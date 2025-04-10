@@ -16,6 +16,7 @@ public class PruebHolaMundo {
 		System.out.println("Hola mundo");
 		System.out.println("María");
 		System.out.println("Rosa");
+		System.out.println("Hola Alejo");
 
 	}
 
