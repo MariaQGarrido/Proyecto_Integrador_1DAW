@@ -15,6 +15,8 @@ public class PruebHolaMundo {
 		// TODO Auto-generated method stub
 		System.out.println("Hola mundo");
 		System.out.println("María");
+		System.out.println("Rosa");
+
 	}
 
 }
