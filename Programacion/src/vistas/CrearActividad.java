@@ -27,7 +27,7 @@ public class CrearActividad extends JFrame {
 	private JTextField txtHora;
 	public CrearActividad() {
 		// Color de fondo de la vista
-		getContentPane().setBackground(new Color(140, 218, 255));
+		getContentPane().setBackground(new Color(247, 202, 136));
 
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -74,6 +74,7 @@ public class CrearActividad extends JFrame {
 		getContentPane().add(scrollPaneDescripcion);
 		
 		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion.setBackground(new Color(253, 162, 171));
 		scrollPaneDescripcion.setViewportView(textAreaDescripcion);
 		
 		//nombre

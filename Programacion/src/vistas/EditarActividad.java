@@ -26,14 +26,14 @@ public class EditarActividad extends JFrame {
 	
 	public EditarActividad() {
 		// Color de fondo de la vista
-		getContentPane().setBackground(new Color(140, 218, 255));
+		getContentPane().setBackground(new Color(247, 202, 136));
 
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
 		// Titulo
-		JLabel lblTitulo = new JLabel("Edición Actividad");
+		JLabel lblTitulo = new JLabel("Editar Actividad");
 		lblTitulo.setBounds(95, 0, 349, 37);
 		// cambio de color la letra
 		lblTitulo.setForeground(new Color(0, 0, 0));
@@ -72,6 +72,7 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(scrollPaneDescripcion);
 
 		JTextArea textAreaCambioDescripcion = new JTextArea();
+		textAreaCambioDescripcion.setBackground(new Color(253, 162, 171));
 		scrollPaneDescripcion.setViewportView(textAreaCambioDescripcion);
 
 		// nombre
