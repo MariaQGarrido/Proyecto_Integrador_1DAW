@@ -1,10 +1,20 @@
 package main;
 
+import vistas.VistaInicioSesion;
+
 public class AppMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		java.awt.EventQueue.invokeLater( new Runnable() {
 
+			@Override
+			public void run() {
+				VistaInicioSesion vista = new VistaInicioSesion ();
+				vista.HacerVisible();
+				
+			}
+			
+		});
 	}
 
 }
