@@ -5,6 +5,8 @@ package vistas;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,10 +31,14 @@ public class CrearCuenta extends JFrame{
 	private JTextField txtProvincia;
 	private JTextField txtPais;
 	private JButton btnBorrar;
-	private JButton btnCuenta;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JButton btnCuentaCuenta;
+	private JTextField txtDaw;
+	private JTextField txtDam;
+	private JTextField txtAsir;
+	private JTextField txtAd;
+	private JTextField txtTfg;
+	private JTextField txtEi;
+	private JTextField txtCi;
 	
 	
 	
@@ -139,6 +145,60 @@ public class CrearCuenta extends JFrame{
 		txtPais = new JTextField();
 		txtPais.setBounds(480, 195, 100, 30);
 		getContentPane().add(txtPais);
+		
+		JLabel lblCiclos = new JLabel("Ciclos:");
+		lblCiclos.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblCiclos.setBounds(23, 230, 100, 30);
+		getContentPane().add(lblCiclos);
+		
+		txtDaw = new JTextField();
+		txtDaw.setText("DAW");
+		txtDaw.setBounds(23, 271, 43, 30);
+		getContentPane().add(txtDaw);
+		
+		txtDam = new JTextField();
+		txtDam.setText("DAM");
+		txtDam.setBounds(80, 271, 43, 30);
+		getContentPane().add(txtDam);
+		
+		txtAsir = new JTextField();
+		txtAsir.setText("ASIR");
+		txtAsir.setBounds(140, 271, 43, 30);
+		getContentPane().add(txtAsir);
+		
+		txtAd = new JTextField();
+		txtAd.setText("A3D");
+		txtAd.setBounds(205, 271, 43, 30);
+		getContentPane().add(txtAd);
+		
+		txtTfg = new JTextField();
+		txtTfg.setText("TFG");
+		txtTfg.setBounds(57, 312, 43, 30);
+		getContentPane().add(txtTfg);
+		
+		txtEi = new JTextField();
+		txtEi.setText("EI");
+		txtEi.setBounds(111, 312, 43, 30);
+		getContentPane().add(txtEi);
+		
+		txtCi = new JTextField();
+		txtCi.setText("CI");
+		txtCi.setBounds(164, 312, 43, 30);
+		getContentPane().add(txtCi);
+		
+		JButton btnBorrar = new JButton("Borrar");
+		btnBorrar.setBackground(new Color(255, 255, 128));
+		btnBorrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnBorrar.setBounds(362, 316, 139, 23);
+		getContentPane().add(btnBorrar);
+		
+		JButton btnCrearCuenta = new JButton("Crear Cuenta");
+		btnCrearCuenta.setBackground(new Color(255, 255, 128));
+		btnCrearCuenta.setBounds(514, 316, 139, 23);
+		getContentPane().add(btnCrearCuenta);
 		
 	}
 
