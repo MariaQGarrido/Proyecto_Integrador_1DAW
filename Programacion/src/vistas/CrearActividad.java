@@ -74,7 +74,7 @@ public class CrearActividad extends JFrame {
 		getContentPane().add(scrollPaneDescripcion);
 		
 		JTextArea textAreaDescripcion = new JTextArea();
-		textAreaDescripcion.setBackground(new Color(253, 162, 171));
+		textAreaDescripcion.setBackground(new Color(255, 255, 255));
 		scrollPaneDescripcion.setViewportView(textAreaDescripcion);
 		
 		//nombre
@@ -148,6 +148,11 @@ public class CrearActividad extends JFrame {
 		JButton btnNewButton = new JButton("Crear Actividad");
 		btnNewButton.setBounds(551, 318, 118, 29);
 		getContentPane().add(btnNewButton);
+		
+		JLabel lblNomUsuario = new JLabel("UserName");
+		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNomUsuario.setBounds(597, 11, 74, 29);
+		getContentPane().add(lblNomUsuario);
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);

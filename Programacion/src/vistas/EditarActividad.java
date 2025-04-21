@@ -72,7 +72,7 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(scrollPaneDescripcion);
 
 		JTextArea textAreaCambioDescripcion = new JTextArea();
-		textAreaCambioDescripcion.setBackground(new Color(253, 162, 171));
+		textAreaCambioDescripcion.setBackground(new Color(255, 255, 255));
 		scrollPaneDescripcion.setViewportView(textAreaCambioDescripcion);
 
 		// nombre
@@ -146,6 +146,11 @@ public class EditarActividad extends JFrame {
 		JButton btnNewButton = new JButton("Editar Actividad");
 		btnNewButton.setBounds(551, 318, 118, 29);
 		getContentPane().add(btnNewButton);
+		
+		JLabel lblNomUsuario = new JLabel("UserName");
+		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNomUsuario.setBounds(595, 11, 74, 29);
+		getContentPane().add(lblNomUsuario);
 
 		setSize(695, 397);
 		setLocationRelativeTo(null);

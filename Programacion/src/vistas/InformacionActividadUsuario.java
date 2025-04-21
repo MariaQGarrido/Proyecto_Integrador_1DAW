@@ -20,15 +20,15 @@ public class InformacionActividadUsuario extends JFrame{
 		getContentPane().setBackground(new Color(253, 251, 159));
 		getContentPane().setForeground(new Color(0, 0, 0));
 						
-		JLabel lblTitulo = new JLabel("ejemUsuario");
-		lblTitulo.setBounds(142, 25, 586, 37);
+		JLabel lblTitulo = new JLabel("UserName");
+		lblTitulo.setBounds(571, 11, 100, 37);
 		lblTitulo.setForeground(new Color(0, 0, 0));
-		lblTitulo.setFont(new Font("", Font.BOLD, 20));
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		getContentPane().add(lblTitulo);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNombre.setBounds(142, 131, 119, 30);
+		lblNombre.setBounds(142, 146, 119, 30);
 		getContentPane().add(lblNombre);
 		
 		JLabel lblInfoAct = new JLabel("Información de la Actividad");
@@ -44,12 +44,12 @@ public class InformacionActividadUsuario extends JFrame{
 		
 		JLabel lblParticipantes = new JLabel("Monitor:");
 		lblParticipantes.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblParticipantes.setBounds(431, 131, 100, 30);
+		lblParticipantes.setBounds(431, 146, 100, 30);
 		getContentPane().add(lblParticipantes);
 		
 		JLabel lblFechaHoraSala = new JLabel("Fecha Hora Sala:");
 		lblFechaHoraSala.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblFechaHoraSala.setBounds(140, 187, 135, 30);
+		lblFechaHoraSala.setBounds(152, 187, 135, 30);
 		getContentPane().add(lblFechaHoraSala);
 		
 		JLabel lblDescripcin = new JLabel("Descripción:");
