@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS ACTIVIDADES(
     id_monitor INT,
     nombre_actividad VARCHAR(10),
     descripcion_actividad VARCHAR(50),
-    usuarios_maximos INT
+    usuarios_maximos INT,
+    usuarios_inscritos INT
 );
 ALTER TABLE ACTIVIDADES ADD CONSTRAINT FOREIGN KEY(id_monitor) REFERENCES USUARIOS(id_usuario);
 
@@ -30,7 +31,7 @@ ALTER TABLE INSCRITO_EN ADD CONSTRAINT FOREIGN KEY(id_usr) REFERENCES USUARIOS(i
 ALTER TABLE INSCRITO_EN ADD CONSTRAINT FOREIGN KEY(id_act) REFERENCES ACTIVIDADES(id_actividad);  
 
 CREATE TABLE IF NOT EXISTS SALA(
-    id_sala INT PRIMARY KEY,
+    id_sala INT UNIQUE PRIMARY KEY,
     capacidad VARCHAR(30),
     tipo_sala VARCHAR(30)
 );
@@ -54,10 +55,10 @@ INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo) VALUES
 (5, 'Lucas', 'Film', '289398I','TAFD'),
 (6, 'Diego', 'García', '328932U','TAFD');
 
-INSERT INTO ACTIVIDADES (id_actividad, id_monitor, nombre_actividad, descripcion_actividad, usuarios_maximos) VALUES
-(1, 4, 'Pilates','Una actividad para relajarse un rato',10),
-(2, 5,'Waterpolo','El gorro no se proporciona',15),
-(3, 6,'Tenis','Se necesita raqueta propia',4);
+INSERT INTO ACTIVIDADES (id_actividad, id_monitor, nombre_actividad, descripcion_actividad, usuarios_maximos, usuarios_inscritos) VALUES
+(1, 4, 'Pilates','Una actividad para relajarse un rato',10,5),
+(2, 5,'Waterpolo','El gorro no se proporciona',15,10),
+(3, 6,'Tenis','Se necesita raqueta propia',4,2);
 
 INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (1, 1),
