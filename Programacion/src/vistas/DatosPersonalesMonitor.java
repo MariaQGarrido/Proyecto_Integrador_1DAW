@@ -18,7 +18,7 @@ import javax.swing.JMenuBar;
 /**
  * 
  */
-public class DatosPersonalesUsuario extends JFrame{
+public class DatosPersonalesMonitor extends JFrame{
 	
 
 	private JTextField txtIdentificador;
@@ -34,16 +34,16 @@ public class DatosPersonalesUsuario extends JFrame{
 	
 
 	
-	public DatosPersonalesUsuario() {
-		getContentPane().setBackground(new Color(253, 251, 159));
+	public DatosPersonalesMonitor() {
+		getContentPane().setBackground(new Color(247, 202, 136));
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 				
-		JLabel lblTitulo = new JLabel("UserName");
-		lblTitulo.setBounds(566, 11, 105, 37);
+		JLabel lblTitulo = new JLabel("monitor@ejem.com");
+		lblTitulo.setBounds(535, 11, 136, 37);
 		lblTitulo.setForeground(new Color(0, 0, 0));
-		lblTitulo.setFont(new Font("Dialog", Font.PLAIN, 20));
+		lblTitulo.setFont(new Font("Dialog", Font.PLAIN, 14));
 		getContentPane().add(lblTitulo);
 				
 		setSize(695, 397);
