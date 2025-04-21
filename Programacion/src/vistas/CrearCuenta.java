@@ -43,6 +43,7 @@ public class CrearCuenta extends JFrame{
 	
 	
 	public CrearCuenta() {
+		getContentPane().setBackground(new Color(247, 202, 136));
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
