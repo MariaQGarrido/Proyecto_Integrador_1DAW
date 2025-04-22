@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.WindowConstants;
+import javax.swing.JTextField;
 
 public class InformacionActividadUsuarioInscrito extends JFrame{
 	
@@ -17,6 +18,7 @@ public class InformacionActividadUsuarioInscrito extends JFrame{
 	private JMenuBar menuBarActividad;
 	private JMenu menuDatosPersonales;
 	private JMenu menuActividad;
+	private JTextField textField;
 	
 	public InformacionActividadUsuarioInscrito() {
 		
@@ -39,7 +41,7 @@ public class InformacionActividadUsuarioInscrito extends JFrame{
 		
 		JLabel nombreUsuario = new JLabel("UserName");
 		nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
-		nombreUsuario.setBounds(123, 22, 100, 30);
+		nombreUsuario.setBounds(571, 11, 100, 30);
 		getContentPane().add(nombreUsuario);
 		
 		
@@ -50,7 +52,7 @@ public class InformacionActividadUsuarioInscrito extends JFrame{
 		
 		JLabel lblNombre = new JLabel("Nombre: ");
 		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombre.setBounds(143, 105, 137, 44);
+		lblNombre.setBounds(143, 105, 81, 44);
 		getContentPane().add(lblNombre);
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
@@ -58,30 +60,36 @@ public class InformacionActividadUsuarioInscrito extends JFrame{
 		lblIdentificador.setBounds(381, 108, 132, 38);
 		getContentPane().add(lblIdentificador);
 		
-		JLabel lblMonitor = new JLabel("Monitor");
+		JLabel lblMonitor = new JLabel("Monitor:");
 		lblMonitor.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMonitor.setBounds(143, 163, 115, 30);
+		lblMonitor.setBounds(143, 163, 80, 30);
 		getContentPane().add(lblMonitor);
 		
-		JLabel lblFechaHoraSala = new JLabel("Fecha/Hora/Sala");
+		JLabel lblFechaHoraSala = new JLabel("Fecha/Hora/Sala:");
 		lblFechaHoraSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFechaHoraSala.setBounds(371, 158, 300, 40);
+		lblFechaHoraSala.setBounds(371, 158, 163, 40);
 		getContentPane().add(lblFechaHoraSala);
 		
-		JLabel lblDescripcion = new JLabel("Descripcion");
+		JLabel lblDescripcion = new JLabel("Descripción:");
 		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblDescripcion.setBounds(143, 224, 200, 40);
+		lblDescripcion.setBounds(140, 224, 107, 40);
 		getContentPane().add(lblDescripcion);
 		
-		JLabel lblNumMax = new JLabel("Nº Máximo");
+		JLabel lblNumMax = new JLabel("Nº Máximo:");
 		lblNumMax.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNumMax.setBounds(149, 275, 250, 40);
+		lblNumMax.setBounds(372, 224, 107, 40);
 		getContentPane().add(lblNumMax);
 		
 		JButton btnDejarActividad = new JButton("Dejar Actividad");
 		btnDejarActividad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnDejarActividad.setBounds(516, 326, 155, 23);
 		getContentPane().add(btnDejarActividad);
+		
+		textField = new JTextField();
+		textField.setText("Descripción de la actividad");
+		textField.setColumns(10);
+		textField.setBounds(136, 275, 147, 74);
+		getContentPane().add(textField);
 		
 		
 		setSize(695, 397);

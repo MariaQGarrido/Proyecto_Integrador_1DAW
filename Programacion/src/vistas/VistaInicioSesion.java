@@ -23,7 +23,7 @@ public class VistaInicioSesion extends JFrame {
 	
 	public VistaInicioSesion() {
 		// Color de fondo de la vista
-		getContentPane().setBackground(new Color(239, 52, 71));
+		getContentPane().setBackground(new Color(255, 104, 104));
 
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

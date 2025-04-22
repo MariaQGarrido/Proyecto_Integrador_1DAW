@@ -37,11 +37,11 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		getContentPane().setBackground(new Color(247, 202, 136));
 						
-		JLabel lblTitulo = new JLabel("monitor@ejem.com");
-		lblTitulo.setBounds(142, 25, 586, 37);
-		lblTitulo.setForeground(new Color(0, 0, 0));
-		lblTitulo.setFont(new Font("", Font.BOLD, 20));
-		getContentPane().add(lblTitulo);
+		JLabel lblNomUsuario = new JLabel("UserName");
+		lblNomUsuario.setBounds(571, 11, 100, 37);
+		lblNomUsuario.setForeground(new Color(0, 0, 0));
+		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		getContentPane().add(lblNomUsuario);
 		
 		JLabel lblInformacinDeLa = new JLabel("Información de la Actividad");
 		lblInformacinDeLa.setForeground(Color.BLACK);

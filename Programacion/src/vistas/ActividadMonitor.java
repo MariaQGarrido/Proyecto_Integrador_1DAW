@@ -41,7 +41,7 @@ public class ActividadMonitor extends JFrame{
 	
 	JLabel nombreUsuario = new JLabel("UserName");
 	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
-	nombreUsuario.setBounds(123, 22, 100, 30);
+	nombreUsuario.setBounds(571, 11, 100, 30);
 	getContentPane().add(nombreUsuario);
 	
 	JLabel listaActividades = new JLabel("Lista Actividades");
