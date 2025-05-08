@@ -187,15 +187,6 @@ public class CrearCuenta extends JFrame{
 		txtCi.setBounds(164, 312, 43, 30);
 		getContentPane().add(txtCi);
 		
-		JButton btnBorrar = new JButton("Borrar");
-		btnBorrar.setBackground(new Color(255, 255, 128));
-		btnBorrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnBorrar.setBounds(362, 316, 139, 23);
-		getContentPane().add(btnBorrar);
-		
 		JButton btnCrearCuenta = new JButton("Crear Cuenta");
 		btnCrearCuenta.setBackground(new Color(255, 255, 128));
 		btnCrearCuenta.setBounds(514, 316, 139, 23);

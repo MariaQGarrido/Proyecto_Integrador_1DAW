@@ -57,16 +57,8 @@ public class ActividadMonitor extends JFrame{
 	scrollListaAct.setViewportView(listActividades);
 	
 	JButton btnNuevaActividad = new JButton("Nueva actividad");
-	btnNuevaActividad.setBounds(141, 308, 148, 23);
+	btnNuevaActividad.setBounds(327, 307, 148, 23);
 	getContentPane().add(btnNuevaActividad);
-	
-	JButton btnEditar = new JButton("Editar");
-	btnEditar.setBounds(367, 308, 89, 23);
-	getContentPane().add(btnEditar);
-	
-	JButton btnBorrarActiviada = new JButton("Borrar");
-	btnBorrarActiviada.setBounds(554, 308, 89, 23);
-	getContentPane().add(btnBorrarActiviada);
 	
 	
 	setSize(695, 397);

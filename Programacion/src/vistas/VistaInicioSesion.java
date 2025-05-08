@@ -21,7 +21,12 @@ public class VistaInicioSesion extends JFrame {
 	private JTextField textField;
 	private JPasswordField passwordField;
 	
-	public VistaInicioSesion() {
+	public VistaInicioSesion(String titulo) {
+		super(titulo);
+		componentes();
+	}
+	
+	public void componentes() {
 		// Color de fondo de la vista
 		getContentPane().setBackground(new Color(255, 104, 104));
 
