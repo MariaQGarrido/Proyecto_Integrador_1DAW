@@ -66,6 +66,7 @@ public class ActividadesUsuario extends JFrame{
 		getContentPane().add(menuBarActividad);
 		
 		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad.setBackground(new Color(255, 255, 255));
 		menuBarActividad.add(menuActividad);
 		
 		JMenu menuDatosPersonales = new JMenu("Datos Personales");
