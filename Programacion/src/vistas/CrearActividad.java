@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+
+import Control.ListenerCrearActividad;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JScrollPane;
@@ -16,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CrearActividad extends JFrame {
 	private JTextField txtIdentificador;
@@ -155,6 +160,7 @@ public class CrearActividad extends JFrame {
 		
 		//Boton para crear la actividad
 		JButton btnNewButton = new JButton("Crear Actividad");
+		btnNewButton.addActionListener(new ListenerCrearActividad(this));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton.setBounds(551, 318, 118, 29);
 		getContentPane().add(btnNewButton);

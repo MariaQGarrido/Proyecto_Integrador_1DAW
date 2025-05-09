@@ -10,7 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.WindowConstants;
+
+import Control.ListenerDejrActividad;
+
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InformacionActividadUsuarioBaja extends JFrame{
 	
@@ -81,6 +86,7 @@ public class InformacionActividadUsuarioBaja extends JFrame{
 		getContentPane().add(lblNumMax);
 		
 		JButton btnDejarActividad = new JButton("Dejar Actividad");
+		btnDejarActividad.addActionListener(new ListenerDejrActividad(this));
 		btnDejarActividad.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnDejarActividad.setBounds(516, 319, 155, 30);
 		getContentPane().add(btnDejarActividad);

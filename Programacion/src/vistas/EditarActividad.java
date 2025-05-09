@@ -15,6 +15,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import Control.ListenerEditarActividad;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class EditarActividad extends JFrame {
 	private JTextField txtIdentificador;
 	private JTextField txtNombre;
@@ -153,6 +158,7 @@ public class EditarActividad extends JFrame {
 
 		// Boton para crear la actividad
 		JButton btnNewButton = new JButton("Editar Actividad");
+		btnNewButton.addActionListener(new ListenerEditarActividad(this));
 		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
 		

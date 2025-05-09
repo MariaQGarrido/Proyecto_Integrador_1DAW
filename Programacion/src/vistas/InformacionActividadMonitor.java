@@ -11,6 +11,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import Control.ListenerBorrar;
+import Control.ListenerEditar;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JTabbedPane;
@@ -47,6 +51,7 @@ public class InformacionActividadMonitor extends JFrame{
 		getContentPane().add(lblNomUsuario);
 		
 		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ListenerEditar(this));
 		btnEditar.setBounds(141, 326, 89, 30);
 		getContentPane().add(btnEditar);
 		
@@ -108,6 +113,7 @@ public class InformacionActividadMonitor extends JFrame{
 		menuBar.add(mnDatosPersonales);
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
+		btnBorrarActiviada.addActionListener(new ListenerBorrar(this));
 		btnBorrarActiviada.setBounds(582, 326, 89, 30);
 		getContentPane().add(btnBorrarActiviada);
 		

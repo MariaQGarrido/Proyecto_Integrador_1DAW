@@ -6,6 +6,11 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 
+import Control.ListenerInscribirActividad;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class InformacionActividadUsuarioInscribir extends JFrame{
 	
 	private JButton btnInscribirActividad;
@@ -78,6 +83,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		getContentPane().add(lblNumMax);
 		
 		JButton btnInscribirActividad = new JButton("Inscribir Actividad");
+		btnInscribirActividad.addActionListener(new ListenerInscribirActividad(this));
 		btnInscribirActividad.setBackground(new Color(255, 255, 255));
 		btnInscribirActividad.setAutoscrolls(true);
 		btnInscribirActividad.setFont(new Font("Tahoma", Font.PLAIN, 14));

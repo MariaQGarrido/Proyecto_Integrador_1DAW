@@ -15,6 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+
+import Control.ListenerCrearCuenta;
+
 import javax.swing.JComboBox;
 
 /**
@@ -103,6 +106,8 @@ public class CrearCuenta extends JFrame{
 		getContentPane().add(lblCiclos);
 				
 		JButton btnCrearCuenta = new JButton("Crear Cuenta");
+		btnCrearCuenta.addActionListener(new ListenerCrearCuenta(this) );
+		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCrearCuenta.setBackground(new Color(255, 255, 128));
 		btnCrearCuenta.setBounds(514, 316, 139, 30);
 		getContentPane().add(btnCrearCuenta);

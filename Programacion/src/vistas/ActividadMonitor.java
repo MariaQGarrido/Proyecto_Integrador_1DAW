@@ -1,11 +1,12 @@
 package vistas;
 
 import java.awt.Color;
+
 import java.awt.GridLayout;
 
 import javax.swing.*;
-import java.awt.Font;
 
+import java.awt.Font;
 public class ActividadMonitor extends JFrame{
 	
 	private JMenuBar menuActividadBar;
