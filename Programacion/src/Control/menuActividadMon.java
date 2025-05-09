@@ -10,28 +10,6 @@ import vistas.InformacionActividadMonitor;
 
 public class menuActividadMon implements MouseListener {
 
-	public menuActividadMon(ActividadMonitor actividadMonitor) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public menuActividadMon(DatosPersonalesMonitor datosPersonalesMonitor) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public menuActividadMon(EditarActividad editarActividad) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public menuActividadMon(InformacionActividadMonitor informacionActividadMonitor) {
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -54,6 +32,12 @@ public class menuActividadMon implements MouseListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		ActividadMonitor.HacerVisible();
 	}
 
 }

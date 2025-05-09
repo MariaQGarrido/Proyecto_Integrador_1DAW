@@ -5,11 +5,7 @@ import java.awt.event.ActionListener;
 
 import vistas.InformacionActividadUsuarioBaja;
 
-public class ListenerDejrActividad implements ActionListener {
-
-	public ListenerDejrActividad(InformacionActividadUsuarioBaja informacionActividadUsuarioBaja) {
-		// TODO Auto-generated constructor stub
-	}
+public class ListenerDejarActividad implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
