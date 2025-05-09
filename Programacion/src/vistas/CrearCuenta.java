@@ -112,8 +112,8 @@ public class CrearCuenta extends JFrame{
 		btnCrearCuenta.setBounds(514, 316, 139, 30);
 		getContentPane().add(btnCrearCuenta);
 		
-		JComboBox<String> comboBoxCiclos = new JComboBox<String>();
 		
+		JComboBox<String> comboBoxCiclos = new JComboBox<String>();
 		String [] ciclos = {"DAW", "DAM", "ASIR", "A3D", "TFG","EI","CI"};
 		DefaultComboBoxModel<String> modeloComboBox = new DefaultComboBoxModel<String>(ciclos);
 		comboBoxCiclos.setModel(modeloComboBox);

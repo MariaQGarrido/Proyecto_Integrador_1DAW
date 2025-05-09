@@ -23,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class CrearActividad extends JFrame {
+	
 	private JTextField txtIdentificador;
 	private JTextField txtNombre;
 	private JTextField txtNumeroSala;
@@ -30,6 +31,7 @@ public class CrearActividad extends JFrame {
 	private JTextField txtTipoSala;
 	private JTextField txtFecha;
 	private JTextField txtHora;
+	
 	public CrearActividad() {
 		// Color de fondo de la vista
 		getContentPane().setBackground(new Color(247, 202, 136));

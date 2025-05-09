@@ -31,15 +31,15 @@ import java.awt.event.ActionEvent;
  */
 public class InformacionActividadMonitor extends JFrame{
 	
-	private JTextField txtIdentificador;
-	private JTextField txtParticipantes;
-	private JTextField txtIFecha;
-	private JTextField txtDescrip;
-	private JTextField txtNMax;
 	private JTextField txtP;
 	private JTextField textField;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
+	private JTextField txtIdentificador;
+	private JTextField txtFecha;
+	private JTextField txtHora;
+	private JTextField txtSala;
+	private JTextField txtNumMax;
 	
 	public InformacionActividadMonitor(){
 		// 1) configura JFrame
@@ -67,18 +67,37 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(141, 109, 282, 30);
+		lblIdentificador.setBounds(141, 90, 120, 30);
 		getContentPane().add(lblIdentificador);
+		
+		txtIdentificador = new JTextField();
+		
+		txtIdentificador = new JTextField();
+		txtIdentificador.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtIdentificador.setBounds(264, 96, 120, 25);
+		getContentPane().add(txtIdentificador);
+		txtIdentificador.setColumns(10);
+		
 		
 		JLabel lblParticipantes = new JLabel("Participantes:");
 		lblParticipantes.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblParticipantes.setBounds(435, 109, 133, 30);
+		lblParticipantes.setBounds(435, 90, 133, 30);
 		getContentPane().add(lblParticipantes);
 		
-		JLabel lblFechaHoraSala = new JLabel("Fecha Hora Sala:");
-		lblFechaHoraSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFechaHoraSala.setBounds(141, 162, 282, 30);
-		getContentPane().add(lblFechaHoraSala);
+		JLabel lblFecha = new JLabel("Fecha:");
+		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblFecha.setBounds(141, 131, 69, 30);
+		getContentPane().add(lblFecha);
+		
+		JLabel lblHora = new JLabel("Hora:");
+		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblHora.setBounds(141, 172, 53, 30);
+		getContentPane().add(lblHora);
+		
+		JLabel lblSala = new JLabel("Sala: ");
+		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblSala.setBounds(435, 221, 45, 30);
+		getContentPane().add(lblSala);
 		
 		JLabel lblDescripcin = new JLabel("Descripción:");
 		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
@@ -86,20 +105,22 @@ public class InformacionActividadMonitor extends JFrame{
 		getContentPane().add(lblDescripcin);
 		
 		textField = new JTextField();
+		textField.setFont(new Font("Dialog", Font.PLAIN, 14));
 		textField.setBounds(141, 262, 165, 30);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNMximo = new JLabel("Nº Máximo:");
 		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNMximo.setBounds(434, 221, 237, 30);
+		lblNMximo.setBounds(435, 262, 112, 30);
 		getContentPane().add(lblNMximo);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(435, 152, 195, 58);
+		scrollPane.setBounds(433, 131, 197, 71);
 		getContentPane().add(scrollPane);
 		
 		txtP = new JTextField();
+		txtP.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtP.setText("Participantes va a ser una lista");
 		scrollPane.setViewportView(txtP);
 		txtP.setColumns(10);
@@ -122,6 +143,30 @@ public class InformacionActividadMonitor extends JFrame{
 		btnBorrarActiviada.addActionListener(new ListenerBorrar(this));
 		btnBorrarActiviada.setBounds(582, 326, 89, 30);
 		getContentPane().add(btnBorrarActiviada);
+		
+		txtFecha = new JTextField();
+		txtFecha.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtFecha.setColumns(10);
+		txtFecha.setBounds(202, 136, 120, 25);
+		getContentPane().add(txtFecha);
+		
+		txtHora = new JTextField();
+		txtHora.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtHora.setColumns(10);
+		txtHora.setBounds(196, 176, 120, 25);
+		getContentPane().add(txtHora);
+		
+		txtSala = new JTextField();
+		txtSala.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtSala.setColumns(10);
+		txtSala.setBounds(480, 226, 148, 25);
+		getContentPane().add(txtSala);
+		
+		txtNumMax = new JTextField();
+		txtNumMax.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtNumMax.setColumns(10);
+		txtNumMax.setBounds(546, 267, 81, 25);
+		getContentPane().add(txtNumMax);
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);

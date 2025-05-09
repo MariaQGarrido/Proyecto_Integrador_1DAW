@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import Control.menuActividadUSR;
 import Control.menuDatosPersonalesUSR;
+import modelo.Actividad;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,9 +18,8 @@ public class ActividadesUsuario extends JFrame{
 	private JScrollPane scrollActInscritas;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
-//	private JList<Actividades> listActDisponibles;
-//	private Jlist<Actividades> listActInscritas;
-	
+	private JList<Actividad> listActDisponibles;
+	private JList<Actividad> listActInscritas;
 	
 	
 	
@@ -32,24 +32,24 @@ public class ActividadesUsuario extends JFrame{
 		getContentPane().setBackground(new Color(253, 251, 159));
 		getContentPane().setForeground(new Color(0, 0, 0));
 		
-		JScrollPane scrollActDisponible = new JScrollPane();
-		getContentPane().add(scrollActDisponibles, BorderLayout.CENTER);
+		scrollActDisponibles = new JScrollPane();
+		scrollActDisponibles.setLocation(131, 252);
+		scrollActDisponibles.setSize(300, 97);
+		getContentPane().add(scrollActDisponibles);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(121, 100, 333, 85);
-		getContentPane().add(scrollPane);
+		listActDisponibles = new JList<Actividad>();
+		scrollActDisponibles.setViewportView(listActDisponibles);
+		listActDisponibles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
+		scrollActInscritas = new JScrollPane();
+		scrollActInscritas.setSize(300, 97);
+		scrollActInscritas.setLocation(131, 101);
+		getContentPane().add(scrollActInscritas);
 		
-		JList list = new JList();
-		scrollPane.setViewportView(list);
-		scrollActDisponibles.setViewportView(list);
+		listActInscritas = new JList<Actividad>();
+		scrollActInscritas.setViewportView(listActInscritas);
+		listActDisponibles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(121, 250, 333, 85);
-		getContentPane().add(scrollPane_1);
-		
-		JList list_1 = new JList();
-		scrollPane_1.setViewportView(list_1);		
 		
 		JLabel actividades = new JLabel("ACTIVIDADES");
 		actividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
@@ -66,7 +66,7 @@ public class ActividadesUsuario extends JFrame{
 		getContentPane().add(actividadesDisponibles);
 		getContentPane().add(actividadesInscritas);
 		
-		JMenuBar menuBarActividad = new JMenuBar();
+		menuBarActividad = new JMenuBar();
 		menuBarActividad.setLayout (new GridLayout(0,1));
 		menuBarActividad.setBounds(0, 0, 99, 360);
 		getContentPane().add(menuBarActividad);

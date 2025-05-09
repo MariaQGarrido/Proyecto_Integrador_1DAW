@@ -16,10 +16,16 @@ import java.awt.event.ActionEvent;
 public class InformacionActividadUsuarioInscribir extends JFrame{
 	
 	private JButton btnInscribirActividad;
-	private JMenuBar menuBarActividad;
 	private JMenu menuDatosPersonales;
 	private JMenu menuActividad;
-	private JTextField txtA;
+	private JTextField txtNombreUSRI;
+	private JTextField txtMonitorUSRI;
+	private JTextField textField_2;
+	private JTextField txtIdentificadorUSRI;
+	private JTextField txtFechaUSRI;
+	private JTextField txtHorUSRI;
+	private JTextField txtSalaUSRI;
+	private JTextField txtNumMaxUSRI;
 	
 	public InformacionActividadUsuarioInscribir () {
 		
@@ -36,11 +42,11 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		menuBarActividad.setBounds(0, 0, 99, 360);
 		getContentPane().add(menuBarActividad);
 		
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
 		menuBarActividad.add(menuActividad);
 		menuActividad.addMouseListener(new menuActividadUSR(this));
 		
-		JMenu menuDatosPersonales = new JMenu("Datos Personales");
+		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
 		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
 		
@@ -54,37 +60,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		lblInformacionAct.setBounds(122, 42, 400, 52);
 		getContentPane().add(lblInformacionAct);
 		
-		JLabel lblNombre = new JLabel("Nombre: ");
-		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombre.setBounds(143, 93, 218, 44);
-		getContentPane().add(lblNombre);
-		
-		JLabel lblIdentificador = new JLabel("Identificador:");
-		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(371, 96, 300, 38);
-		getContentPane().add(lblIdentificador);
-		
-		JLabel lblMonitor = new JLabel("Monitor:");
-		lblMonitor.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMonitor.setBounds(143, 148, 218, 30);
-		getContentPane().add(lblMonitor);
-		
-		JLabel lblFechaHoraSala = new JLabel("Fecha/Hora/Sala:");
-		lblFechaHoraSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFechaHoraSala.setBounds(371, 143, 300, 40);
-		getContentPane().add(lblFechaHoraSala);
-		
-		JLabel lblDescripcion = new JLabel("Descripcion:");
-		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblDescripcion.setBounds(143, 195, 121, 40);
-		getContentPane().add(lblDescripcion);
-		
-		JLabel lblNumMax = new JLabel("Nº Máximo:");
-		lblNumMax.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNumMax.setBounds(371, 195, 300, 40);
-		getContentPane().add(lblNumMax);
-		
-		JButton btnInscribirActividad = new JButton("Inscribir Actividad");
+		btnInscribirActividad = new JButton("Inscribir Actividad");
 		btnInscribirActividad.addActionListener(new ListenerInscribirActividad(this));
 		btnInscribirActividad.setBackground(new Color(255, 255, 255));
 		btnInscribirActividad.setAutoscrolls(true);
@@ -92,13 +68,95 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		btnInscribirActividad.setBounds(516, 319, 155, 30);
 		getContentPane().add(btnInscribirActividad);
 		
-		txtA = new JTextField();
-		txtA.setFont(new Font("Microsoft JhengHei UI", Font.PLAIN, 11));
-		txtA.setBackground(new Color(253,251,159));
-		txtA.setText("Descripción de la actividad");
-		txtA.setBounds(143, 234, 155, 38);
-		getContentPane().add(txtA);
-		txtA.setColumns(10);
+		JLabel lblNombre = new JLabel("Nombre: ");
+		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblNombre.setBounds(132, 93, 81, 44);
+		getContentPane().add(lblNombre);
+		
+		txtNombreUSRI = new JTextField();
+		txtNombreUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtNombreUSRI.setColumns(10);
+		txtNombreUSRI.setBounds(218, 105, 186, 25);
+		getContentPane().add(txtNombreUSRI);
+		
+		txtMonitorUSRI = new JTextField();
+		txtMonitorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtMonitorUSRI.setColumns(10);
+		txtMonitorUSRI.setBounds(212, 145, 192, 25);
+		getContentPane().add(txtMonitorUSRI);
+		
+		JLabel lblMonitor = new JLabel("Monitor:");
+		lblMonitor.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblMonitor.setBounds(132, 148, 81, 30);
+		getContentPane().add(lblMonitor);
+		
+		JLabel lblDescripcion = new JLabel("Descripción:");
+		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblDescripcion.setBounds(132, 195, 218, 40);
+		getContentPane().add(lblDescripcion);
+		
+		textField_2 = new JTextField();
+		textField_2.setText("Descripción de la actividad");
+		textField_2.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 11));
+		textField_2.setColumns(10);
+		textField_2.setBackground(Color.WHITE);
+		textField_2.setBounds(142, 239, 180, 95);
+		getContentPane().add(textField_2);
+		
+		JLabel lblIdentificador = new JLabel("Identificador:");
+		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblIdentificador.setBounds(436, 93, 127, 38);
+		getContentPane().add(lblIdentificador);
+		
+		txtIdentificadorUSRI = new JTextField();
+		txtIdentificadorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtIdentificadorUSRI.setColumns(10);
+		txtIdentificadorUSRI.setBounds(559, 106, 93, 25);
+		getContentPane().add(txtIdentificadorUSRI);
+		
+		txtFechaUSRI = new JTextField();
+		txtFechaUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtFechaUSRI.setColumns(10);
+		txtFechaUSRI.setBounds(497, 147, 155, 25);
+		getContentPane().add(txtFechaUSRI);
+		
+		JLabel lblFecha = new JLabel("Fecha:");
+		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblFecha.setBounds(436, 142, 69, 30);
+		getContentPane().add(lblFecha);
+		
+		JLabel lblHora = new JLabel("Hora:");
+		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblHora.setBounds(436, 183, 53, 30);
+		getContentPane().add(lblHora);
+		
+		txtHorUSRI = new JTextField();
+		txtHorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtHorUSRI.setColumns(10);
+		txtHorUSRI.setBounds(491, 187, 161, 25);
+		getContentPane().add(txtHorUSRI);
+		
+		JLabel lblSala = new JLabel("Sala: ");
+		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblSala.setBounds(436, 227, 45, 30);
+		getContentPane().add(lblSala);
+		
+		txtSalaUSRI = new JTextField();
+		txtSalaUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtSalaUSRI.setColumns(10);
+		txtSalaUSRI.setBounds(481, 232, 171, 25);
+		getContentPane().add(txtSalaUSRI);
+		
+		JLabel lblNMximo = new JLabel("Nº Máximo:");
+		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblNMximo.setBounds(436, 268, 112, 30);
+		getContentPane().add(lblNMximo);
+		
+		txtNumMaxUSRI = new JTextField();
+		txtNumMaxUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtNumMaxUSRI.setColumns(10);
+		txtNumMaxUSRI.setBounds(547, 273, 105, 25);
+		getContentPane().add(txtNumMaxUSRI);
 		
 		
 		setSize(695, 397);

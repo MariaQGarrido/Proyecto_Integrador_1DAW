@@ -25,16 +25,11 @@ import javax.swing.JMenuBar;
 public class DatosPersonalesUsuario extends JFrame{
 	
 
-	private JTextField txtIdentificador;
-	private JTextField txtNombre;
-	private JTextField txtMatricula;
-	private JTextField txtCorreo;
-	private JTextField txtTel;
-	private JTextField txtDireccion;
-	private JTextField textCP;
-	private JTextField txtCiudad;
-	private JTextField txtProvincia;
-	private JTextField txtPais;
+	private JTextField txtIdentificadorUSR;
+	private JTextField txtNombreUSR;
+	private JTextField txtMatriculaUSR;
+	private JTextField txtCorreoUSR;
+	private JTextField txtTelUSR;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
 
@@ -56,28 +51,56 @@ public class DatosPersonalesUsuario extends JFrame{
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(143, 141, 231, 30);
+		lblIdentificador.setBounds(143, 145, 121, 30);
 		getContentPane().add(lblIdentificador);
+		
+		txtIdentificadorUSR = new JTextField();
+		txtIdentificadorUSR.setSize(250, 25);
+		txtIdentificadorUSR.setLocation(268, 150);
+		getContentPane().add(txtIdentificadorUSR);
+	
 		
 		JLabel lblMatrcula = new JLabel("Matrícula:");
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatrcula.setBounds(143, 191, 260, 30);
+		lblMatrcula.setBounds(143, 191, 100, 30);
 		getContentPane().add(lblMatrcula);
 		
-		JLabel lblCorreo = new JLabel("Correo: userNmae@gmail.com");
+		txtMatriculaUSR = new JTextField();
+		txtMatriculaUSR.setSize(250, 25);
+		txtMatriculaUSR.setLocation(237, 195);
+		getContentPane().add(txtMatriculaUSR);
+		
+		
+		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(143, 242, 298, 30);
+		lblCorreo.setBounds(143, 242, 72, 30);
 		getContentPane().add(lblCorreo);
 		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono: 123456789");
+		txtCorreoUSR = new JTextField();
+		txtCorreoUSR.setSize(250, 25);
+		txtCorreoUSR.setLocation(212, 245);
+		getContentPane().add(txtCorreoUSR);
+		
+		JLabel lblNTelfono = new JLabel("Nº Teléfono:");
 		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNTelfono.setBounds(143, 298, 231, 30);
+		lblNTelfono.setBounds(143, 298, 121, 30);
 		getContentPane().add(lblNTelfono);
+		
+		txtTelUSR = new JTextField();
+		txtTelUSR.setSize(250, 25);
+		txtTelUSR.setLocation(260, 303);
+		getContentPane().add(txtTelUSR);		
 		
 		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos:");
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombreYApellidos.setBounds(143, 100, 525, 30);
+		lblNombreYApellidos.setBounds(143, 100, 189, 30);
 		getContentPane().add(lblNombreYApellidos);
+		
+		txtNombreUSR = new JTextField();
+		txtNombreUSR.setSize(250, 25);
+		txtNombreUSR.setLocation(328, 104);
+		getContentPane().add(txtNombreUSR);
+		
 		
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas

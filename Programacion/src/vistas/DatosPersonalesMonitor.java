@@ -25,18 +25,13 @@ import javax.swing.JMenuBar;
 public class DatosPersonalesMonitor extends JFrame{
 	
 
-	private JTextField txtIdentificador;
-	private JTextField txtNombre;
-	private JTextField txtMatricula;
-	private JTextField txtCorreo;
-	private JTextField txtTel;
-	private JTextField txtDireccion;
-	private JTextField textCP;
-	private JTextField txtCiudad;
-	private JTextField txtProvincia;
-	private JTextField txtPais;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
+	private JTextField txtNombreMon;
+	private JTextField txtIndetificdorMon;
+	private JTextField txtMatriculaMon;
+	private JTextField txtCorreoMon;
+	private JTextField txtTelMon;
 
 	
 	public DatosPersonalesMonitor() {
@@ -56,27 +51,27 @@ public class DatosPersonalesMonitor extends JFrame{
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(143, 141, 365, 30);
+		lblIdentificador.setBounds(143, 145, 124, 30);
 		getContentPane().add(lblIdentificador);
 		
 		JLabel lblMatrcula = new JLabel("Matrícula:");
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatrcula.setBounds(143, 191, 365, 30);
+		lblMatrcula.setBounds(143, 191, 87, 30);
 		getContentPane().add(lblMatrcula);
 		
-		JLabel lblCorreo = new JLabel("Correo: monitor@gmail.com");
+		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(143, 242, 365, 30);
+		lblCorreo.setBounds(143, 242, 74, 30);
 		getContentPane().add(lblCorreo);
 		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono: 123456789");
+		JLabel lblNTelfono = new JLabel("Nº Teléfono:");
 		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNTelfono.setBounds(143, 298, 438, 30);
+		lblNTelfono.setBounds(143, 298, 114, 30);
 		getContentPane().add(lblNTelfono);
 		
 		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos:");
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombreYApellidos.setBounds(143, 100, 528, 30);
+		lblNombreYApellidos.setBounds(143, 100, 183, 30);
 		getContentPane().add(lblNombreYApellidos);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -98,6 +93,26 @@ public class DatosPersonalesMonitor extends JFrame{
 		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));
 		lblDatosPersonales.setBounds(122, 42, 251, 51);
 		getContentPane().add(lblDatosPersonales);
+		
+		txtNombreMon = new JTextField();
+		txtNombreMon.setBounds(326, 104, 250, 25);
+		getContentPane().add(txtNombreMon);
+		
+		txtIndetificdorMon = new JTextField();
+		txtIndetificdorMon.setBounds(266, 150, 250, 25);
+		getContentPane().add(txtIndetificdorMon);
+		
+		txtMatriculaMon = new JTextField();
+		txtMatriculaMon.setBounds(235, 195, 250, 25);
+		getContentPane().add(txtMatriculaMon);
+		
+		txtCorreoMon = new JTextField();
+		txtCorreoMon.setBounds(210, 245, 250, 25);
+		getContentPane().add(txtCorreoMon);
+		
+		txtTelMon = new JTextField();
+		txtTelMon.setBounds(260, 303, 250, 25);
+		getContentPane().add(txtTelMon);
 		
 	}
 }
