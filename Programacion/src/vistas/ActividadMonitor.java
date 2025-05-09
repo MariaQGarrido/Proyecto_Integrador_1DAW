@@ -57,7 +57,8 @@ public class ActividadMonitor extends JFrame{
 	scrollListaAct.setViewportView(listActividades);
 	
 	JButton btnNuevaActividad = new JButton("Nueva actividad");
-	btnNuevaActividad.setBounds(327, 307, 148, 23);
+	btnNuevaActividad.setFont(new Font("Tahoma", Font.PLAIN, 12));
+	btnNuevaActividad.setBounds(327, 307, 148, 30);
 	getContentPane().add(btnNuevaActividad);
 	
 	

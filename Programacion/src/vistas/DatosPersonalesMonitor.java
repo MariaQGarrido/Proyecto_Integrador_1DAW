@@ -50,54 +50,29 @@ public class DatosPersonalesMonitor extends JFrame{
 		setLocationRelativeTo(null);
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
-		lblIdentificador.setFont(new Font(" ", Font.PLAIN, 13));
-		lblIdentificador.setBounds(167, 75, 100, 30);
+		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblIdentificador.setBounds(143, 141, 365, 30);
 		getContentPane().add(lblIdentificador);
 		
 		JLabel lblMatrcula = new JLabel("Matrícula:");
-		lblMatrcula.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblMatrcula.setBounds(167, 116, 100, 30);
+		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblMatrcula.setBounds(143, 191, 365, 30);
 		getContentPane().add(lblMatrcula);
 		
-		JLabel lblCorreo = new JLabel("Correo:");
-		lblCorreo.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblCorreo.setBounds(167, 157, 100, 30);
+		JLabel lblCorreo = new JLabel("Correo: monitor@gmail.com");
+		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblCorreo.setBounds(143, 242, 365, 30);
 		getContentPane().add(lblCorreo);
 		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono");
-		lblNTelfono.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblNTelfono.setBounds(167, 207, 100, 30);
+		JLabel lblNTelfono = new JLabel("Nº Teléfono: 123456789");
+		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblNTelfono.setBounds(143, 298, 438, 30);
 		getContentPane().add(lblNTelfono);
 		
 		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos:");
-		lblNombreYApellidos.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblNombreYApellidos.setBounds(340, 75, 136, 30);
+		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblNombreYApellidos.setBounds(143, 100, 528, 30);
 		getContentPane().add(lblNombreYApellidos);
-		
-		JLabel lblDireccin = new JLabel("Dirección:");
-		lblDireccin.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblDireccin.setBounds(340, 125, 100, 30);
-		getContentPane().add(lblDireccin);
-		
-		JLabel lblCp = new JLabel("CP:");
-		lblCp.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblCp.setBounds(340, 166, 100, 30);
-		getContentPane().add(lblCp);
-		
-		JLabel lblCiudad = new JLabel("Ciudad:");
-		lblCiudad.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblCiudad.setBounds(427, 166, 100, 30);
-		getContentPane().add(lblCiudad);
-		
-		JLabel lblProvinciaa = new JLabel("Provincia:");
-		lblProvinciaa.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblProvinciaa.setBounds(340, 207, 100, 30);
-		getContentPane().add(lblProvinciaa);
-		
-		JLabel lblPas = new JLabel("País");
-		lblPas.setFont(new Font("Dialog", Font.PLAIN, 13));
-		lblPas.setBounds(456, 207, 100, 30);
-		getContentPane().add(lblPas);
 		
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
@@ -110,6 +85,11 @@ public class DatosPersonalesMonitor extends JFrame{
 		
 		JMenu mnDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(mnDatosPersonales);
+		
+		JLabel lblDatosPersonales = new JLabel("Datos Personales: ");
+		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));
+		lblDatosPersonales.setBounds(122, 42, 251, 51);
+		getContentPane().add(lblDatosPersonales);
 		
 	}
 }

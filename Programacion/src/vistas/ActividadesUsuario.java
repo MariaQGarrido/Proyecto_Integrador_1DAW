@@ -48,9 +48,9 @@ public class ActividadesUsuario extends JFrame{
 		JLabel actividades = new JLabel("ACTIVIDADES");
 		actividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
 		JLabel actividadesDisponibles = new JLabel("Actividades disponibles: ");
-		actividadesDisponibles.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
+		actividadesDisponibles.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		JLabel actividadesInscritas = new JLabel("Actividades inscritas: ");
-		actividadesInscritas.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
+		actividadesInscritas.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		
 		actividades.setBounds(121,11,158,52);
 		actividadesDisponibles.setBounds(121,191,248,52);

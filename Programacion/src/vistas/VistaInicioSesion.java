@@ -16,10 +16,13 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+import java.awt.SystemColor;
 
 public class VistaInicioSesion extends JFrame {
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JButton btnInicioSesion;
+	private JButton btnCrearCuenta;
 	
 	public VistaInicioSesion(String titulo) {
 		super(titulo);
@@ -58,14 +61,14 @@ public class VistaInicioSesion extends JFrame {
 		textField.setColumns(10);
 
 		// Boton Iniciar sesión
-		JButton btnSesion = new JButton("Iniciar Sesión");
-		btnSesion.setBackground(new Color(255, 255, 128));
-		btnSesion.addActionListener(new ActionListener() {
+		btnInicioSesion = new JButton("Iniciar Sesión");
+		btnInicioSesion.setBackground(new Color(255, 255, 255));
+		btnInicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnSesion.setBounds(273, 280, 139, 23);
-		getContentPane().add(btnSesion);
+		btnInicioSesion.setBounds(273, 280, 139, 23);
+		getContentPane().add(btnInicioSesion);
 
 		// Texto contraseña
 		JLabel lblContrasena = new JLabel("Contraseña");
@@ -79,14 +82,6 @@ public class VistaInicioSesion extends JFrame {
 		passwordField.setBackground(new Color(255, 255, 255));
 		passwordField.setBounds(269, 234, 143, 20);
 		getContentPane().add(passwordField);
-
-		// Al pinchar en este texto te envi a otra página
-		JLabel lblCrearNuevaCuenta = new JLabel("Crear Nueva Cuenta");
-		lblCrearNuevaCuenta.setForeground(new Color(0, 0, 255));
-		lblCrearNuevaCuenta.setBounds(271, 314, 141, 22);
-		// Esto es para alinear el texto al medio
-		lblCrearNuevaCuenta.setHorizontalAlignment(SwingConstants.CENTER);
-		getContentPane().add(lblCrearNuevaCuenta);
 		
 		// Logotipo del equipo
 		String rutaRaiz = System.getProperty("user.dir");
@@ -94,6 +89,14 @@ public class VistaInicioSesion extends JFrame {
 		ImageIcon originalIcon = new ImageIcon(path.toString());
 		Image imagenEscalada = originalIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		ImageIcon imageIcon = new ImageIcon(imagenEscalada);
+		
+		btnCrearCuenta = new JButton("Crear Nueva Cuenta");
+		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnCrearCuenta.setForeground(new Color(0, 0, 160));
+		btnCrearCuenta.setBackground(new Color(255,104,104));
+		btnCrearCuenta.setBorderPainted(false);
+		btnCrearCuenta.setBounds(271, 314, 141, 23);
+		getContentPane().add(btnCrearCuenta);
 		JLabel imageLabel = new JLabel(imageIcon);
 		imageLabel.setBounds(291,35,100, 100);
 		getContentPane().add(imageLabel);

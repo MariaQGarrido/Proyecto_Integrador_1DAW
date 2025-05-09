@@ -34,7 +34,7 @@ public class EditarActividad extends JFrame {
 
 		// Titulo
 		JLabel lblTitulo = new JLabel("Editar Actividad");
-		lblTitulo.setBounds(95, 0, 349, 37);
+		lblTitulo.setBounds(96, 11, 349, 37);
 		// cambio de color la letra
 		lblTitulo.setForeground(new Color(0, 0, 0));
 		lblTitulo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
@@ -42,11 +42,12 @@ public class EditarActividad extends JFrame {
 
 		// identificador
 		JLabel lblCambioIdentificador = new JLabel("Identificador:");
+		lblCambioIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioIdentificador.setBounds(95, 48, 124, 29);
 		getContentPane().add(lblCambioIdentificador);
 
 		txtIdentificador = new JTextField();
-		txtIdentificador.setBounds(162, 52, 124, 20);
+		txtIdentificador.setBounds(170, 52, 124, 20);
 		getContentPane().add(txtIdentificador);
 		txtIdentificador.setColumns(10);
 
@@ -63,6 +64,7 @@ public class EditarActividad extends JFrame {
 		menuBar.add(mnDatosPersonales);
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
+		lblCambioDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioDescripcion.setBounds(95, 78, 124, 29);
 		getContentPane().add(lblCambioDescripcion);
 
@@ -77,6 +79,7 @@ public class EditarActividad extends JFrame {
 
 		// nombre
 		JLabel lblCambioNombre = new JLabel("Nombre:");
+		lblCambioNombre.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioNombre.setBounds(365, 48, 124, 29);
 		getContentPane().add(lblCambioNombre);
 
@@ -87,64 +90,70 @@ public class EditarActividad extends JFrame {
 
 		// Descripción de la sala (tipo, numero y nombre de la sala)
 		JLabel lblNumeroSala = new JLabel("Número Sala:");
+		lblNumeroSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNumeroSala.setBounds(365, 107, 124, 29);
 		getContentPane().add(lblNumeroSala);
 
 		txtNumeroSala = new JTextField();
 		txtNumeroSala.setColumns(10);
-		txtNumeroSala.setBounds(432, 111, 124, 20);
+		txtNumeroSala.setBounds(445, 111, 124, 20);
 		getContentPane().add(txtNumeroSala);
 
 		JLabel lblNombreSala = new JLabel("Nombre Sala:");
+		lblNombreSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNombreSala.setBounds(365, 142, 124, 29);
 		getContentPane().add(lblNombreSala);
 
 		txtNombreSala = new JTextField();
 		txtNombreSala.setColumns(10);
-		txtNombreSala.setBounds(432, 146, 124, 20);
+		txtNombreSala.setBounds(445, 146, 124, 20);
 		getContentPane().add(txtNombreSala);
 
 		JLabel lblTipoSala = new JLabel("Tipo Sala:");
+		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblTipoSala.setBounds(365, 182, 124, 29);
 		getContentPane().add(lblTipoSala);
 
 		txtTipoSala = new JTextField();
 		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(432, 186, 124, 20);
+		txtTipoSala.setBounds(445, 186, 124, 20);
 		getContentPane().add(txtTipoSala);
 
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
 		JSpinner AlumnosCambioMaximos = new JSpinner();
-		AlumnosCambioMaximos.setBounds(185, 246, 101, 20);
+		AlumnosCambioMaximos.setBounds(200, 247, 101, 20);
 		getContentPane().add(AlumnosCambioMaximos);
 
 		JLabel lblCambioAlumnosMaximos = new JLabel("Alumnos Máximos:");
+		lblCambioAlumnosMaximos.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioAlumnosMaximos.setBounds(95, 242, 124, 29);
 		getContentPane().add(lblCambioAlumnosMaximos);
 
 		// label y txt para añadir la fecha
 		JLabel lblCambioFecha = new JLabel("Fecha Actividad:");
+		lblCambioFecha.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioFecha.setBounds(95, 277, 124, 29);
 		getContentPane().add(lblCambioFecha);
 
 		txtCambioFecha = new JTextField();
-		txtCambioFecha.setBounds(185, 282, 101, 20);
+		txtCambioFecha.setBounds(200, 282, 101, 20);
 		getContentPane().add(txtCambioFecha);
 		txtCambioFecha.setColumns(10);
 
 		// label y txt para añadir la hora
 		JLabel lblCambioHora = new JLabel("Hora Actividad:");
+		lblCambioHora.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioHora.setBounds(95, 313, 124, 29);
 		getContentPane().add(lblCambioHora);
 
 		txtCambioHora = new JTextField();
 		txtCambioHora.setColumns(10);
-		txtCambioHora.setBounds(185, 317, 101, 20);
+		txtCambioHora.setBounds(200, 317, 101, 20);
 		getContentPane().add(txtCambioHora);
 
 		// Boton para crear la actividad
 		JButton btnNewButton = new JButton("Editar Actividad");
-		btnNewButton.setBounds(551, 318, 118, 29);
+		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
 		
 		JLabel lblNomUsuario = new JLabel("UserName");
