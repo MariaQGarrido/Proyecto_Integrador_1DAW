@@ -93,6 +93,11 @@ public class Usuario {
 	public void setCiclo(String ciclo) {
 		this.ciclo = ciclo;
 	}
+
+	public boolean EsMonitor() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 }

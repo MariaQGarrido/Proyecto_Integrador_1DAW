@@ -91,4 +91,122 @@ public class InformacionActividadUsuario extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the txtIdentificador
+	 */
+	public JTextField getTxtIdentificador() {
+		return txtIdentificador;
+	}
+
+	/**
+	 * @param txtIdentificador the txtIdentificador to set
+	 */
+	public void setTxtIdentificador(JTextField txtIdentificador) {
+		this.txtIdentificador = txtIdentificador;
+	}
+
+	/**
+	 * @return the txtParticipantes
+	 */
+	public JTextField getTxtParticipantes() {
+		return txtParticipantes;
+	}
+
+	/**
+	 * @param txtParticipantes the txtParticipantes to set
+	 */
+	public void setTxtParticipantes(JTextField txtParticipantes) {
+		this.txtParticipantes = txtParticipantes;
+	}
+
+	/**
+	 * @return the txtIFecha
+	 */
+	public JTextField getTxtIFecha() {
+		return txtIFecha;
+	}
+
+	/**
+	 * @param txtIFecha the txtIFecha to set
+	 */
+	public void setTxtIFecha(JTextField txtIFecha) {
+		this.txtIFecha = txtIFecha;
+	}
+
+	/**
+	 * @return the txtDescrip
+	 */
+	public JTextField getTxtDescrip() {
+		return txtDescrip;
+	}
+
+	/**
+	 * @param txtDescrip the txtDescrip to set
+	 */
+	public void setTxtDescrip(JTextField txtDescrip) {
+		this.txtDescrip = txtDescrip;
+	}
+
+	/**
+	 * @return the txtNMax
+	 */
+	public JTextField getTxtNMax() {
+		return txtNMax;
+	}
+
+	/**
+	 * @param txtNMax the txtNMax to set
+	 */
+	public void setTxtNMax(JTextField txtNMax) {
+		this.txtNMax = txtNMax;
+	}
+
+	/**
+	 * @return the textField
+	 */
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	/**
+	 * @param textField the textField to set
+	 */
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
 }

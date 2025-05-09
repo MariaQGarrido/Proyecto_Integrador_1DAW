@@ -162,4 +162,164 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the btnInscribirActividad
+	 */
+	public JButton getBtnInscribirActividad() {
+		return btnInscribirActividad;
+	}
+
+	/**
+	 * @param btnInscribirActividad the btnInscribirActividad to set
+	 */
+	public void setBtnInscribirActividad(JButton btnInscribirActividad) {
+		this.btnInscribirActividad = btnInscribirActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the txtNombreUSRI
+	 */
+	public JTextField getTxtNombreUSRI() {
+		return txtNombreUSRI;
+	}
+
+	/**
+	 * @param txtNombreUSRI the txtNombreUSRI to set
+	 */
+	public void setTxtNombreUSRI(JTextField txtNombreUSRI) {
+		this.txtNombreUSRI = txtNombreUSRI;
+	}
+
+	/**
+	 * @return the txtMonitorUSRI
+	 */
+	public JTextField getTxtMonitorUSRI() {
+		return txtMonitorUSRI;
+	}
+
+	/**
+	 * @param txtMonitorUSRI the txtMonitorUSRI to set
+	 */
+	public void setTxtMonitorUSRI(JTextField txtMonitorUSRI) {
+		this.txtMonitorUSRI = txtMonitorUSRI;
+	}
+
+	/**
+	 * @return the textField_2
+	 */
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	/**
+	 * @param textField_2 the textField_2 to set
+	 */
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	/**
+	 * @return the txtIdentificadorUSRI
+	 */
+	public JTextField getTxtIdentificadorUSRI() {
+		return txtIdentificadorUSRI;
+	}
+
+	/**
+	 * @param txtIdentificadorUSRI the txtIdentificadorUSRI to set
+	 */
+	public void setTxtIdentificadorUSRI(JTextField txtIdentificadorUSRI) {
+		this.txtIdentificadorUSRI = txtIdentificadorUSRI;
+	}
+
+	/**
+	 * @return the txtFechaUSRI
+	 */
+	public JTextField getTxtFechaUSRI() {
+		return txtFechaUSRI;
+	}
+
+	/**
+	 * @param txtFechaUSRI the txtFechaUSRI to set
+	 */
+	public void setTxtFechaUSRI(JTextField txtFechaUSRI) {
+		this.txtFechaUSRI = txtFechaUSRI;
+	}
+
+	/**
+	 * @return the txtHorUSRI
+	 */
+	public JTextField getTxtHorUSRI() {
+		return txtHorUSRI;
+	}
+
+	/**
+	 * @param txtHorUSRI the txtHorUSRI to set
+	 */
+	public void setTxtHorUSRI(JTextField txtHorUSRI) {
+		this.txtHorUSRI = txtHorUSRI;
+	}
+
+	/**
+	 * @return the txtSalaUSRI
+	 */
+	public JTextField getTxtSalaUSRI() {
+		return txtSalaUSRI;
+	}
+
+	/**
+	 * @param txtSalaUSRI the txtSalaUSRI to set
+	 */
+	public void setTxtSalaUSRI(JTextField txtSalaUSRI) {
+		this.txtSalaUSRI = txtSalaUSRI;
+	}
+
+	/**
+	 * @return the txtNumMaxUSRI
+	 */
+	public JTextField getTxtNumMaxUSRI() {
+		return txtNumMaxUSRI;
+	}
+
+	/**
+	 * @param txtNumMaxUSRI the txtNumMaxUSRI to set
+	 */
+	public void setTxtNumMaxUSRI(JTextField txtNumMaxUSRI) {
+		this.txtNumMaxUSRI = txtNumMaxUSRI;
+	}
 }
