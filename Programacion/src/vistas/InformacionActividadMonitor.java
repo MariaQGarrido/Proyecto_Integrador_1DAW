@@ -14,6 +14,8 @@ import javax.swing.WindowConstants;
 
 import Control.ListenerBorrar;
 import Control.ListenerEditar;
+import Control.menuActividadMon;
+import Control.menuDatosPersonalesMon;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -36,6 +38,8 @@ public class InformacionActividadMonitor extends JFrame{
 	private JTextField txtNMax;
 	private JTextField txtP;
 	private JTextField textField;
+	private JMenu menuActividad;
+	private JMenu menuDatosPersonales;
 	
 	public InformacionActividadMonitor(){
 		// 1) configura JFrame
@@ -103,14 +107,16 @@ public class InformacionActividadMonitor extends JFrame{
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
 		menuBar.setLayout (new GridLayout(0,1));
-		menuBar.setBounds(0, 0, 85, 358);
+		menuBar.setBounds(0, 0, 95, 358);
 		getContentPane().add(menuBar);
 		
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
+		menuActividad.addMouseListener(new menuActividadMon(this));
 		
-		JMenu mnDatosPersonales = new JMenu("Datos Personales");
-		menuBar.add(mnDatosPersonales);
+		menuDatosPersonales = new JMenu("Datos Personales");
+		menuBar.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
 		btnBorrarActiviada.addActionListener(new ListenerBorrar(this));

@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import javax.swing.*;
 
 import Control.ListenerInscribirActividad;
+import Control.menuActividadUSR;
+import Control.menuDatosPersonalesUSR;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -35,12 +37,12 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		getContentPane().add(menuBarActividad);
 		
 		JMenu menuActividad = new JMenu("Actividades");
-		menuActividad.setBackground(new Color(255, 255, 128));
 		menuBarActividad.add(menuActividad);
+		menuActividad.addMouseListener(new menuActividadUSR(this));
 		
 		JMenu menuDatosPersonales = new JMenu("Datos Personales");
-		menuDatosPersonales.setBackground(new Color(255, 255, 128));
 		menuBarActividad.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
 		
 		JLabel nombreUsuario = new JLabel("UserName");
 		nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));

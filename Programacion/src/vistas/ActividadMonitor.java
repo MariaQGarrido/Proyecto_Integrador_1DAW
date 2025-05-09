@@ -6,6 +6,9 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 
+import Control.menuActividadMon;
+import Control.menuDatosPersonalesMon;
+
 import java.awt.Font;
 public class ActividadMonitor extends JFrame{
 	
@@ -34,11 +37,13 @@ public class ActividadMonitor extends JFrame{
 	menuBarActividad.setBounds(0, 0, 99, 360);
 	getContentPane().add(menuBarActividad);
 	
-	JMenu menuActividad = new JMenu("Actividades");
+	menuActividad = new JMenu("Actividades");
 	menuBarActividad.add(menuActividad);
+	menuActividad.addMouseListener(new menuActividadMon(this));
 	
-	JMenu menuDatosPersonales = new JMenu("Datos Personales");
+	menuDatosPersonales = new JMenu("Datos Personales");
 	menuBarActividad.add(menuDatosPersonales);
+	menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
 	
 	JLabel nombreUsuario = new JLabel("UserName");
 	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));

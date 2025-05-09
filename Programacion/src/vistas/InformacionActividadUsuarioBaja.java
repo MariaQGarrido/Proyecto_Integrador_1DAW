@@ -12,6 +12,8 @@ import javax.swing.JMenuBar;
 import javax.swing.WindowConstants;
 
 import Control.ListenerDejrActividad;
+import Control.menuActividadUSR;
+import Control.menuDatosPersonalesUSR;
 
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -40,9 +42,11 @@ public class InformacionActividadUsuarioBaja extends JFrame{
 		
 		JMenu menuActividad = new JMenu("Actividades");
 		menuBarActividad.add(menuActividad);
+		menuActividad.addMouseListener(new menuActividadUSR(this));
 		
 		JMenu menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
 		
 		JLabel nombreUsuario = new JLabel("UserName");
 		nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));

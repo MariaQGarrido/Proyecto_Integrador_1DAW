@@ -12,6 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import Control.menuActividadUSR;
+import Control.menuDatosPersonalesUSR;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 
@@ -31,7 +35,8 @@ public class DatosPersonalesUsuario extends JFrame{
 	private JTextField txtCiudad;
 	private JTextField txtProvincia;
 	private JTextField txtPais;
-	
+	private JMenu menuActividad;
+	private JMenu menuDatosPersonales;
 
 	
 	public DatosPersonalesUsuario() {
@@ -80,11 +85,14 @@ public class DatosPersonalesUsuario extends JFrame{
 		menuBar.setBounds(0, 0, 100, 358);
 		getContentPane().add(menuBar);
 		
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
+		menuActividad.addMouseListener(new menuActividadUSR(this));
 		
-		JMenu mnDatosPersonales = new JMenu("Datos Personales");
-		menuBar.add(mnDatosPersonales);
+		menuDatosPersonales = new JMenu("Datos Personales");
+		menuBar.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
+		
 		
 		JLabel lblDatosPersonales = new JLabel("Datos Personales: ");
 		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));

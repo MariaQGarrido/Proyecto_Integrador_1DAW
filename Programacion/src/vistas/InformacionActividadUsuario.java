@@ -1,6 +1,10 @@
 package vistas;
 
 import javax.swing.*;
+
+import Control.menuActividadUSR;
+import Control.menuDatosPersonalesUSR;
+
 import java.awt.*;
 
 public class InformacionActividadUsuario extends JFrame{
@@ -11,6 +15,9 @@ public class InformacionActividadUsuario extends JFrame{
 	private JTextField txtDescrip;
 	private JTextField txtNMax;
 	private JTextField textField;
+	private JMenu menuActividad;
+	private JMenu menuDatosPersonales;
+
 	
 	public InformacionActividadUsuario() {
 		
@@ -73,11 +80,13 @@ public class InformacionActividadUsuario extends JFrame{
 		menuBar.setBounds(0, 0, 85, 358);
 		getContentPane().add(menuBar);
 		
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
+		menuActividad.addMouseListener(new menuActividadUSR(this));
 		
-		JMenu mnDatosPersonales = new JMenu("Datos Personales");
-		menuBar.add(mnDatosPersonales);
+		menuDatosPersonales = new JMenu("Datos Personales");
+		menuBar.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);

@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import Control.ListenerEditarActividad;
+import Control.menuActividadMon;
+import Control.menuDatosPersonalesMon;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -28,6 +30,8 @@ public class EditarActividad extends JFrame {
 	private JTextField txtTipoSala;
 	private JTextField txtCambioFecha;
 	private JTextField txtCambioHora;
+	private JMenu menuActividad;
+	private JMenu menuDatosPersonales;
 	
 	public EditarActividad() {
 		// Color de fondo de la vista
@@ -62,11 +66,13 @@ public class EditarActividad extends JFrame {
 		menuBar.setBounds(0, 0, 85, 358);
 		getContentPane().add(menuBar);
 
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-
-		JMenu mnDatosPersonales = new JMenu("Info Personal");
-		menuBar.add(mnDatosPersonales);
+		menuActividad.addMouseListener(new menuActividadMon(this));
+		
+		menuDatosPersonales = new JMenu("DatosPersonales");
+		menuBar.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
 		lblCambioDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));

@@ -1,6 +1,10 @@
 package vistas;
 
 import javax.swing.*;
+
+import Control.menuActividadUSR;
+import Control.menuDatosPersonalesUSR;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,6 +15,8 @@ public class ActividadesUsuario extends JFrame{
 	private JMenuBar menuBarActividad;
 	private JScrollPane scrollActDisponibles;
 	private JScrollPane scrollActInscritas;
+	private JMenu menuActividad;
+	private JMenu menuDatosPersonales;
 //	private JList<Actividades> listActDisponibles;
 //	private Jlist<Actividades> listActInscritas;
 	
@@ -65,13 +71,14 @@ public class ActividadesUsuario extends JFrame{
 		menuBarActividad.setBounds(0, 0, 99, 360);
 		getContentPane().add(menuBarActividad);
 		
-		JMenu menuActividad = new JMenu("Actividades");
+		menuActividad = new JMenu("Actividades");
+		menuActividad.addMouseListener(new menuActividadUSR(this));		
 		menuActividad.setBackground(new Color(255, 255, 255));
 		menuBarActividad.add(menuActividad);
 		
-		JMenu menuDatosPersonales = new JMenu("Datos Personales");
+		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
-		
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));	
 		JLabel lblNomUsuario = new JLabel("UserName");
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNomUsuario.setBounds(581, 11, 90, 31);
