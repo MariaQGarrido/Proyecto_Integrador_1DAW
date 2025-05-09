@@ -123,4 +123,108 @@ public class DatosPersonalesUsuario extends JFrame{
 		getContentPane().add(lblDatosPersonales);
 		
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the txtIdentificadorUSR
+	 */
+	public JTextField getTxtIdentificadorUSR() {
+		return txtIdentificadorUSR;
+	}
+
+	/**
+	 * @param txtIdentificadorUSR the txtIdentificadorUSR to set
+	 */
+	public void setTxtIdentificadorUSR(JTextField txtIdentificadorUSR) {
+		this.txtIdentificadorUSR = txtIdentificadorUSR;
+	}
+
+	/**
+	 * @return the txtNombreUSR
+	 */
+	public JTextField getTxtNombreUSR() {
+		return txtNombreUSR;
+	}
+
+	/**
+	 * @param txtNombreUSR the txtNombreUSR to set
+	 */
+	public void setTxtNombreUSR(JTextField txtNombreUSR) {
+		this.txtNombreUSR = txtNombreUSR;
+	}
+
+	/**
+	 * @return the txtMatriculaUSR
+	 */
+	public JTextField getTxtMatriculaUSR() {
+		return txtMatriculaUSR;
+	}
+
+	/**
+	 * @param txtMatriculaUSR the txtMatriculaUSR to set
+	 */
+	public void setTxtMatriculaUSR(JTextField txtMatriculaUSR) {
+		this.txtMatriculaUSR = txtMatriculaUSR;
+	}
+
+	/**
+	 * @return the txtCorreoUSR
+	 */
+	public JTextField getTxtCorreoUSR() {
+		return txtCorreoUSR;
+	}
+
+	/**
+	 * @param txtCorreoUSR the txtCorreoUSR to set
+	 */
+	public void setTxtCorreoUSR(JTextField txtCorreoUSR) {
+		this.txtCorreoUSR = txtCorreoUSR;
+	}
+
+	/**
+	 * @return the txtTelUSR
+	 */
+	public JTextField getTxtTelUSR() {
+		return txtTelUSR;
+	}
+
+	/**
+	 * @param txtTelUSR the txtTelUSR to set
+	 */
+	public void setTxtTelUSR(JTextField txtTelUSR) {
+		this.txtTelUSR = txtTelUSR;
+	}
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}	
 }

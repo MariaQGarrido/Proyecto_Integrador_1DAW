@@ -176,5 +176,136 @@ public class EditarActividad extends JFrame {
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
 
+	/**
+	 * @return the txtIdentificador
+	 */
+	public JTextField getTxtIdentificador() {
+		return txtIdentificador;
+	}
+
+	/**
+	 * @param txtIdentificador the txtIdentificador to set
+	 */
+	public void setTxtIdentificador(JTextField txtIdentificador) {
+		this.txtIdentificador = txtIdentificador;
+	}
+
+	/**
+	 * @return the txtNombre
+	 */
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	/**
+	 * @param txtNombre the txtNombre to set
+	 */
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+	/**
+	 * @return the txtNumeroSala
+	 */
+	public JTextField getTxtNumeroSala() {
+		return txtNumeroSala;
+	}
+
+	/**
+	 * @param txtNumeroSala the txtNumeroSala to set
+	 */
+	public void setTxtNumeroSala(JTextField txtNumeroSala) {
+		this.txtNumeroSala = txtNumeroSala;
+	}
+
+	/**
+	 * @return the txtNombreSala
+	 */
+	public JTextField getTxtNombreSala() {
+		return txtNombreSala;
+	}
+
+	/**
+	 * @param txtNombreSala the txtNombreSala to set
+	 */
+	public void setTxtNombreSala(JTextField txtNombreSala) {
+		this.txtNombreSala = txtNombreSala;
+	}
+
+	/**
+	 * @return the txtTipoSala
+	 */
+	public JTextField getTxtTipoSala() {
+		return txtTipoSala;
+	}
+
+	/**
+	 * @param txtTipoSala the txtTipoSala to set
+	 */
+	public void setTxtTipoSala(JTextField txtTipoSala) {
+		this.txtTipoSala = txtTipoSala;
+	}
+
+	/**
+	 * @return the txtCambioFecha
+	 */
+	public JTextField getTxtCambioFecha() {
+		return txtCambioFecha;
+	}
+
+	/**
+	 * @param txtCambioFecha the txtCambioFecha to set
+	 */
+	public void setTxtCambioFecha(JTextField txtCambioFecha) {
+		this.txtCambioFecha = txtCambioFecha;
+	}
+
+	/**
+	 * @return the txtCambioHora
+	 */
+	public JTextField getTxtCambioHora() {
+		return txtCambioHora;
+	}
+
+	/**
+	 * @param txtCambioHora the txtCambioHora to set
+	 */
+	public void setTxtCambioHora(JTextField txtCambioHora) {
+		this.txtCambioHora = txtCambioHora;
+	}
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
 }

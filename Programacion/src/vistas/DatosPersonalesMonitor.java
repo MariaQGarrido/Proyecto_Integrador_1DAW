@@ -115,4 +115,109 @@ public class DatosPersonalesMonitor extends JFrame{
 		getContentPane().add(txtTelMon);
 		
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+	/**
+	 * @return the txtNombreMon
+	 */
+	public JTextField getTxtNombreMon() {
+		return txtNombreMon;
+	}
+
+	/**
+	 * @param txtNombreMon the txtNombreMon to set
+	 */
+	public void setTxtNombreMon(JTextField txtNombreMon) {
+		this.txtNombreMon = txtNombreMon;
+	}
+
+	/**
+	 * @return the txtIndetificdorMon
+	 */
+	public JTextField getTxtIndetificdorMon() {
+		return txtIndetificdorMon;
+	}
+
+	/**
+	 * @param txtIndetificdorMon the txtIndetificdorMon to set
+	 */
+	public void setTxtIndetificdorMon(JTextField txtIndetificdorMon) {
+		this.txtIndetificdorMon = txtIndetificdorMon;
+	}
+
+	/**
+	 * @return the txtMatriculaMon
+	 */
+	public JTextField getTxtMatriculaMon() {
+		return txtMatriculaMon;
+	}
+
+	/**
+	 * @param txtMatriculaMon the txtMatriculaMon to set
+	 */
+	public void setTxtMatriculaMon(JTextField txtMatriculaMon) {
+		this.txtMatriculaMon = txtMatriculaMon;
+	}
+
+	/**
+	 * @return the txtCorreoMon
+	 */
+	public JTextField getTxtCorreoMon() {
+		return txtCorreoMon;
+	}
+
+	/**
+	 * @param txtCorreoMon the txtCorreoMon to set
+	 */
+	public void setTxtCorreoMon(JTextField txtCorreoMon) {
+		this.txtCorreoMon = txtCorreoMon;
+	}
+
+	/**
+	 * @return the txtTelMon
+	 */
+	public JTextField getTxtTelMon() {
+		return txtTelMon;
+	}
+
+	/**
+	 * @param txtTelMon the txtTelMon to set
+	 */
+	public void setTxtTelMon(JTextField txtTelMon) {
+		this.txtTelMon = txtTelMon;
+	}
+	
 }

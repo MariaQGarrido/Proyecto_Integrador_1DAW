@@ -126,4 +126,104 @@ public class CrearCuenta extends JFrame{
 	public void HacerVisible(){
 		setVisible(true);
 	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the txtIdentificador
+	 */
+	public JTextField getTxtIdentificador() {
+		return txtIdentificador;
+	}
+
+	/**
+	 * @param txtIdentificador the txtIdentificador to set
+	 */
+	public void setTxtIdentificador(JTextField txtIdentificador) {
+		this.txtIdentificador = txtIdentificador;
+	}
+
+	/**
+	 * @return the txtMatricula
+	 */
+	public JTextField getTxtMatricula() {
+		return txtMatricula;
+	}
+
+	/**
+	 * @param txtMatricula the txtMatricula to set
+	 */
+	public void setTxtMatricula(JTextField txtMatricula) {
+		this.txtMatricula = txtMatricula;
+	}
+
+	/**
+	 * @return the txtTel
+	 */
+	public JTextField getTxtTel() {
+		return txtTel;
+	}
+
+	/**
+	 * @param txtTel the txtTel to set
+	 */
+	public void setTxtTel(JTextField txtTel) {
+		this.txtTel = txtTel;
+	}
+
+	/**
+	 * @return the txtCorreos
+	 */
+	public JTextField getTxtCorreos() {
+		return txtCorreos;
+	}
+
+	/**
+	 * @param txtCorreos the txtCorreos to set
+	 */
+	public void setTxtCorreos(JTextField txtCorreos) {
+		this.txtCorreos = txtCorreos;
+	}
+
+	/**
+	 * @return the txtNombreApe
+	 */
+	public JTextField getTxtNombreApe() {
+		return txtNombreApe;
+	}
+
+	/**
+	 * @param txtNombreApe the txtNombreApe to set
+	 */
+	public void setTxtNombreApe(JTextField txtNombreApe) {
+		this.txtNombreApe = txtNombreApe;
+	}
+
+	/**
+	 * @return the btnBorrar
+	 */
+	public JButton getBtnBorrar() {
+		return btnBorrar;
+	}
+
+	/**
+	 * @param btnBorrar the btnBorrar to set
+	 */
+	public void setBtnBorrar(JButton btnBorrar) {
+		this.btnBorrar = btnBorrar;
+	}
+
+	/**
+	 * @return the btnCuentaCuenta
+	 */
+	public JButton getBtnCuentaCuenta() {
+		return btnCuentaCuenta;
+	}
+
+	/**
+	 * @param btnCuentaCuenta the btnCuentaCuenta to set
+	 */
+	public void setBtnCuentaCuenta(JButton btnCuentaCuenta) {
+		this.btnCuentaCuenta = btnCuentaCuenta;
+	}
 }

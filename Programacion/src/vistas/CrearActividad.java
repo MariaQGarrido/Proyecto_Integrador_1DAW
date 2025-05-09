@@ -175,4 +175,108 @@ public class CrearActividad extends JFrame {
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the txtIdentificador
+	 */
+	public JTextField getTxtIdentificador() {
+		return txtIdentificador;
+	}
+
+	/**
+	 * @param txtIdentificador the txtIdentificador to set
+	 */
+	public void setTxtIdentificador(JTextField txtIdentificador) {
+		this.txtIdentificador = txtIdentificador;
+	}
+
+	/**
+	 * @return the txtNombre
+	 */
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	/**
+	 * @param txtNombre the txtNombre to set
+	 */
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+	/**
+	 * @return the txtNumeroSala
+	 */
+	public JTextField getTxtNumeroSala() {
+		return txtNumeroSala;
+	}
+
+	/**
+	 * @param txtNumeroSala the txtNumeroSala to set
+	 */
+	public void setTxtNumeroSala(JTextField txtNumeroSala) {
+		this.txtNumeroSala = txtNumeroSala;
+	}
+
+	/**
+	 * @return the txtNombreSala
+	 */
+	public JTextField getTxtNombreSala() {
+		return txtNombreSala;
+	}
+
+	/**
+	 * @param txtNombreSala the txtNombreSala to set
+	 */
+	public void setTxtNombreSala(JTextField txtNombreSala) {
+		this.txtNombreSala = txtNombreSala;
+	}
+
+	/**
+	 * @return the txtTipoSala
+	 */
+	public JTextField getTxtTipoSala() {
+		return txtTipoSala;
+	}
+
+	/**
+	 * @param txtTipoSala the txtTipoSala to set
+	 */
+	public void setTxtTipoSala(JTextField txtTipoSala) {
+		this.txtTipoSala = txtTipoSala;
+	}
+
+	/**
+	 * @return the txtFecha
+	 */
+	public JTextField getTxtFecha() {
+		return txtFecha;
+	}
+
+	/**
+	 * @param txtFecha the txtFecha to set
+	 */
+	public void setTxtFecha(JTextField txtFecha) {
+		this.txtFecha = txtFecha;
+	}
+
+	/**
+	 * @return the txtHora
+	 */
+	public JTextField getTxtHora() {
+		return txtHora;
+	}
+
+	/**
+	 * @param txtHora the txtHora to set
+	 */
+	public void setTxtHora(JTextField txtHora) {
+		this.txtHora = txtHora;
+	}
 }

@@ -86,7 +86,135 @@ public class ActividadesUsuario extends JFrame{
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
-		
-		
+	}
+
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+
+	/**
+	 * @return the menuBarActividad
+	 */
+	public JMenuBar getMenuBarActividad() {
+		return menuBarActividad;
+	}
+
+
+
+	/**
+	 * @param menuBarActividad the menuBarActividad to set
+	 */
+	public void setMenuBarActividad(JMenuBar menuBarActividad) {
+		this.menuBarActividad = menuBarActividad;
+	}
+
+
+
+	/**
+	 * @return the scrollActDisponibles
+	 */
+	public JScrollPane getScrollActDisponibles() {
+		return scrollActDisponibles;
+	}
+
+
+
+	/**
+	 * @param scrollActDisponibles the scrollActDisponibles to set
+	 */
+	public void setScrollActDisponibles(JScrollPane scrollActDisponibles) {
+		this.scrollActDisponibles = scrollActDisponibles;
+	}
+
+
+
+	/**
+	 * @return the scrollActInscritas
+	 */
+	public JScrollPane getScrollActInscritas() {
+		return scrollActInscritas;
+	}
+
+
+
+	/**
+	 * @param scrollActInscritas the scrollActInscritas to set
+	 */
+	public void setScrollActInscritas(JScrollPane scrollActInscritas) {
+		this.scrollActInscritas = scrollActInscritas;
+	}
+
+
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+
+
+	/**
+	 * @return the listActDisponibles
+	 */
+	public JList<Actividad> getListActDisponibles() {
+		return listActDisponibles;
+	}
+
+
+
+	/**
+	 * @param listActDisponibles the listActDisponibles to set
+	 */
+	public void setListActDisponibles(JList<Actividad> listActDisponibles) {
+		this.listActDisponibles = listActDisponibles;
+	}
+
+
+
+	/**
+	 * @return the listActInscritas
+	 */
+	public JList<Actividad> getListActInscritas() {
+		return listActInscritas;
+	}
+
+
+
+	/**
+	 * @param listActInscritas the listActInscritas to set
+	 */
+	public void setListActInscritas(JList<Actividad> listActInscritas) {
+		this.listActInscritas = listActInscritas;
 	}
 }

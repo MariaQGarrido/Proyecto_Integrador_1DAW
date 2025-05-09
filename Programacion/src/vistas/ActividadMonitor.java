@@ -75,4 +75,105 @@ public class ActividadMonitor extends JFrame{
 	setSize(695, 397);
 	setLocationRelativeTo(null);
 	}
+
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+	
+	/**
+	 * @return the menuBarActividad
+	 */
+	public JMenuBar getMenuBarActividad() {
+		return menuBarActividad;
+	}
+
+
+	/**
+	 * @param menuBarActividad the menuBarActividad to set
+	 */
+	public void setMenuBarActividad(JMenuBar menuBarActividad) {
+		this.menuBarActividad = menuBarActividad;
+	}
+
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+
+	/**
+	 * @return the scrollListaAct
+	 */
+	public JScrollPane getScrollListaAct() {
+		return scrollListaAct;
+	}
+
+
+	/**
+	 * @param scrollListaAct the scrollListaAct to set
+	 */
+	public void setScrollListaAct(JScrollPane scrollListaAct) {
+		this.scrollListaAct = scrollListaAct;
+	}
+
+
+	/**
+	 * @return the listaActividades
+	 */
+	public JList<Actividad> getListaActividades() {
+		return listaActividades;
+	}
+
+
+	/**
+	 * @param listaActividades the listaActividades to set
+	 */
+	public void setListaActividades(JList<Actividad> listaActividades) {
+		this.listaActividades = listaActividades;
+	}
+
+
+	/**
+	 * @return the btnNuevaActividad
+	 */
+	public JButton getBtnNuevaActividad() {
+		return btnNuevaActividad;
+	}
+
+
+	/**
+	 * @param btnNuevaActividad the btnNuevaActividad to set
+	 */
+	public void setBtnNuevaActividad(JButton btnNuevaActividad) {
+		this.btnNuevaActividad = btnNuevaActividad;
+	}
 }

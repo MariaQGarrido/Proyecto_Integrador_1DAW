@@ -172,4 +172,136 @@ public class InformacionActividadMonitor extends JFrame{
 		setLocationRelativeTo(null);
 		
 	}
+	
+	public void HacerVisible(){
+		setVisible(true);
+	}
+	
+	// Getters y Setters
+
+	/**
+	 * @return the txtP
+	 */
+	public JTextField getTxtP() {
+		return txtP;
+	}
+
+	/**
+	 * @param txtP the txtP to set
+	 */
+	public void setTxtP(JTextField txtP) {
+		this.txtP = txtP;
+	}
+
+	/**
+	 * @return the textField
+	 */
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	/**
+	 * @param textField the textField to set
+	 */
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	/**
+	 * @return the menuActividad
+	 */
+	public JMenu getMenuActividad() {
+		return menuActividad;
+	}
+
+	/**
+	 * @param menuActividad the menuActividad to set
+	 */
+	public void setMenuActividad(JMenu menuActividad) {
+		this.menuActividad = menuActividad;
+	}
+
+	/**
+	 * @return the menuDatosPersonales
+	 */
+	public JMenu getMenuDatosPersonales() {
+		return menuDatosPersonales;
+	}
+
+	/**
+	 * @param menuDatosPersonales the menuDatosPersonales to set
+	 */
+	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
+		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+	/**
+	 * @return the txtIdentificador
+	 */
+	public JTextField getTxtIdentificador() {
+		return txtIdentificador;
+	}
+
+	/**
+	 * @param txtIdentificador the txtIdentificador to set
+	 */
+	public void setTxtIdentificador(JTextField txtIdentificador) {
+		this.txtIdentificador = txtIdentificador;
+	}
+
+	/**
+	 * @return the txtFecha
+	 */
+	public JTextField getTxtFecha() {
+		return txtFecha;
+	}
+
+	/**
+	 * @param txtFecha the txtFecha to set
+	 */
+	public void setTxtFecha(JTextField txtFecha) {
+		this.txtFecha = txtFecha;
+	}
+
+	/**
+	 * @return the txtHora
+	 */
+	public JTextField getTxtHora() {
+		return txtHora;
+	}
+
+	/**
+	 * @param txtHora the txtHora to set
+	 */
+	public void setTxtHora(JTextField txtHora) {
+		this.txtHora = txtHora;
+	}
+
+	/**
+	 * @return the txtSala
+	 */
+	public JTextField getTxtSala() {
+		return txtSala;
+	}
+
+	/**
+	 * @param txtSala the txtSala to set
+	 */
+	public void setTxtSala(JTextField txtSala) {
+		this.txtSala = txtSala;
+	}
+
+	/**
+	 * @return the txtNumMax
+	 */
+	public JTextField getTxtNumMax() {
+		return txtNumMax;
+	}
+
+	/**
+	 * @param txtNumMax the txtNumMax to set
+	 */
+	public void setTxtNumMax(JTextField txtNumMax) {
+		this.txtNumMax = txtNumMax;
+	}
 }
