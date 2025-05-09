@@ -7,9 +7,11 @@ public class Actividad {
 	private String descripcionActividad;
 	private int usuariosMaximos;
 	private int usuariosInscritos;
+	private String fechaActividad;
+	private String HoraActividad;
 	
 	public Actividad(int idActividad, int idMonitor, String nombreActividad, String descripcionActividad,
-			int usuariosMaximos, int usuariosInscritos) {
+			int usuariosMaximos, int usuariosInscritos, String fechaActividad, String horaActividad) {
 		super();
 		this.idActividad = idActividad;
 		this.idMonitor = idMonitor;
@@ -17,6 +19,8 @@ public class Actividad {
 		this.descripcionActividad = descripcionActividad;
 		this.usuariosMaximos = usuariosMaximos;
 		this.usuariosInscritos = usuariosInscritos;
+		this.fechaActividad = fechaActividad;
+		HoraActividad = horaActividad;
 	}
 
 	public void CrearActividad() {
@@ -114,6 +118,33 @@ public class Actividad {
 	public void setUsuariosInscritos(int usuariosInscritos) {
 		this.usuariosInscritos = usuariosInscritos;
 	}
-	
+
+	/**
+	 * @return the fechaActividad
+	 */
+	public String getFechaActividad() {
+		return fechaActividad;
+	}
+
+	/**
+	 * @param fechaActividad the fechaActividad to set
+	 */
+	public void setFechaActividad(String fechaActividad) {
+		this.fechaActividad = fechaActividad;
+	}
+
+	/**
+	 * @return the horaActividad
+	 */
+	public String getHoraActividad() {
+		return HoraActividad;
+	}
+
+	/**
+	 * @param horaActividad the horaActividad to set
+	 */
+	public void setHoraActividad(String horaActividad) {
+		HoraActividad = horaActividad;
+	}
 	
 }
