@@ -23,10 +23,11 @@ import Control.ListenerLogin;
 import java.awt.SystemColor;
 
 public class VistaInicioSesion extends JFrame {
-	private JTextField textField;
-	private JPasswordField passwordField;
+	private JTextField Nombretxt;
+	private JPasswordField txtpassword;
 	private JButton btnInicioSesion;
 	private JButton btnCrearCuenta;
+	private ListenerLogin ListenerLI;
 	
 	public VistaInicioSesion() {
 		componentes();
@@ -49,24 +50,24 @@ public class VistaInicioSesion extends JFrame {
 		lblTitulo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
 		getContentPane().add(lblTitulo);
 
-		JLabel lblNewLabel = new JLabel("Nombre Usuario");
-		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 11));
-		lblNewLabel.setBounds(271, 137, 141, 22);
+		JLabel lblNombre = new JLabel("Nombre Usuario");
+		lblNombre.setFont(new Font("Verdana", Font.PLAIN, 11));
+		lblNombre.setBounds(271, 137, 141, 22);
 		// Esto es para alinear el texto al medio
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		getContentPane().add(lblNewLabel);
+		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
+		getContentPane().add(lblNombre);
 
 		// Texto para el nombre de usuario
-		textField = new JTextField();
-		textField.setBackground(new Color(255, 255, 255));
-		textField.setBounds(271, 170, 141, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		Nombretxt = new JTextField();
+		Nombretxt.setBackground(new Color(255, 255, 255));
+		Nombretxt.setBounds(271, 170, 141, 20);
+		getContentPane().add(Nombretxt);
+		Nombretxt.setColumns(10);
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
 		btnInicioSesion.setBackground(new Color(255, 255, 255));
-		btnInicioSesion.addActionListener(new ListenerLogin());
+		btnInicioSesion.addActionListener(ListenerLI);
 		btnInicioSesion.setBounds(273, 280, 139, 23);
 		getContentPane().add(btnInicioSesion);
 
@@ -78,10 +79,10 @@ public class VistaInicioSesion extends JFrame {
 		lblContrasena.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblContrasena);
 
-		passwordField = new JPasswordField();
-		passwordField.setBackground(new Color(255, 255, 255));
-		passwordField.setBounds(269, 234, 143, 20);
-		getContentPane().add(passwordField);
+		txtpassword = new JPasswordField();
+		txtpassword.setBackground(new Color(255, 255, 255));
+		txtpassword.setBounds(269, 234, 143, 20);
+		getContentPane().add(txtpassword);
 		
 		// Logotipo del equipo
 		String rutaRaiz = System.getProperty("user.dir");
@@ -110,5 +111,61 @@ public class VistaInicioSesion extends JFrame {
 	
 	public void HacerVisible(){
 		setVisible(true);
+	}
+
+	/**
+	 * @return the nombretxt
+	 */
+	public JTextField getNombretxt() {
+		return Nombretxt;
+	}
+
+	/**
+	 * @param nombretxt the nombretxt to set
+	 */
+	public void setNombretxt(JTextField nombretxt) {
+		Nombretxt = nombretxt;
+	}
+
+	/**
+	 * @return the txtpassword
+	 */
+	public JPasswordField getTxtpassword() {
+		return txtpassword;
+	}
+
+	/**
+	 * @param txtpassword the txtpassword to set
+	 */
+	public void setTxtpassword(JPasswordField txtpassword) {
+		this.txtpassword = txtpassword;
+	}
+
+	/**
+	 * @return the btnInicioSesion
+	 */
+	public JButton getBtnInicioSesion() {
+		return btnInicioSesion;
+	}
+
+	/**
+	 * @param btnInicioSesion the btnInicioSesion to set
+	 */
+	public void setBtnInicioSesion(JButton btnInicioSesion) {
+		this.btnInicioSesion = btnInicioSesion;
+	}
+
+	/**
+	 * @return the btnCrearCuenta
+	 */
+	public JButton getBtnCrearCuenta() {
+		return btnCrearCuenta;
+	}
+
+	/**
+	 * @param btnCrearCuenta the btnCrearCuenta to set
+	 */
+	public void setBtnCrearCuenta(JButton btnCrearCuenta) {
+		this.btnCrearCuenta = btnCrearCuenta;
 	}
 }

@@ -19,15 +19,21 @@ public class ListenerLogin implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		nombre = Login.;
-		if(Usr.EsMonitor() == true) {
-			ActM = new ActividadMonitor();
-			ActM.setVisible(true);
-			Login.dispose();
-		}else{
-			ActUsr = new ActividadesUsuario();
-				ActUsr.setVisible(true);
+		nombre = Login.getNombretxt().getText();
+		Contrasena = Login.getTxtpassword().getText();
+		
+		if(Usr.iniciarSesion(nombre, Contrasena) == true){
+			if(Usr.EsMonitor(Contrasena) == true) {
+				ActM = new ActividadMonitor();
+				ActM.setVisible(true);
 				Login.dispose();
-			}
+			}else{
+				ActUsr = new ActividadesUsuario();
+					ActUsr.setVisible(true);
+					Login.dispose();
+				}
+		}else {
+			System.out.println("No existe el usuario");
+		}
 	}
 }
