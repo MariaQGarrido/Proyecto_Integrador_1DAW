@@ -7,11 +7,12 @@ import vistas.ActividadMonitor;
 import vistas.InformacionActividadMonitor;
 
 public class ListenerEditar implements ActionListener {
-
+	ActividadMonitor ActMon;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		ActividadMonitor.HacerVisible();
+		ActMon = new ActividadMonitor();
+		ActMon.HacerVisible();
 	}
 
 }
