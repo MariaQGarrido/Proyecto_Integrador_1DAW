@@ -82,7 +82,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		txtMonitorUSRI = new JTextField();
 		txtMonitorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtMonitorUSRI.setColumns(10);
-		txtMonitorUSRI.setBounds(212, 145, 192, 25);
+		txtMonitorUSRI.setBounds(212, 154, 192, 25);
 		getContentPane().add(txtMonitorUSRI);
 		
 		JLabel lblMonitor = new JLabel("Monitor:");
@@ -111,7 +111,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		txtIdentificadorUSRI = new JTextField();
 		txtIdentificadorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtIdentificadorUSRI.setColumns(10);
-		txtIdentificadorUSRI.setBounds(559, 106, 93, 25);
+		txtIdentificadorUSRI.setBounds(559, 102, 93, 25);
 		getContentPane().add(txtIdentificadorUSRI);
 		
 		txtFechaUSRI = new JTextField();

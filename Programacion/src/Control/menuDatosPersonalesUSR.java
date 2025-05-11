@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 
 import vistas.ActividadesUsuario;
 import vistas.DatosPersonalesUsuario;
-import vistas.InformacionActividadUsuario;
+import vistas.InformacionActividadUsuarioBaja;
 import vistas.InformacionActividadUsuarioBaja;
 import vistas.InformacionActividadUsuarioInscribir;
 
