@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class BBDD {
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost/proyecto_integador";
+	private String url = "jdbc:mysql://localhost/Base_Integrador (2)";
 
 	private String usuario = "root";
 	private String passwd = "1234567";

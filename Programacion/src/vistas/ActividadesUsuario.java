@@ -72,13 +72,13 @@ public class ActividadesUsuario extends JFrame{
 		getContentPane().add(menuBarActividad);
 		
 		menuActividad = new JMenu("Actividades");
-		menuActividad.addMouseListener(new menuActividadUSR(this));		
+		menuActividad.addMouseListener(new menuActividadUSR());		
 		menuActividad.setBackground(new Color(255, 255, 255));
 		menuBarActividad.add(menuActividad);
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));	
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR());	
 		JLabel lblNomUsuario = new JLabel("UserName");
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNomUsuario.setBounds(581, 11, 90, 31);

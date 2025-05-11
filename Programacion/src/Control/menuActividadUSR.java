@@ -10,11 +10,13 @@ import vistas.InformacionActividadUsuarioBaja;
 import vistas.InformacionActividadUsuarioInscribir;
 
 public class menuActividadUSR implements MouseListener {
-
+	ActividadesUsuario ActividadUsr;
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		ActividadesUsuario.HacerVisible();
+		ActividadUsr = new ActividadesUsuario();
+		ActividadUsr.HacerVisible();
 	}
 
 	@Override

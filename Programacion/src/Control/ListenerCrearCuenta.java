@@ -4,17 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import vistas.CrearCuenta;
+import vistas.VistaInicioSesion;
 
 public class ListenerCrearCuenta implements ActionListener {
-
-	public ListenerCrearCuenta(CrearCuenta crearCuenta) {
-		// TODO Auto-generated constructor stub
-	}
-
+	CrearCuenta vistaCerrada;
+	VistaInicioSesion Login;
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		vistaCerrada = new CrearCuenta();
+		Login = new VistaInicioSesion();
+		
+		vistaCerrada.dispose();
+		Login.HacerVisible();
 	}
 
 }

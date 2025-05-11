@@ -162,7 +162,7 @@ public class CrearActividad extends JFrame {
 		
 		//Boton para crear la actividad
 		JButton btnNewButton = new JButton("Crear Actividad");
-		btnNewButton.addActionListener(new ListenerCrearActividad(this));
+		btnNewButton.addActionListener(new ListenerCrearActividad());
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton.setBounds(551, 318, 118, 29);
 		getContentPane().add(btnNewButton);

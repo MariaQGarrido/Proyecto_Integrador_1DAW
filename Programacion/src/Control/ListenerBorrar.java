@@ -7,10 +7,6 @@ import vistas.InformacionActividadMonitor;
 
 public class ListenerBorrar implements ActionListener {
 
-	public ListenerBorrar(InformacionActividadMonitor informacionActividadMonitor) {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
