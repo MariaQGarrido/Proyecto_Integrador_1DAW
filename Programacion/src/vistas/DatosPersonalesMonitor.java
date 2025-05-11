@@ -82,12 +82,12 @@ public class DatosPersonalesMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon(this));
+		menuActividad.addMouseListener(new menuActividadMon());
 		
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
 		
 		JLabel lblDatosPersonales = new JLabel("Datos Personales: ");
 		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));

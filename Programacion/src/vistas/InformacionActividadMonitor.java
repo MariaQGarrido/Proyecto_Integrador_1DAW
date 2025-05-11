@@ -55,7 +55,7 @@ public class InformacionActividadMonitor extends JFrame{
 		getContentPane().add(lblNomUsuario);
 		
 		JButton btnEditar = new JButton("Editar");
-		btnEditar.addActionListener(new ListenerEditar(this));
+		btnEditar.addActionListener(new ListenerEditar());
 		btnEditar.setBounds(141, 326, 89, 30);
 		getContentPane().add(btnEditar);
 		
@@ -133,14 +133,14 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon(this));
+		menuActividad.addMouseListener(new menuActividadMon());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
-		btnBorrarActiviada.addActionListener(new ListenerBorrar(this));
+		btnBorrarActiviada.addActionListener(new ListenerBorrar());
 		btnBorrarActiviada.setBounds(582, 326, 89, 30);
 		getContentPane().add(btnBorrarActiviada);
 		

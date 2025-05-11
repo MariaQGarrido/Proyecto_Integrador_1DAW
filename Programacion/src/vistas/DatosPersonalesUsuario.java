@@ -110,11 +110,11 @@ public class DatosPersonalesUsuario extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadUSR(this));
+		menuActividad.addMouseListener(new menuActividadUSR());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR());
 		
 		
 		JLabel lblDatosPersonales = new JLabel("Datos Personales: ");

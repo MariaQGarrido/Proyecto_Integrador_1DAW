@@ -106,7 +106,7 @@ public class CrearCuenta extends JFrame{
 		getContentPane().add(lblCiclos);
 				
 		JButton btnCrearCuenta = new JButton("Crear Cuenta");
-		btnCrearCuenta.addActionListener(new ListenerCrearCuenta(this) );
+		btnCrearCuenta.addActionListener(new ListenerCrearCuenta() );
 		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCrearCuenta.setBackground(new Color(255, 255, 128));
 		btnCrearCuenta.setBounds(514, 316, 139, 30);
