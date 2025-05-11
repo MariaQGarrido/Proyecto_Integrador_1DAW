@@ -20,7 +20,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 	private JMenu menuActividad;
 	private JTextField txtNombreUSRI;
 	private JTextField txtMonitorUSRI;
-	private JTextField textField_2;
+	private JTextField txtDescripcionUSRI;
 	private JTextField txtIdentificadorUSRI;
 	private JTextField txtFechaUSRI;
 	private JTextField txtHorUSRI;
@@ -44,11 +44,11 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBarActividad.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadUSR(this));
+		menuActividad.addMouseListener(new menuActividadUSR());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR(this));
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR());
 		
 		JLabel nombreUsuario = new JLabel("UserName");
 		nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
@@ -95,13 +95,13 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		lblDescripcion.setBounds(132, 195, 218, 40);
 		getContentPane().add(lblDescripcion);
 		
-		textField_2 = new JTextField();
-		textField_2.setText("Descripción de la actividad");
-		textField_2.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 11));
-		textField_2.setColumns(10);
-		textField_2.setBackground(Color.WHITE);
-		textField_2.setBounds(142, 239, 180, 95);
-		getContentPane().add(textField_2);
+		txtDescripcionUSRI = new JTextField();
+		txtDescripcionUSRI.setText("Descripción de la actividad");
+		txtDescripcionUSRI.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 11));
+		txtDescripcionUSRI.setColumns(10);
+		txtDescripcionUSRI.setBackground(Color.WHITE);
+		txtDescripcionUSRI.setBounds(142, 239, 180, 95);
+		getContentPane().add(txtDescripcionUSRI);
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
@@ -243,14 +243,14 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 	 * @return the textField_2
 	 */
 	public JTextField getTextField_2() {
-		return textField_2;
+		return txtDescripcionUSRI;
 	}
 
 	/**
 	 * @param textField_2 the textField_2 to set
 	 */
 	public void setTextField_2(JTextField textField_2) {
-		this.textField_2 = textField_2;
+		this.txtDescripcionUSRI = textField_2;
 	}
 
 	/**

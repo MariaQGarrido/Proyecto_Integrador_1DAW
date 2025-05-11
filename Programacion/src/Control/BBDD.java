@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BBDD {
@@ -13,11 +14,12 @@ public class BBDD {
 	private String usuario = "root";
 	private String passwd = "1234567";
 	
+	private Connection con;
+	
 	public Connection getConexion() {
-		Connection con = null;
+		con = null;
 
 		try {
-			Class.forName(driver);
 			con = DriverManager.getConnection(url, usuario, passwd);
 			System.out.println("Conexión establecida");
 		} catch (Exception e) {
@@ -26,5 +28,14 @@ public class BBDD {
 		}
 
 		return con;
+	}
+	
+	public void cerrarConexion() {
+		try {
+			con.close();
+		}catch(SQLException e){
+			System.out.println("Error al cerrar conexión");
+			e.printStackTrace();
+		}
 	}
 }
