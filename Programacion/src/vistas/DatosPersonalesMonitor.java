@@ -27,11 +27,6 @@ public class DatosPersonalesMonitor extends JFrame{
 
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
-	private JTextField txtNombreMon;
-	private JTextField txtIndetificdorMon;
-	private JTextField txtMatriculaMon;
-	private JTextField txtCorreoMon;
-	private JTextField txtTelMon;
 
 	
 	public DatosPersonalesMonitor() {
@@ -49,29 +44,29 @@ public class DatosPersonalesMonitor extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 		
-		JLabel lblIdentificador = new JLabel("Identificador:");
+		JLabel lblIdentificador = new JLabel("Identificador: ");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(143, 145, 124, 30);
+		lblIdentificador.setBounds(143, 145, 528, 30);
 		getContentPane().add(lblIdentificador);
 		
-		JLabel lblMatrcula = new JLabel("Matrícula:");
+		JLabel lblMatrcula = new JLabel("Matrícula: ");
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatrcula.setBounds(143, 191, 87, 30);
+		lblMatrcula.setBounds(143, 191, 528, 30);
 		getContentPane().add(lblMatrcula);
 		
-		JLabel lblCorreo = new JLabel("Correo:");
+		JLabel lblCorreo = new JLabel("Correo: ");
 		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(143, 242, 74, 30);
+		lblCorreo.setBounds(143, 242, 528, 30);
 		getContentPane().add(lblCorreo);
 		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono:");
+		JLabel lblNTelfono = new JLabel("Nº Teléfono: ");
 		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNTelfono.setBounds(143, 298, 114, 30);
+		lblNTelfono.setBounds(143, 298, 528, 30);
 		getContentPane().add(lblNTelfono);
 		
-		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos:");
+		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: ");
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombreYApellidos.setBounds(143, 100, 183, 30);
+		lblNombreYApellidos.setBounds(143, 100, 528, 30);
 		getContentPane().add(lblNombreYApellidos);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -93,26 +88,6 @@ public class DatosPersonalesMonitor extends JFrame{
 		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));
 		lblDatosPersonales.setBounds(122, 42, 251, 51);
 		getContentPane().add(lblDatosPersonales);
-		
-		txtNombreMon = new JTextField();
-		txtNombreMon.setBounds(326, 104, 250, 25);
-		getContentPane().add(txtNombreMon);
-		
-		txtIndetificdorMon = new JTextField();
-		txtIndetificdorMon.setBounds(266, 150, 250, 25);
-		getContentPane().add(txtIndetificdorMon);
-		
-		txtMatriculaMon = new JTextField();
-		txtMatriculaMon.setBounds(235, 195, 250, 25);
-		getContentPane().add(txtMatriculaMon);
-		
-		txtCorreoMon = new JTextField();
-		txtCorreoMon.setBounds(210, 245, 250, 25);
-		getContentPane().add(txtCorreoMon);
-		
-		txtTelMon = new JTextField();
-		txtTelMon.setBounds(260, 303, 250, 25);
-		getContentPane().add(txtTelMon);
 		
 	}
 	
@@ -150,74 +125,4 @@ public class DatosPersonalesMonitor extends JFrame{
 		this.menuDatosPersonales = menuDatosPersonales;
 	}
 
-	/**
-	 * @return the txtNombreMon
-	 */
-	public JTextField getTxtNombreMon() {
-		return txtNombreMon;
-	}
-
-	/**
-	 * @param txtNombreMon the txtNombreMon to set
-	 */
-	public void setTxtNombreMon(JTextField txtNombreMon) {
-		this.txtNombreMon = txtNombreMon;
-	}
-
-	/**
-	 * @return the txtIndetificdorMon
-	 */
-	public JTextField getTxtIndetificdorMon() {
-		return txtIndetificdorMon;
-	}
-
-	/**
-	 * @param txtIndetificdorMon the txtIndetificdorMon to set
-	 */
-	public void setTxtIndetificdorMon(JTextField txtIndetificdorMon) {
-		this.txtIndetificdorMon = txtIndetificdorMon;
-	}
-
-	/**
-	 * @return the txtMatriculaMon
-	 */
-	public JTextField getTxtMatriculaMon() {
-		return txtMatriculaMon;
-	}
-
-	/**
-	 * @param txtMatriculaMon the txtMatriculaMon to set
-	 */
-	public void setTxtMatriculaMon(JTextField txtMatriculaMon) {
-		this.txtMatriculaMon = txtMatriculaMon;
-	}
-
-	/**
-	 * @return the txtCorreoMon
-	 */
-	public JTextField getTxtCorreoMon() {
-		return txtCorreoMon;
-	}
-
-	/**
-	 * @param txtCorreoMon the txtCorreoMon to set
-	 */
-	public void setTxtCorreoMon(JTextField txtCorreoMon) {
-		this.txtCorreoMon = txtCorreoMon;
-	}
-
-	/**
-	 * @return the txtTelMon
-	 */
-	public JTextField getTxtTelMon() {
-		return txtTelMon;
-	}
-
-	/**
-	 * @param txtTelMon the txtTelMon to set
-	 */
-	public void setTxtTelMon(JTextField txtTelMon) {
-		this.txtTelMon = txtTelMon;
-	}
-	
 }

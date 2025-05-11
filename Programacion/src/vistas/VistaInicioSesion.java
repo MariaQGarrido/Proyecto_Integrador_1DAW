@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-import Control.ListenerCrearCuenta;
+import Control.ListenerCrearCuentaNueva;
 import Control.ListenerLogin;
 
 import java.awt.SystemColor;
@@ -27,7 +27,7 @@ public class VistaInicioSesion extends JFrame {
 	private JPasswordField txtpassword;
 	private JButton btnInicioSesion;
 	private JButton btnCrearCuenta;
-	private ListenerLogin ListenerLI;
+	private JLabel lblMensaje;
 	
 	public VistaInicioSesion() {
 		componentes();
@@ -50,8 +50,8 @@ public class VistaInicioSesion extends JFrame {
 		lblTitulo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
 		getContentPane().add(lblTitulo);
 
-		JLabel lblNombre = new JLabel("Nombre Usuario");
-		lblNombre.setFont(new Font("Verdana", Font.PLAIN, 11));
+		JLabel lblNombre = new JLabel("Matricula");
+		lblNombre.setFont(new Font("Verdana", Font.PLAIN, 14));
 		lblNombre.setBounds(271, 137, 141, 22);
 		// Esto es para alinear el texto al medio
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
@@ -66,22 +66,23 @@ public class VistaInicioSesion extends JFrame {
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
+		btnInicioSesion.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnInicioSesion.setBackground(new Color(255, 255, 255));
-		btnInicioSesion.addActionListener(ListenerLI);
+		btnInicioSesion.addActionListener(new ListenerLogin(this));
 		btnInicioSesion.setBounds(273, 280, 139, 23);
 		getContentPane().add(btnInicioSesion);
 
 		// Texto contraseña
 		JLabel lblContrasena = new JLabel("Contraseña");
-		lblContrasena.setFont(new Font("Verdana", Font.PLAIN, 11));
-		lblContrasena.setBounds(271, 201, 141, 22);
+		lblContrasena.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblContrasena.setBounds(271, 196, 141, 22);
 		// Esto es para alinear el texto al medio
 		lblContrasena.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblContrasena);
 
 		txtpassword = new JPasswordField();
 		txtpassword.setBackground(new Color(255, 255, 255));
-		txtpassword.setBounds(269, 234, 143, 20);
+		txtpassword.setBounds(269, 220, 143, 20);
 		getContentPane().add(txtpassword);
 		
 		// Logotipo del equipo
@@ -92,11 +93,11 @@ public class VistaInicioSesion extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(imagenEscalada);
 		
 		btnCrearCuenta = new JButton("Crear Nueva Cuenta");
-		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnCrearCuenta.setForeground(new Color(0, 0, 160));
 		btnCrearCuenta.setBackground(new Color(255,104,104));
 		btnCrearCuenta.setBorderPainted(false);
-		btnCrearCuenta.addActionListener(new ListenerCrearCuenta());
+		btnCrearCuenta.addActionListener(new ListenerCrearCuentaNueva());
 		btnCrearCuenta.setBounds(271, 314, 141, 23);
 		getContentPane().add(btnCrearCuenta);
 		
@@ -104,6 +105,11 @@ public class VistaInicioSesion extends JFrame {
 		JLabel imageLabel = new JLabel(imageIcon);
 		imageLabel.setBounds(291,35,100, 100);
 		getContentPane().add(imageLabel);
+		
+		lblMensaje = new JLabel("");
+		lblMensaje.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblMensaje.setBounds(269, 251, 143, 20);
+		getContentPane().add(lblMensaje);
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
@@ -168,4 +174,20 @@ public class VistaInicioSesion extends JFrame {
 	public void setBtnCrearCuenta(JButton btnCrearCuenta) {
 		this.btnCrearCuenta = btnCrearCuenta;
 	}
+
+	/**
+	 * @return the lblMensaje
+	 */
+	public JLabel getLblMensaje() {
+		return lblMensaje;
+	}
+
+	/**
+	 * @param lblMensaje the lblMensaje to set
+	 */
+	public void setLblMensaje(JLabel lblMensaje) {
+		this.lblMensaje = lblMensaje;
+	}
+	
+	
 }

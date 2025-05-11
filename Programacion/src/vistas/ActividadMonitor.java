@@ -36,10 +36,11 @@ public class ActividadMonitor extends JFrame{
 	
 	menuBarActividad = new JMenuBar();
 	menuBarActividad.setLayout (new GridLayout(0,1));
-	menuBarActividad.setBounds(0, 0, 99, 360);
+	menuBarActividad.setBounds(0, 0, 109, 360);
 	getContentPane().add(menuBarActividad);
 	
 	menuActividad = new JMenu("Actividades");
+	menuActividad.setBackground(new Color(255, 255, 128));
 	menuBarActividad.add(menuActividad);
 	menuActividad.addMouseListener(new menuActividadMon());
 	
@@ -53,15 +54,17 @@ public class ActividadMonitor extends JFrame{
 	getContentPane().add(nombreUsuario);
 	
 	JLabel lblListActividades = new JLabel("Lista Actividades");
-	listaActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
-	listaActividades.setBounds(307, 59, 200, 30);
-	getContentPane().add(listaActividades);
+	lblListActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+	lblListActividades.setBounds(327,84, 161, 25);
+	getContentPane().add(lblListActividades);
 	
 	scrollListaAct = new JScrollPane();
 	scrollListaAct.setBounds(179, 120, 421, 156);
 	getContentPane().add(scrollListaAct);
 	
 	listaActividades = new JList<Actividad>();
+	listaActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
+	listaActividades.setBounds(307, 59, 200, 30);
 	scrollListaAct.setViewportView(listaActividades);
 	listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	

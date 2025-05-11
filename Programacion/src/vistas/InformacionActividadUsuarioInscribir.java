@@ -18,14 +18,6 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 	private JButton btnInscribirActividad;
 	private JMenu menuDatosPersonales;
 	private JMenu menuActividad;
-	private JTextField txtNombreUSRI;
-	private JTextField txtMonitorUSRI;
-	private JTextField txtDescripcionUSRI;
-	private JTextField txtIdentificadorUSRI;
-	private JTextField txtFechaUSRI;
-	private JTextField txtHorUSRI;
-	private JTextField txtSalaUSRI;
-	private JTextField txtNumMaxUSRI;
 	
 	public InformacionActividadUsuarioInscribir () {
 		
@@ -70,93 +62,43 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		
 		JLabel lblNombre = new JLabel("Nombre: ");
 		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombre.setBounds(132, 93, 81, 44);
+		lblNombre.setBounds(132, 93, 294, 44);
 		getContentPane().add(lblNombre);
 		
-		txtNombreUSRI = new JTextField();
-		txtNombreUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtNombreUSRI.setColumns(10);
-		txtNombreUSRI.setBounds(218, 105, 186, 25);
-		getContentPane().add(txtNombreUSRI);
-		
-		txtMonitorUSRI = new JTextField();
-		txtMonitorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtMonitorUSRI.setColumns(10);
-		txtMonitorUSRI.setBounds(212, 154, 192, 25);
-		getContentPane().add(txtMonitorUSRI);
-		
-		JLabel lblMonitor = new JLabel("Monitor:");
+		JLabel lblMonitor = new JLabel("Monitor: ");
 		lblMonitor.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMonitor.setBounds(132, 148, 81, 30);
+		lblMonitor.setBounds(132, 148, 288, 30);
 		getContentPane().add(lblMonitor);
 		
-		JLabel lblDescripcion = new JLabel("Descripción:");
+		JLabel lblDescripcion = new JLabel("Descripción: ");
 		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblDescripcion.setBounds(132, 195, 218, 40);
+		lblDescripcion.setBounds(132, 195, 294, 40);
 		getContentPane().add(lblDescripcion);
 		
-		txtDescripcionUSRI = new JTextField();
-		txtDescripcionUSRI.setText("Descripción de la actividad");
-		txtDescripcionUSRI.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 11));
-		txtDescripcionUSRI.setColumns(10);
-		txtDescripcionUSRI.setBackground(Color.WHITE);
-		txtDescripcionUSRI.setBounds(142, 239, 180, 95);
-		getContentPane().add(txtDescripcionUSRI);
-		
-		JLabel lblIdentificador = new JLabel("Identificador:");
+		JLabel lblIdentificador = new JLabel("Identificador: ");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(436, 93, 127, 38);
+		lblIdentificador.setBounds(436, 93, 235, 38);
 		getContentPane().add(lblIdentificador);
 		
-		txtIdentificadorUSRI = new JTextField();
-		txtIdentificadorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtIdentificadorUSRI.setColumns(10);
-		txtIdentificadorUSRI.setBounds(559, 102, 93, 25);
-		getContentPane().add(txtIdentificadorUSRI);
-		
-		txtFechaUSRI = new JTextField();
-		txtFechaUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtFechaUSRI.setColumns(10);
-		txtFechaUSRI.setBounds(497, 147, 155, 25);
-		getContentPane().add(txtFechaUSRI);
-		
-		JLabel lblFecha = new JLabel("Fecha:");
+		JLabel lblFecha = new JLabel("Fecha: ");
 		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFecha.setBounds(436, 142, 69, 30);
+		lblFecha.setBounds(436, 142, 235, 30);
 		getContentPane().add(lblFecha);
 		
-		JLabel lblHora = new JLabel("Hora:");
+		JLabel lblHora = new JLabel("Hora: ");
 		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblHora.setBounds(436, 183, 53, 30);
+		lblHora.setBounds(436, 183, 235, 30);
 		getContentPane().add(lblHora);
-		
-		txtHorUSRI = new JTextField();
-		txtHorUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtHorUSRI.setColumns(10);
-		txtHorUSRI.setBounds(491, 187, 161, 25);
-		getContentPane().add(txtHorUSRI);
 		
 		JLabel lblSala = new JLabel("Sala: ");
 		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblSala.setBounds(436, 227, 45, 30);
+		lblSala.setBounds(436, 227, 235, 30);
 		getContentPane().add(lblSala);
 		
-		txtSalaUSRI = new JTextField();
-		txtSalaUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtSalaUSRI.setColumns(10);
-		txtSalaUSRI.setBounds(481, 232, 171, 25);
-		getContentPane().add(txtSalaUSRI);
-		
-		JLabel lblNMximo = new JLabel("Nº Máximo:");
+		JLabel lblNMximo = new JLabel("Nº Máximo: ");
 		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNMximo.setBounds(436, 268, 112, 30);
+		lblNMximo.setBounds(436, 268, 235, 30);
 		getContentPane().add(lblNMximo);
-		
-		txtNumMaxUSRI = new JTextField();
-		txtNumMaxUSRI.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtNumMaxUSRI.setColumns(10);
-		txtNumMaxUSRI.setBounds(547, 273, 105, 25);
-		getContentPane().add(txtNumMaxUSRI);
 		
 		
 		setSize(695, 397);
@@ -211,115 +153,4 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		this.menuActividad = menuActividad;
 	}
 
-	/**
-	 * @return the txtNombreUSRI
-	 */
-	public JTextField getTxtNombreUSRI() {
-		return txtNombreUSRI;
-	}
-
-	/**
-	 * @param txtNombreUSRI the txtNombreUSRI to set
-	 */
-	public void setTxtNombreUSRI(JTextField txtNombreUSRI) {
-		this.txtNombreUSRI = txtNombreUSRI;
-	}
-
-	/**
-	 * @return the txtMonitorUSRI
-	 */
-	public JTextField getTxtMonitorUSRI() {
-		return txtMonitorUSRI;
-	}
-
-	/**
-	 * @param txtMonitorUSRI the txtMonitorUSRI to set
-	 */
-	public void setTxtMonitorUSRI(JTextField txtMonitorUSRI) {
-		this.txtMonitorUSRI = txtMonitorUSRI;
-	}
-
-	/**
-	 * @return the textField_2
-	 */
-	public JTextField getTextField_2() {
-		return txtDescripcionUSRI;
-	}
-
-	/**
-	 * @param textField_2 the textField_2 to set
-	 */
-	public void setTextField_2(JTextField textField_2) {
-		this.txtDescripcionUSRI = textField_2;
-	}
-
-	/**
-	 * @return the txtIdentificadorUSRI
-	 */
-	public JTextField getTxtIdentificadorUSRI() {
-		return txtIdentificadorUSRI;
-	}
-
-	/**
-	 * @param txtIdentificadorUSRI the txtIdentificadorUSRI to set
-	 */
-	public void setTxtIdentificadorUSRI(JTextField txtIdentificadorUSRI) {
-		this.txtIdentificadorUSRI = txtIdentificadorUSRI;
-	}
-
-	/**
-	 * @return the txtFechaUSRI
-	 */
-	public JTextField getTxtFechaUSRI() {
-		return txtFechaUSRI;
-	}
-
-	/**
-	 * @param txtFechaUSRI the txtFechaUSRI to set
-	 */
-	public void setTxtFechaUSRI(JTextField txtFechaUSRI) {
-		this.txtFechaUSRI = txtFechaUSRI;
-	}
-
-	/**
-	 * @return the txtHorUSRI
-	 */
-	public JTextField getTxtHorUSRI() {
-		return txtHorUSRI;
-	}
-
-	/**
-	 * @param txtHorUSRI the txtHorUSRI to set
-	 */
-	public void setTxtHorUSRI(JTextField txtHorUSRI) {
-		this.txtHorUSRI = txtHorUSRI;
-	}
-
-	/**
-	 * @return the txtSalaUSRI
-	 */
-	public JTextField getTxtSalaUSRI() {
-		return txtSalaUSRI;
-	}
-
-	/**
-	 * @param txtSalaUSRI the txtSalaUSRI to set
-	 */
-	public void setTxtSalaUSRI(JTextField txtSalaUSRI) {
-		this.txtSalaUSRI = txtSalaUSRI;
-	}
-
-	/**
-	 * @return the txtNumMaxUSRI
-	 */
-	public JTextField getTxtNumMaxUSRI() {
-		return txtNumMaxUSRI;
-	}
-
-	/**
-	 * @param txtNumMaxUSRI the txtNumMaxUSRI to set
-	 */
-	public void setTxtNumMaxUSRI(JTextField txtNumMaxUSRI) {
-		this.txtNumMaxUSRI = txtNumMaxUSRI;
-	}
 }

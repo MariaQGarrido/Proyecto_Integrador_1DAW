@@ -9,14 +9,14 @@ import java.sql.Statement;
 
 public class BBDD {
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost/Base_Integrador (2)";
+	private String url = "jdbc:mysql://localhost/Base_Integrador";
 
 	private String usuario = "root";
-	private String passwd = "1234567";
+	private String passwd = "Tote2005@";
 	
 	private Connection con;
 	
-	public Connection getConexion() {
+	public Connection abrirConexion() {
 		con = null;
 
 		try {
@@ -30,6 +30,59 @@ public class BBDD {
 		return con;
 	}
 	
+	public boolean usuarioAutenticado(String matricula, String password) {
+		String consultaString = "SELECT * FROM usuarios WHERE matricula=? AND password=?";
+		
+		try {
+			abrirConexion();
+			PreparedStatement stmt1 = con.prepareStatement(consultaString);
+			
+			stmt1.setString(1, matricula);
+			stmt1.setString(2, password);
+			
+			ResultSet resultado = stmt1.executeQuery();
+			
+			while (resultado.next()) {
+				return true;
+			}
+			
+			cerrarConexion();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	
+	public boolean EsMonitor(String matricula) {
+		// TODO Auto-generated method stub
+		
+		String consultaString = "SELECT * FROM usuarios WHERE matricula=? AND ciclo='TAFD'";
+		
+		try {
+			abrirConexion();
+			PreparedStatement stmt1 = con.prepareStatement(consultaString);
+			
+			stmt1.setString(1, matricula);
+			
+			ResultSet resultado = stmt1.executeQuery();
+			
+			while (resultado.next()) {
+				return true;
+			}
+			
+			cerrarConexion();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return false;
+	}
+	
+	
+	
 	public void cerrarConexion() {
 		try {
 			con.close();
@@ -38,4 +91,6 @@ public class BBDD {
 			e.printStackTrace();
 		}
 	}
+
+	
 }

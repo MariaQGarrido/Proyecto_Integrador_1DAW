@@ -16,7 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-import Control.ListenerCrearCuenta;
+import Control.ListenerCrearCuentaNueva;
+import Control.ListenerCuentaNueva;
 
 import javax.swing.JComboBox;
 
@@ -42,7 +43,7 @@ public class CrearCuenta extends JFrame{
 		getContentPane().setLayout(null);
 		
 		JLabel lblTitulo = new JLabel("Crear Cuenta Usuario");
-		lblTitulo.setBounds(50, 25, 253, 37);
+		lblTitulo.setBounds(10, 11, 253, 37);
 		lblTitulo.setForeground(new Color(0, 0, 0));
 		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 24));
 		getContentPane().add(lblTitulo);
@@ -52,61 +53,61 @@ public class CrearCuenta extends JFrame{
 		
 		JLabel lblIdentificador = new JLabel("Identificador:");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(60, 73, 132, 30);
+		lblIdentificador.setBounds(39, 59, 132, 30);
 		getContentPane().add(lblIdentificador);
 		
 		txtIdentificador = new JTextField();
 		txtIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtIdentificador.setBounds(187, 77, 165, 30);
+		txtIdentificador.setBounds(166, 60, 165, 30);
 		getContentPane().add(txtIdentificador);
 		
 		JLabel lblMatricula = new JLabel("Matrícula:");
 		lblMatricula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatricula.setBounds(381, 73, 100, 30);
+		lblMatricula.setBounds(360, 59, 100, 30);
 		getContentPane().add(lblMatricula);
 		
 		txtMatricula = new JTextField();
 		txtMatricula.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtMatricula.setBounds(476, 77, 198, 30);
+		txtMatricula.setBounds(455, 63, 198, 30);
 		getContentPane().add(txtMatricula);
 		
 		JLabel lbltel = new JLabel("Teléfono:");
 		lbltel.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lbltel.setBounds(60, 312, 92, 30);
+		lbltel.setBounds(39, 292, 92, 30);
 		getContentPane().add(lbltel);
 		
 		txtTel = new JTextField();
 		txtTel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtTel.setBounds(148, 316, 159, 30);
+		txtTel.setBounds(127, 296, 159, 30);
 		getContentPane().add(txtTel);
 		
 		JLabel lblCorreo = new JLabel("Correo:");
 		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(60, 189, 78, 30);
+		lblCorreo.setBounds(39, 175, 78, 30);
 		getContentPane().add(lblCorreo);
 		
 		txtCorreos = new JTextField();
 		txtCorreos.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtCorreos.setBounds(129, 193, 247, 30);
+		txtCorreos.setBounds(108, 179, 247, 30);
 		getContentPane().add(txtCorreos);
 		
 		JLabel lblNombre = new JLabel("Nombre y Apellidos:");
 		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombre.setBounds(60, 134, 179, 30);
+		lblNombre.setBounds(39, 120, 179, 30);
 		getContentPane().add(lblNombre);
 		
 		txtNombreApe = new JTextField();
 		txtNombreApe.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtNombreApe.setBounds(249, 138, 222, 30);
+		txtNombreApe.setBounds(226, 122, 222, 30);
 		getContentPane().add(txtNombreApe);
 		
 		JLabel lblCiclos = new JLabel("Ciclos:");
 		lblCiclos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCiclos.setBounds(60, 258, 71, 30);
+		lblCiclos.setBounds(39, 232, 71, 30);
 		getContentPane().add(lblCiclos);
 				
 		JButton btnCrearCuenta = new JButton("Crear Cuenta");
-		btnCrearCuenta.addActionListener(new ListenerCrearCuenta() );
+		btnCrearCuenta.addActionListener(new ListenerCuentaNueva() );
 		btnCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCrearCuenta.setBackground(new Color(255, 255, 128));
 		btnCrearCuenta.setBounds(514, 316, 139, 30);
@@ -118,7 +119,7 @@ public class CrearCuenta extends JFrame{
 		DefaultComboBoxModel<String> modeloComboBox = new DefaultComboBoxModel<String>(ciclos);
 		comboBoxCiclos.setModel(modeloComboBox);
 		comboBoxCiclos.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 12));
-		comboBoxCiclos.setBounds(130, 258, 173, 37);
+		comboBoxCiclos.setBounds(109, 232, 173, 37);
 		getContentPane().add(comboBoxCiclos);
 		
 	}

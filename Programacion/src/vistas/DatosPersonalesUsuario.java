@@ -23,13 +23,6 @@ import javax.swing.JMenuBar;
  * 
  */
 public class DatosPersonalesUsuario extends JFrame{
-	
-
-	private JTextField txtIdentificadorUSR;
-	private JTextField txtNombreUSR;
-	private JTextField txtMatriculaUSR;
-	private JTextField txtCorreoUSR;
-	private JTextField txtTelUSR;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
 
@@ -49,57 +42,32 @@ public class DatosPersonalesUsuario extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 		
-		JLabel lblIdentificador = new JLabel("Identificador:");
+		JLabel lblIdentificador = new JLabel("Identificador: ");
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(143, 145, 121, 30);
+		lblIdentificador.setBounds(143, 145, 528, 30);
 		getContentPane().add(lblIdentificador);
-		
-		txtIdentificadorUSR = new JTextField();
-		txtIdentificadorUSR.setSize(250, 25);
-		txtIdentificadorUSR.setLocation(268, 150);
-		getContentPane().add(txtIdentificadorUSR);
 	
 		
-		JLabel lblMatrcula = new JLabel("Matrícula:");
+		JLabel lblMatrcula = new JLabel("Matrícula: ");
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatrcula.setBounds(143, 191, 100, 30);
+		lblMatrcula.setBounds(143, 191, 528, 30);
 		getContentPane().add(lblMatrcula);
 		
-		txtMatriculaUSR = new JTextField();
-		txtMatriculaUSR.setSize(250, 25);
-		txtMatriculaUSR.setLocation(237, 195);
-		getContentPane().add(txtMatriculaUSR);
 		
-		
-		JLabel lblCorreo = new JLabel("Correo:");
+		JLabel lblCorreo = new JLabel("Correo: ");
 		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(143, 242, 72, 30);
+		lblCorreo.setBounds(143, 242, 528, 30);
 		getContentPane().add(lblCorreo);
 		
-		txtCorreoUSR = new JTextField();
-		txtCorreoUSR.setSize(250, 25);
-		txtCorreoUSR.setLocation(212, 245);
-		getContentPane().add(txtCorreoUSR);
-		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono:");
+		JLabel lblNTelfono = new JLabel("Nº Teléfono: ");
 		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNTelfono.setBounds(143, 298, 121, 30);
+		lblNTelfono.setBounds(143, 298, 528, 30);
 		getContentPane().add(lblNTelfono);
 		
-		txtTelUSR = new JTextField();
-		txtTelUSR.setSize(250, 25);
-		txtTelUSR.setLocation(260, 303);
-		getContentPane().add(txtTelUSR);		
-		
-		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos:");
+		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: ");
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombreYApellidos.setBounds(143, 100, 189, 30);
+		lblNombreYApellidos.setBounds(143, 100, 528, 30);
 		getContentPane().add(lblNombreYApellidos);
-		
-		txtNombreUSR = new JTextField();
-		txtNombreUSR.setSize(250, 25);
-		txtNombreUSR.setLocation(328, 104);
-		getContentPane().add(txtNombreUSR);
 		
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -128,77 +96,6 @@ public class DatosPersonalesUsuario extends JFrame{
 		setVisible(true);
 	}
 	
-	// Getters y Setters
-	
-	/**
-	 * @return the txtIdentificadorUSR
-	 */
-	public JTextField getTxtIdentificadorUSR() {
-		return txtIdentificadorUSR;
-	}
-
-	/**
-	 * @param txtIdentificadorUSR the txtIdentificadorUSR to set
-	 */
-	public void setTxtIdentificadorUSR(JTextField txtIdentificadorUSR) {
-		this.txtIdentificadorUSR = txtIdentificadorUSR;
-	}
-
-	/**
-	 * @return the txtNombreUSR
-	 */
-	public JTextField getTxtNombreUSR() {
-		return txtNombreUSR;
-	}
-
-	/**
-	 * @param txtNombreUSR the txtNombreUSR to set
-	 */
-	public void setTxtNombreUSR(JTextField txtNombreUSR) {
-		this.txtNombreUSR = txtNombreUSR;
-	}
-
-	/**
-	 * @return the txtMatriculaUSR
-	 */
-	public JTextField getTxtMatriculaUSR() {
-		return txtMatriculaUSR;
-	}
-
-	/**
-	 * @param txtMatriculaUSR the txtMatriculaUSR to set
-	 */
-	public void setTxtMatriculaUSR(JTextField txtMatriculaUSR) {
-		this.txtMatriculaUSR = txtMatriculaUSR;
-	}
-
-	/**
-	 * @return the txtCorreoUSR
-	 */
-	public JTextField getTxtCorreoUSR() {
-		return txtCorreoUSR;
-	}
-
-	/**
-	 * @param txtCorreoUSR the txtCorreoUSR to set
-	 */
-	public void setTxtCorreoUSR(JTextField txtCorreoUSR) {
-		this.txtCorreoUSR = txtCorreoUSR;
-	}
-
-	/**
-	 * @return the txtTelUSR
-	 */
-	public JTextField getTxtTelUSR() {
-		return txtTelUSR;
-	}
-
-	/**
-	 * @param txtTelUSR the txtTelUSR to set
-	 */
-	public void setTxtTelUSR(JTextField txtTelUSR) {
-		this.txtTelUSR = txtTelUSR;
-	}
 
 	/**
 	 * @return the menuActividad

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import vistas.CrearCuenta;
 import vistas.VistaInicioSesion;
 
-public class ListenerCrearCuenta implements ActionListener {
+public class ListenerCuentaNueva implements ActionListener {
 	CrearCuenta vistaCerrada;
 	VistaInicioSesion Login;
 	
