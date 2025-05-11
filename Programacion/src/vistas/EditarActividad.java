@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import Control.EditarActividadMonitor;
 import Control.ListenerEditarActividad;
 import Control.menuActividadMon;
 import Control.menuDatosPersonalesMon;
@@ -68,11 +69,11 @@ public class EditarActividad extends JFrame {
 
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon(this));
+		menuActividad.addMouseListener(new menuActividadMon());
 		
 		menuDatosPersonales = new JMenu("DatosPersonales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon(this));
+		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
 		lblCambioDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -164,7 +165,7 @@ public class EditarActividad extends JFrame {
 
 		// Boton para crear la actividad
 		JButton btnNewButton = new JButton("Editar Actividad");
-		btnNewButton.addActionListener(new ListenerEditarActividad(this));
+		btnNewButton.addActionListener(new EditarActividadMonitor());
 		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
 		

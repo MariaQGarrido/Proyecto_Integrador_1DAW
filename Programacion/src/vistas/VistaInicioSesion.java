@@ -16,6 +16,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+
+import Control.ListenerCrearCuenta;
+import Control.ListenerLogin;
+
 import java.awt.SystemColor;
 
 public class VistaInicioSesion extends JFrame {
@@ -24,8 +28,7 @@ public class VistaInicioSesion extends JFrame {
 	private JButton btnInicioSesion;
 	private JButton btnCrearCuenta;
 	
-	public VistaInicioSesion(String titulo) {
-		super(titulo);
+	public VistaInicioSesion() {
 		componentes();
 	}
 	
@@ -63,10 +66,7 @@ public class VistaInicioSesion extends JFrame {
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
 		btnInicioSesion.setBackground(new Color(255, 255, 255));
-		btnInicioSesion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnInicioSesion.addActionListener(new ListenerLogin());
 		btnInicioSesion.setBounds(273, 280, 139, 23);
 		getContentPane().add(btnInicioSesion);
 
@@ -95,8 +95,11 @@ public class VistaInicioSesion extends JFrame {
 		btnCrearCuenta.setForeground(new Color(0, 0, 160));
 		btnCrearCuenta.setBackground(new Color(255,104,104));
 		btnCrearCuenta.setBorderPainted(false);
+		btnCrearCuenta.addActionListener(new ListenerCrearCuenta());
 		btnCrearCuenta.setBounds(271, 314, 141, 23);
 		getContentPane().add(btnCrearCuenta);
+		
+		
 		JLabel imageLabel = new JLabel(imageIcon);
 		imageLabel.setBounds(291,35,100, 100);
 		getContentPane().add(imageLabel);

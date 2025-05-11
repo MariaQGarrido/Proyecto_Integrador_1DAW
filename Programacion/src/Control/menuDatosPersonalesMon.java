@@ -9,10 +9,13 @@ import vistas.EditarActividad;
 import vistas.InformacionActividadMonitor;
 
 public class menuDatosPersonalesMon implements MouseListener {
+	DatosPersonalesMonitor DatosMon;
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		DatosPersonalesMonitor.HacerVisible();
+		DatosMon = new DatosPersonalesMonitor();
+		DatosMon.HacerVisible();
 	}
 
 	@Override

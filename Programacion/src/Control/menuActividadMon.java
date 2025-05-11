@@ -9,11 +9,11 @@ import vistas.EditarActividad;
 import vistas.InformacionActividadMonitor;
 
 public class menuActividadMon implements MouseListener {
-
+	ActividadMonitor ActMon;
+	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -37,7 +37,8 @@ public class menuActividadMon implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		ActividadMonitor.HacerVisible();
+		ActMon = new ActividadMonitor();
+		ActMon.HacerVisible();
 	}
 
 }
