@@ -5,4 +5,6 @@ public class InscritoEn {
 	private int idAct;
 	private Usuario usuario;
 	private Actividad actividad;
+	
+	
 }
