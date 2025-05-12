@@ -54,7 +54,22 @@ public class BBDD {
 		return false;
 	}
 	
+	// el monitor tenga opcion de registrarse como participante
+	// o en el login preguntr si quiere ser participante o monitor
 	
+	
+	// con la matrícula hacer que en la vista datos personales muestren sus datos.
+	// en el controldor del login tiene que abrir aparte de la ventana dtos actividad, hacer objeto tipo usuario
+	// con los datos de la mtrícula...
+	//o devuelvo un obejto tipo usuario o nda
+	/**
+	 * peticion de traerlas actividades inscritas(con los datos...)
+	 *  pedir un rraylist de actividades
+	 *  
+	 *  que se abra la vista datos personles mejor.
+	 * @param matricula
+	 * @return
+	 */
 	public boolean EsMonitor(String matricula) {
 		// TODO Auto-generated method stub
 		
@@ -69,6 +84,7 @@ public class BBDD {
 			ResultSet resultado = stmt1.executeQuery();
 			
 			while (resultado.next()) {
+				//hacer un objeto de tipo usuario y que devuelv un usuario.
 				return true;
 			}
 			
