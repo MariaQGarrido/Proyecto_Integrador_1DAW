@@ -56,12 +56,15 @@ public class VistaInicioSesion extends JFrame {
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblNombre);
 
-		// Texto para el nombre de usuario
+		// Texto para la matricula
 		Nombretxt = new JTextField();
 		Nombretxt.setBackground(new Color(255, 255, 255));
 		Nombretxt.setBounds(271, 196, 141, 20);
 		getContentPane().add(Nombretxt);
 		Nombretxt.setColumns(10);
+		
+		// TODO: borrar mas adelante -----------------------------------------------
+		Nombretxt.setText("489343L");
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
@@ -77,11 +80,15 @@ public class VistaInicioSesion extends JFrame {
 		lblContrasena.setBounds(271, 222, 141, 22);
 		// Esto es para alinear el texto al medio
 		lblContrasena.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		getContentPane().add(lblContrasena);
 
 		txtpassword = new JPasswordField();
 		txtpassword.setBackground(new Color(255, 255, 255));
 		txtpassword.setBounds(269, 246, 143, 20);
+
+		// TODO: borrar mas adelante -----------------------------------------------
+		txtpassword.setText("1234");
 		getContentPane().add(txtpassword);
 		
 		// Logotipo del equipo
@@ -149,20 +156,6 @@ public class VistaInicioSesion extends JFrame {
 	 */
 	public void setBtnInicioSesion(JButton btnInicioSesion) {
 		this.btnInicioSesion = btnInicioSesion;
-	}
-
-	/**
-	 * @return the btnCrearCuenta
-	 */
-	public JButton getBtnCrearCuenta() {
-		return btnCrearCuenta;
-	}
-
-	/**
-	 * @param btnCrearCuenta the btnCrearCuenta to set
-	 */
-	public void setBtnCrearCuenta(JButton btnCrearCuenta) {
-		this.btnCrearCuenta = btnCrearCuenta;
 	}
 
 	/**

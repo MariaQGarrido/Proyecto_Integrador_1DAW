@@ -17,8 +17,8 @@ import javax.swing.WindowConstants;
 
 import Control.EditarActividadMonitor;
 import Control.ListenerEditarActividad;
-import Control.menuActividadMon;
-import Control.menuDatosPersonalesMon;
+import Control.MenuActividadMon;
+import Control.MenuDatosPersonalesMonitorListener;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -69,11 +69,11 @@ public class EditarActividad extends JFrame {
 
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon());
 		
 		menuDatosPersonales = new JMenu("DatosPersonales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
+//		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
 		lblCambioDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));

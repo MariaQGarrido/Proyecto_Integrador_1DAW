@@ -4,8 +4,8 @@ import javax.swing.*;
 
 import Control.ListenerDejarActividad;
 import Control.ListenerInscribirActividad;
-import Control.menuActividadUSR;
-import Control.menuDatosPersonalesUSR;
+import Control.MenuActividadUSR;
+import Control.MenuDatosPersonalesUsuarioListener;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -34,11 +34,11 @@ public class InformacionActividadUsuarioBaja extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadUSR());
+		menuActividad.addMouseListener(new MenuActividadUSR());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR());
+//		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener());
 		
 		JLabel lblInformacionAct = new JLabel("Información de la Actividad: ");
 		lblInformacionAct.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));

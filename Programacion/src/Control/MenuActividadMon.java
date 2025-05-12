@@ -1,28 +1,21 @@
 package Control;
 
 import java.awt.event.MouseEvent;
-
 import java.awt.event.MouseListener;
 
 import vistas.ActividadMonitor;
 import vistas.DatosPersonalesMonitor;
-import vistas.EditarActividad;
-import vistas.InformacionActividadMonitor;
 
-public class menuDatosPersonalesMon implements MouseListener {
-	DatosPersonalesMonitor DatosMon;
+public class MenuActividadMon implements MouseListener {
+	private DatosPersonalesMonitor datosPersonalesMonitor;
 	
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		DatosMon = new DatosPersonalesMonitor();
-		DatosMon.HacerVisible();
+	public MenuActividadMon(DatosPersonalesMonitor datosPersonalesMonitor) {
+		this.datosPersonalesMonitor = datosPersonalesMonitor;
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -41,6 +34,13 @@ public class menuDatosPersonalesMon implements MouseListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		ActividadMonitor actividadMonitor  = new ActividadMonitor(datosPersonalesMonitor.getUsuario());
+		actividadMonitor.HacerVisible();
 	}
 
 }

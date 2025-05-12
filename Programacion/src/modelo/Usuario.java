@@ -22,6 +22,10 @@ public class Usuario {
 		this.ciclo = ciclo;
 	}
 
+	public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void infoUsuario(Usuario usr){
 		
 	}

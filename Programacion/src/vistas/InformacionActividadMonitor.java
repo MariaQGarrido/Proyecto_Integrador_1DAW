@@ -14,8 +14,8 @@ import javax.swing.WindowConstants;
 
 import Control.ListenerBorrar;
 import Control.ListenerEditar;
-import Control.menuActividadMon;
-import Control.menuDatosPersonalesMon;
+import Control.MenuActividadMon;
+import Control.MenuDatosPersonalesMonitorListener;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -116,11 +116,11 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
+//		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
 		btnBorrarActiviada.addActionListener(new ListenerBorrar());

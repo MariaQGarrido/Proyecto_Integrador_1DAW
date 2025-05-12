@@ -7,9 +7,10 @@ import java.awt.GridLayout;
 import javax.swing.*;
 
 import Control.ListenerNuevaActividad;
-import Control.menuActividadMon;
-import Control.menuDatosPersonalesMon;
+import Control.MenuActividadMon;
+import Control.MenuDatosPersonalesMonitorListener;
 import modelo.Actividad;
+import modelo.Usuario;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -22,10 +23,11 @@ public class ActividadMonitor extends JFrame{
 	private JScrollPane scrollListaAct;
 	private JList<Actividad> listaActividades;
 	private JButton btnNuevaActividad;
+	private Usuario usuario;
 	
 	
-	public ActividadMonitor() {
-	
+	public ActividadMonitor(Usuario usuario) {
+		this.usuario = usuario; 
 	// Color de fondo de la vista
 	getContentPane().setBackground(new Color(247, 202, 136));
 	
@@ -42,13 +44,12 @@ public class ActividadMonitor extends JFrame{
 	menuActividad = new JMenu("Actividades");
 	menuActividad.setBackground(new Color(255, 255, 128));
 	menuBarActividad.add(menuActividad);
-	menuActividad.addMouseListener(new menuActividadMon());
 	
 	menuDatosPersonales = new JMenu("Datos Personales");
 	menuBarActividad.add(menuDatosPersonales);
-	menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
+	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
 	
-	JLabel nombreUsuario = new JLabel("UserName");
+	JLabel nombreUsuario = new JLabel(usuario.getMatricula());
 	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
 	nombreUsuario.setBounds(571, 11, 100, 30);
 	getContentPane().add(nombreUsuario);
@@ -178,5 +179,9 @@ public class ActividadMonitor extends JFrame{
 	 */
 	public void setBtnNuevaActividad(JButton btnNuevaActividad) {
 		this.btnNuevaActividad = btnNuevaActividad;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
 }

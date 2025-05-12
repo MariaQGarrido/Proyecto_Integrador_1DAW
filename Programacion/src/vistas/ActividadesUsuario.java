@@ -1,15 +1,21 @@
 package vistas;
 
-import javax.swing.*;
-
-import Control.menuActividadUSR;
-import Control.menuDatosPersonalesUSR;
-import modelo.Actividad;
-
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.WindowConstants;
+
+import Control.MenuDatosPersonalesUsuarioListener;
+import modelo.Actividad;
+import modelo.Usuario;
 
 public class ActividadesUsuario extends JFrame{
 
@@ -20,10 +26,14 @@ public class ActividadesUsuario extends JFrame{
 	private JMenu menuDatosPersonales;
 	private JList<Actividad> listActDisponibles;
 	private JList<Actividad> listActInscritas;
+	private Usuario usuario;
 	
 	
 	
-	public ActividadesUsuario() {
+	public ActividadesUsuario(Usuario usuario) {
+		this.usuario = usuario;
+		
+		
 		
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -72,13 +82,12 @@ public class ActividadesUsuario extends JFrame{
 		getContentPane().add(menuBarActividad);
 		
 		menuActividad = new JMenu("Actividades");
-		menuActividad.addMouseListener(new menuActividadUSR());		
 		menuActividad.setBackground(new Color(255, 255, 255));
 		menuBarActividad.add(menuActividad);
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
+		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener(this));
 		menuBarActividad.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesUSR());	
 		JLabel lblNomUsuario = new JLabel("UserName");
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNomUsuario.setBounds(581, 11, 90, 31);
@@ -217,4 +226,9 @@ public class ActividadesUsuario extends JFrame{
 	public void setListActInscritas(JList<Actividad> listActInscritas) {
 		this.listActInscritas = listActInscritas;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	
 }

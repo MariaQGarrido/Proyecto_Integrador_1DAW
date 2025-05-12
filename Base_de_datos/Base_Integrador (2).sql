@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS USUARIOS(
     apellidos VARCHAR(30),
     matricula VARCHAR(30),
     ciclo VARCHAR(4),
-    correo VARCHAR(40)
+    password VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS ACTIVIDADES(
@@ -46,13 +46,13 @@ INSERT INTO SALA (id_sala, capacidad, tipo_sala) VALUES
 (2, 30,'Piscina climatizada'),
 (3, 10,'Pista de tenis');
 
-INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo) VALUES
-(1, 'María', 'Garrido Bravo', '123456H', 'DAM'),
-(2, 'Alejandro', 'Raboso Martos', '234567T','DAW'),
-(3, 'Rosa', 'Hu', '463827Y','ASIR'),
-(4, 'Sara', 'Villanueva', '489343L','TAFD'),
-(5, 'Lucas', 'Film', '289398I','TAFD'),
-(6, 'Diego', 'García', '328932U','TAFD');
+INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo, password) VALUES
+(1, 'María', 'Garrido Bravo', '123456H', 'DAM',  '1234'),
+(2, 'Alejandro', 'Raboso Martos', '234567T','DAW', '1357'),
+(3, 'Rosa', 'Hu', '463827Y','ASIR', '2468'),
+(4, 'Sara', 'Villanueva', '489343L','TAFD', '1234'),
+(5, 'Lucas', 'Film', '289398I','TAFD', '1234'),
+(6, 'Diego', 'García', '328932U','TAFD', '1234');
 
 INSERT INTO ACTIVIDADES (id_actividad, id_monitor, id_sala, nombre_actividad, descripcion_actividad, usuarios_maximos, usuarios_inscritos, dia_actividad, hora) VALUES
 (1, 4, 1, 'Pilates','Una actividad para relajarse un rato',10,5, '2025-04-11', '11:05'),

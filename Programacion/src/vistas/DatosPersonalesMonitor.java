@@ -13,8 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import Control.menuActividadMon;
-import Control.menuDatosPersonalesMon;
+import Control.MenuActividadMon;
+import Control.MenuDatosPersonalesMonitorListener;
+import modelo.Usuario;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -23,19 +24,21 @@ import javax.swing.JMenuBar;
  * 
  */
 public class DatosPersonalesMonitor extends JFrame{
-	
 
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
+	private Usuario usuario;
 
 	
-	public DatosPersonalesMonitor() {
+	public DatosPersonalesMonitor(Usuario usuario) {
+		this.usuario = usuario;
+		
 		getContentPane().setBackground(new Color(247, 202, 136));
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 				
-		JLabel lblTitulo = new JLabel("monitor@ejem.com");
+		JLabel lblTitulo = new JLabel(usuario.getMatricula());
 		lblTitulo.setBounds(535, 11, 136, 37);
 		lblTitulo.setForeground(new Color(0, 0, 0));
 		lblTitulo.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -44,29 +47,24 @@ public class DatosPersonalesMonitor extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 		
-		JLabel lblIdentificador = new JLabel("Identificador: ");
+		JLabel lblIdentificador = new JLabel("Identificador: "+usuario.getIdUsuario());
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(143, 145, 528, 30);
+		lblIdentificador.setBounds(143, 168, 528, 30);
 		getContentPane().add(lblIdentificador);
 		
-		JLabel lblMatrcula = new JLabel("Matrícula: ");
+		JLabel lblMatrcula = new JLabel("Matrícula: "+usuario.getMatricula());
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblMatrcula.setBounds(143, 191, 528, 30);
+		lblMatrcula.setBounds(143, 223, 528, 30);
 		getContentPane().add(lblMatrcula);
 		
-		JLabel lblCorreo = new JLabel("Correo: ");
-		lblCorreo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblCorreo.setBounds(143, 242, 528, 30);
-		getContentPane().add(lblCorreo);
+		JLabel lblCiclo = new JLabel("Ciclo: "+usuario.getCiclo());
+		lblCiclo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblCiclo.setBounds(143, 286, 528, 30);
+		getContentPane().add(lblCiclo);
 		
-		JLabel lblNTelfono = new JLabel("Nº Teléfono: ");
-		lblNTelfono.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNTelfono.setBounds(143, 298, 528, 30);
-		getContentPane().add(lblNTelfono);
-		
-		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: ");
+		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: "+usuario.getNombre()+" "+usuario.getApellidos());
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombreYApellidos.setBounds(143, 100, 528, 30);
+		lblNombreYApellidos.setBounds(143, 115, 528, 30);
 		getContentPane().add(lblNombreYApellidos);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -77,12 +75,11 @@ public class DatosPersonalesMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new menuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon(this));
 		
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new menuDatosPersonalesMon());
 		
 		JLabel lblDatosPersonales = new JLabel("Datos Personales: ");
 		lblDatosPersonales.setFont(new Font("Microsoft JhengHei", Font.BOLD, 24));
@@ -124,5 +121,10 @@ public class DatosPersonalesMonitor extends JFrame{
 	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
 		this.menuDatosPersonales = menuDatosPersonales;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
 
 }

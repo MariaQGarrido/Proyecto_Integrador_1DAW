@@ -5,42 +5,45 @@ import java.awt.event.MouseListener;
 
 import vistas.ActividadesUsuario;
 import vistas.DatosPersonalesUsuario;
-import vistas.InformacionActividadUsuarioBaja;
-import vistas.InformacionActividadUsuarioBaja;
-import vistas.InformacionActividadUsuarioInscribir;
 
-public class menuActividadUSR implements MouseListener {
-	ActividadesUsuario ActividadUsr;
-	
+
+public class MenuDatosPersonalesUsuarioListener implements MouseListener {
+	private ActividadesUsuario actividadesUsuario;
+
+	/**
+	 * @param actividadesUsuario
+	 */
+	public MenuDatosPersonalesUsuarioListener(ActividadesUsuario actividadesUsuario) {
+		this.actividadesUsuario = actividadesUsuario;
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		ActividadUsr = new ActividadesUsuario();
-		ActividadUsr.HacerVisible();
+		DatosPersonalesUsuario datosPersonalesUsuario = new DatosPersonalesUsuario(actividadesUsuario.getUsuario());
+		datosPersonalesUsuario.hacerVisible();
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
-
 }
