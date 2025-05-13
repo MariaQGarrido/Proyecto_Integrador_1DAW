@@ -11,8 +11,6 @@ public class ListenerEditar implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		ActMon = new ActividadMonitor();
-		ActMon.HacerVisible();
 	}
 
 }

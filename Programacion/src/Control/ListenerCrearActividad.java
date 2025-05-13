@@ -15,9 +15,6 @@ public class ListenerCrearActividad implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
-			ActMon = new ActividadMonitor();
-			
-			ActMon.HacerVisible();
 
 	}
 

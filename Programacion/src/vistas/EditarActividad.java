@@ -19,6 +19,7 @@ import Control.EditarActividadMonitor;
 import Control.ListenerEditarActividad;
 import Control.MenuActividadMon;
 import Control.MenuDatosPersonalesMonitorListener;
+import modelo.Usuario;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -33,8 +34,10 @@ public class EditarActividad extends JFrame {
 	private JTextField txtCambioHora;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
+	private Usuario usuario;
 	
-	public EditarActividad() {
+	public EditarActividad(Usuario usuario) {
+		this.setUsuario(usuario);
 		// Color de fondo de la vista
 		getContentPane().setBackground(new Color(247, 202, 136));
 
@@ -308,5 +311,13 @@ public class EditarActividad extends JFrame {
 	 */
 	public void setMenuDatosPersonales(JMenu menuDatosPersonales) {
 		this.menuDatosPersonales = menuDatosPersonales;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

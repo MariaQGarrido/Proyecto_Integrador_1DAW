@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 
+import Control.ListenerLogin;
 import Control.ListenerNuevaActividad;
 import Control.MenuActividadMon;
 import Control.MenuDatosPersonalesMonitorListener;
@@ -23,11 +24,9 @@ public class ActividadMonitor extends JFrame{
 	private JScrollPane scrollListaAct;
 	private JList<Actividad> listaActividades;
 	private JButton btnNuevaActividad;
-	private Usuario usuario;
 	
 	
-	public ActividadMonitor(Usuario usuario) {
-		this.usuario = usuario; 
+	public ActividadMonitor() {
 	// Color de fondo de la vista
 	getContentPane().setBackground(new Color(247, 202, 136));
 	
@@ -49,7 +48,7 @@ public class ActividadMonitor extends JFrame{
 	menuBarActividad.add(menuDatosPersonales);
 	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
 	
-	JLabel nombreUsuario = new JLabel(usuario.getMatricula());
+	JLabel nombreUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
 	nombreUsuario.setBounds(571, 11, 100, 30);
 	getContentPane().add(nombreUsuario);
@@ -181,7 +180,4 @@ public class ActividadMonitor extends JFrame{
 		this.btnNuevaActividad = btnNuevaActividad;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
 }

@@ -5,13 +5,10 @@ import java.awt.event.MouseListener;
 
 import vistas.ActividadMonitor;
 import vistas.DatosPersonalesMonitor;
+import vistas.EditarActividad;
 
 public class MenuActividadMon implements MouseListener {
-	private DatosPersonalesMonitor datosPersonalesMonitor;
 	
-	public MenuActividadMon(DatosPersonalesMonitor datosPersonalesMonitor) {
-		this.datosPersonalesMonitor = datosPersonalesMonitor;
-	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -39,7 +36,7 @@ public class MenuActividadMon implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		ActividadMonitor actividadMonitor  = new ActividadMonitor(datosPersonalesMonitor.getUsuario());
+		ActividadMonitor actividadMonitor  = new ActividadMonitor();
 		actividadMonitor.HacerVisible();
 	}
 

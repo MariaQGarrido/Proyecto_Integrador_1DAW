@@ -14,6 +14,7 @@ import javax.swing.JMenuBar;
 import javax.swing.WindowConstants;
 
 import Control.MenuDatosPersonalesUsuarioListener;
+import Control.ListenerLogin;
 import Control.MenuActividadUSR;
 import modelo.Usuario;
 
@@ -22,13 +23,13 @@ public class DatosPersonalesUsuario extends JFrame{
 	private JMenu menuDatosPersonales;
 
 	
-	public DatosPersonalesUsuario(Usuario usuario) {
+	public DatosPersonalesUsuario() {
 		getContentPane().setBackground(new Color(253, 251, 159));
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 				
-		JLabel lblTitulo = new JLabel(usuario.getMatricula());
+		JLabel lblTitulo = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblTitulo.setBounds(566, 11, 105, 37);
 		lblTitulo.setForeground(new Color(0, 0, 0));
 		lblTitulo.setFont(new Font("Dialog", Font.PLAIN, 20));
@@ -37,24 +38,24 @@ public class DatosPersonalesUsuario extends JFrame{
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 		
-		JLabel lblIdentificador = new JLabel("Identificador: "+ usuario.getIdUsuario());
+		JLabel lblIdentificador = new JLabel("Identificador: "+ ListenerLogin.usuario.getIdUsuario());
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblIdentificador.setBounds(143, 168, 528, 30);
 		getContentPane().add(lblIdentificador);
 	
 		
-		JLabel lblMatrcula = new JLabel("Matrícula: "+ usuario.getMatricula());
+		JLabel lblMatrcula = new JLabel("Matrícula: "+ ListenerLogin.usuario.getMatricula());
 		lblMatrcula.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblMatrcula.setBounds(143, 223, 528, 30);
 		getContentPane().add(lblMatrcula);
 		
 		
-		JLabel lblCiclo = new JLabel("Ciclo: "+ usuario.getCiclo());
+		JLabel lblCiclo = new JLabel("Ciclo: "+ ListenerLogin.usuario.getCiclo());
 		lblCiclo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblCiclo.setBounds(143, 286, 528, 30);
 		getContentPane().add(lblCiclo);
 		
-		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: "+ usuario.getNombre()+" "+usuario.getApellidos());
+		JLabel lblNombreYApellidos = new JLabel("Nombre y Apellidos: "+ ListenerLogin.usuario.getNombre()+" "+ListenerLogin.usuario.getApellidos());
 		lblNombreYApellidos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblNombreYApellidos.setBounds(143, 115, 528, 30);
 		getContentPane().add(lblNombreYApellidos);
@@ -68,7 +69,7 @@ public class DatosPersonalesUsuario extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadUSR(usuario));
+		menuActividad.addMouseListener(new MenuActividadUSR());
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);

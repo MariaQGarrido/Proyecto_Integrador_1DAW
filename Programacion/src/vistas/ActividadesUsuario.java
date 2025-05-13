@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.WindowConstants;
 
+import Control.ListenerLogin;
 import Control.MenuDatosPersonalesUsuarioListener;
 import modelo.Actividad;
 import modelo.Usuario;
@@ -26,13 +27,10 @@ public class ActividadesUsuario extends JFrame{
 	private JMenu menuDatosPersonales;
 	private JList<Actividad> listActDisponibles;
 	private JList<Actividad> listActInscritas;
-	private Usuario usuario;
 	
 	
 	
-	public ActividadesUsuario(Usuario usuario) {
-		this.usuario = usuario;
-		
+	public ActividadesUsuario() {
 		
 		
 		// 1) configura JFrame
@@ -88,7 +86,8 @@ public class ActividadesUsuario extends JFrame{
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener(this));
 		menuBarActividad.add(menuDatosPersonales);
-		JLabel lblNomUsuario = new JLabel("UserName");
+		
+		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNomUsuario.setBounds(581, 11, 90, 31);
 		getContentPane().add(lblNomUsuario);
@@ -226,9 +225,4 @@ public class ActividadesUsuario extends JFrame{
 	public void setListActInscritas(JList<Actividad> listActInscritas) {
 		this.listActInscritas = listActInscritas;
 	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	
 }

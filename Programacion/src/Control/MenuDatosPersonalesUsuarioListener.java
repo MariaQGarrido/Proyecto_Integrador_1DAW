@@ -19,7 +19,7 @@ public class MenuDatosPersonalesUsuarioListener implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		DatosPersonalesUsuario datosPersonalesUsuario = new DatosPersonalesUsuario(actividadesUsuario.getUsuario());
+		DatosPersonalesUsuario datosPersonalesUsuario = new DatosPersonalesUsuario();
 		datosPersonalesUsuario.hacerVisible();
 	}
 

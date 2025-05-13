@@ -49,14 +49,7 @@ public class MenuDatosPersonalesMonitorListener implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		Usuario usuario = null;
-		if (actividadMonitor!=null && actividadMonitor.getUsuario()!=null) {
-			usuario = actividadMonitor.getUsuario();
-		}
-		if (datosMon!= null && datosMon.getUsuario()!=null) {
-			usuario = datosMon.getUsuario();
-		}
-		DatosPersonalesMonitor vista = new DatosPersonalesMonitor(usuario);
+		DatosPersonalesMonitor vista = new DatosPersonalesMonitor();
 		vista.setVisible(true);
 		
 	}

@@ -7,16 +7,10 @@ import modelo.Usuario;
 import vistas.ActividadesUsuario;
 
 public class MenuActividadUSR implements MouseListener {
-	private ActividadesUsuario actividadUsr;
-	private Usuario usuario;
-	
-	public MenuActividadUSR(Usuario usuario) {
-		this.usuario = usuario;
-	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		actividadUsr = new ActividadesUsuario(usuario);
+		ActividadesUsuario actividadUsr = new ActividadesUsuario();
 		actividadUsr.HacerVisible();
 	}
 
