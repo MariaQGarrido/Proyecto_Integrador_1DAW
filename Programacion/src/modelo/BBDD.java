@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import Control.ListenerCrearActividad;
 import Control.ListenerLogin;
@@ -37,7 +38,7 @@ public class BBDD {
 		// consulta para iniciar sesión
 		String consultaString = "SELECT * FROM usuarios WHERE matricula=? AND password=?";
 		
-		// aquí creamos un objeto usuario vacía para luego rellenarl con sus atributos.
+		// aquí creamos un objeto usuario vacía para luego rellenarlo con sus atributos.
 		Usuario usuario = new Usuario();
 		try {
 			abrirConexion();
@@ -141,6 +142,8 @@ public class BBDD {
 						
 			ResultSet resultado = stmt1.executeQuery();
 			
+			ArrayList<Actividad> lista = new ArrayList<Actividad>();
+			
 			while (resultado.next()) {
 				Actividad actividad = new Actividad();
 				Sala sala = new Sala();
@@ -181,8 +184,10 @@ public class BBDD {
 				
 				actividad.setSala(sala);
 				
-				ListenerCrearActividad.actividades.add(actividad);
+				lista.add(actividad);
 			}
+			
+			ListenerCrearActividad.actividades= lista;
 			
 			cerrarConexion();
 		}catch (SQLException e) {
@@ -192,6 +197,23 @@ public class BBDD {
 		
 	}
 	
+	public void eliminarActividad() {
+		String eliminar = "delete from actividades where id_actividad=?";
+		
+
+		try {
+			abrirConexion();
+			PreparedStatement stmt1 = con.prepareStatement(eliminar);
+			
+			stmt1.setInt(1, ListenerCrearActividad.actividad.getIdActividad());
+			stmt1.executeUpdate();
+						
+			cerrarConexion();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	public void cerrarConexion() {

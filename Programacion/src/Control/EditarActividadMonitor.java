@@ -48,7 +48,7 @@ public class EditarActividadMonitor implements ActionListener {
 		SalaActividad = SalaEditada;
 		
 		vistaAnterior = new InformacionActividadMonitor();
-		vistaAnterior.HacerVisible();
+		vistaAnterior.isVisible();
 		vista.dispose();
 	}
 

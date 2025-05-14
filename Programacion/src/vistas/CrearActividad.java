@@ -38,6 +38,7 @@ public class CrearActividad extends JFrame {
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		setResizable(false);
 
 		// Titulo
 		JLabel lblTitulo = new JLabel("Crear Actividad");

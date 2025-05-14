@@ -13,9 +13,12 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import Control.ListenerBorrar;
+import Control.ListenerCrearActividad;
 import Control.ListenerEditar;
 import Control.MenuActividadMon;
 import Control.MenuDatosPersonalesMonitorListener;
+import modelo.Actividad;
+import modelo.Usuario;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -25,21 +28,23 @@ import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JList;
 
 /**
  * 
  */
 public class InformacionActividadMonitor extends JFrame{
-	
-	private JTextField txtP;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
 	private JTextField txtIdentificador;
+	private JList<Usuario> listParticipantes;
+	private JLabel lblMensaje;
 	
 	public InformacionActividadMonitor(){
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		setResizable(false);
 		
 		getContentPane().setBackground(new Color(247, 202, 136));
 						
@@ -60,7 +65,7 @@ public class InformacionActividadMonitor extends JFrame{
 		lblInformacinDeLa.setBounds(122, 42, 338, 37);
 		getContentPane().add(lblInformacinDeLa);
 		
-		JLabel lblIdentificador = new JLabel("Identificador: ");
+		JLabel lblIdentificador = new JLabel("Identificador: "+ ListenerCrearActividad.actividad.getIdActividad());
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblIdentificador.setBounds(141, 90, 284, 30);
 		getContentPane().add(lblIdentificador);
@@ -73,27 +78,27 @@ public class InformacionActividadMonitor extends JFrame{
 		lblParticipantes.setBounds(435, 90, 133, 30);
 		getContentPane().add(lblParticipantes);
 		
-		JLabel lblFecha = new JLabel("Fecha: ");
+		JLabel lblFecha = new JLabel("Fecha: "+ListenerCrearActividad.actividad.getFechaActividad());
 		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblFecha.setBounds(141, 131, 267, 30);
 		getContentPane().add(lblFecha);
 		
-		JLabel lblHora = new JLabel("Hora: ");
+		JLabel lblHora = new JLabel("Hora: "+ListenerCrearActividad.actividad.getHoraActividad());
 		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblHora.setBounds(141, 172, 267, 30);
 		getContentPane().add(lblHora);
 		
-		JLabel lblSala = new JLabel("Sala: ");
+		JLabel lblSala = new JLabel("Sala: "+ListenerCrearActividad.actividad.getSala().getTipoSala());
 		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblSala.setBounds(435, 221, 236, 30);
+		lblSala.setBounds(141, 262, 236, 30);
 		getContentPane().add(lblSala);
 		
-		JLabel lblDescripcin = new JLabel("Descripción: ");
-		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblDescripcin.setBounds(142, 221, 283, 30);
+		JLabel lblDescripcin = new JLabel("Descripción: "+ ListenerCrearActividad.actividad.getDescripcionActividad());
+		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
+		lblDescripcin.setBounds(142, 221, 488, 30);
 		getContentPane().add(lblDescripcin);
 		
-		JLabel lblNMximo = new JLabel("Nº Máximo: ");
+		JLabel lblNMximo = new JLabel("Nº Máximo: "+ ListenerCrearActividad.actividad.getUsuariosMaximos());
 		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblNMximo.setBounds(435, 262, 236, 30);
 		getContentPane().add(lblNMximo);
@@ -102,11 +107,8 @@ public class InformacionActividadMonitor extends JFrame{
 		scrollPane.setBounds(433, 131, 197, 71);
 		getContentPane().add(scrollPane);
 		
-		txtP = new JTextField();
-		txtP.setFont(new Font("Dialog", Font.PLAIN, 14));
-		txtP.setText("Participantes va a ser una lista");
-		scrollPane.setViewportView(txtP);
-		txtP.setColumns(10);
+		listParticipantes = new JList();
+		scrollPane.setViewportView(listParticipantes);
 		
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
@@ -127,30 +129,18 @@ public class InformacionActividadMonitor extends JFrame{
 		btnBorrarActiviada.setBounds(582, 326, 89, 30);
 		getContentPane().add(btnBorrarActiviada);
 		
+		lblMensaje = new JLabel("");
+		lblMensaje.setBounds(272, 326, 296, 30);
+		getContentPane().add(lblMensaje);
+		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 		
-	}
-	
-	public void HacerVisible(){
 		setVisible(true);
+		
 	}
-	
+		
 	// Getters y Setters
-
-	/**
-	 * @return the txtP
-	 */
-	public JTextField getTxtP() {
-		return txtP;
-	}
-
-	/**
-	 * @param txtP the txtP to set
-	 */
-	public void setTxtP(JTextField txtP) {
-		this.txtP = txtP;
-	}
 
 	/**
 	 * @return the menuActividad
@@ -193,4 +183,34 @@ public class InformacionActividadMonitor extends JFrame{
 	public void setTxtIdentificador(JTextField txtIdentificador) {
 		this.txtIdentificador = txtIdentificador;
 	}
+
+	/**
+	 * @return the listParticipantes
+	 */
+	public JList<Usuario> getListParticipantes() {
+		return listParticipantes;
+	}
+
+	/**
+	 * @param listParticipantes the listParticipantes to set
+	 */
+	public void setListParticipantes(JList<Usuario> listParticipantes) {
+		this.listParticipantes = listParticipantes;
+	}
+
+	/**
+	 * @return the lblMensaje
+	 */
+	public JLabel getLblMensaje() {
+		return lblMensaje;
+	}
+
+	/**
+	 * @param lblMensaje the lblMensaje to set
+	 */
+	public void setLblMensaje(JLabel lblMensaje) {
+		this.lblMensaje = lblMensaje;
+	}
+	
+	
 }

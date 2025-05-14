@@ -14,6 +14,7 @@ public class ListenerCrearActividad implements ActionListener {
 	private CrearActividad vista;
 	private BBDD bbdd;
 	public static ArrayList<Actividad> actividades= new ArrayList<Actividad>();
+	public static Actividad actividad;
 	
 	public ListenerCrearActividad(CrearActividad crearActividad) {
 		this.vista =  crearActividad;

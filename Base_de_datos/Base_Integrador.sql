@@ -64,5 +64,3 @@ INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (2, 3),
 (3, 2);
 
-
-select*from actividades a , sala s where a.id_sala = s.id_sala 

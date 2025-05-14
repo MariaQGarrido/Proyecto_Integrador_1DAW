@@ -3,6 +3,8 @@ package vistas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -80,6 +82,19 @@ public class ActividadMonitor extends JFrame{
 	modeloLista.addAll(ListenerCrearActividad.actividades);
 	
 	listaActividades.setModel(modeloLista);
+	
+	listaActividades.addMouseListener(new MouseAdapter() {
+		
+       public void mouseClicked(MouseEvent e) {
+    	   int index = listaActividades.locationToIndex(e.getPoint());
+           if (index != -1) { 
+        	   ListenerCrearActividad.actividad = listaActividades.getModel().getElementAt(index);
+        	   
+        	   new InformacionActividadMonitor();
+           }
+       }
+	});
+	
 	
 	btnNuevaActividad = new JButton("Nueva actividad");
 	btnNuevaActividad.addActionListener(new ListenerNuevaActividad());

@@ -36,6 +36,7 @@ public class DatosPersonalesMonitor extends JFrame{
 		// 1) configura JFrame
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		setResizable(false);
 				
 		JLabel lblTitulo = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblTitulo.setBounds(535, 11, 136, 37);

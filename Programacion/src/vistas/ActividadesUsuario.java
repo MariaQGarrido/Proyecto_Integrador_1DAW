@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -13,9 +14,11 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.WindowConstants;
 
+import Control.ListenerCrearActividad;
 import Control.ListenerLogin;
 import Control.MenuDatosPersonalesUsuarioListener;
 import modelo.Actividad;
+import modelo.BBDD;
 import modelo.Usuario;
 
 public class ActividadesUsuario extends JFrame{
@@ -27,7 +30,7 @@ public class ActividadesUsuario extends JFrame{
 	private JMenu menuDatosPersonales;
 	private JList<Actividad> listActDisponibles;
 	private JList<Actividad> listActInscritas;
-	
+	private BBDD bbdd = new BBDD();
 	
 	
 	public ActividadesUsuario() {
@@ -42,15 +45,21 @@ public class ActividadesUsuario extends JFrame{
 		
 		scrollActDisponibles = new JScrollPane();
 		scrollActDisponibles.setLocation(131, 252);
-		scrollActDisponibles.setSize(300, 97);
+		scrollActDisponibles.setSize(540, 97);
 		getContentPane().add(scrollActDisponibles);
 		
 		listActDisponibles = new JList<Actividad>();
 		scrollActDisponibles.setViewportView(listActDisponibles);
 		listActDisponibles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
+		DefaultListModel<Actividad> modeloLista = new DefaultListModel<Actividad>();
+		bbdd.traerActividades();
+		modeloLista.addAll(ListenerCrearActividad.actividades);
+		
+		listActDisponibles.setModel(modeloLista);
+		
 		scrollActInscritas = new JScrollPane();
-		scrollActInscritas.setSize(300, 97);
+		scrollActInscritas.setSize(540, 97);
 		scrollActInscritas.setLocation(131, 101);
 		getContentPane().add(scrollActInscritas);
 		

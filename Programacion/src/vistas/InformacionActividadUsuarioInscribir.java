@@ -23,6 +23,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		setResizable(false);
 		
 		getContentPane().setBackground(new Color(253, 251, 159));
 		getContentPane().setForeground(new Color(0, 0, 0));
