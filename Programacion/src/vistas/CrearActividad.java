@@ -1,37 +1,35 @@
 package vistas;
 
 import java.awt.Color;
-
 import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.WindowConstants;
 
 import Control.ListenerCrearActividad;
-
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JSpinner;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import Control.ListenerLogin;
+import Control.MenuActividadMon;
+import Control.MenuDatosPersonalesMonitorListener;
 
 public class CrearActividad extends JFrame {
-	
-	private JTextField txtIdentificador;
 	private JTextField txtNombre;
-	private JTextField txtNumeroSala;
-	private JTextField txtNombreSala;
 	private JTextField txtTipoSala;
 	private JTextField txtFecha;
 	private JTextField txtHora;
+	private JSpinner alumnosMaximos;
+	private JTextArea textAreaDescripcion;
+	private JSpinner capacidadSala;
+	private JLabel lblMensaje;
 	
 	public CrearActividad() {
 		// Color de fondo de la vista
@@ -49,17 +47,6 @@ public class CrearActividad extends JFrame {
 		lblTitulo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
 		getContentPane().add(lblTitulo);
 		
-		// identificador
-		JLabel lblidentificador = new JLabel("Identificador:");
-		lblidentificador.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblidentificador.setBounds(151, 48, 124, 29);
-		getContentPane().add(lblidentificador);
-		
-		txtIdentificador = new JTextField();
-		txtIdentificador.setBounds(231, 52, 124, 20);
-		getContentPane().add(txtIdentificador);
-		txtIdentificador.setColumns(10);
-		
 		
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
@@ -69,134 +56,134 @@ public class CrearActividad extends JFrame {
 		
 		JMenu menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
+		menuActividad.addMouseListener(new MenuActividadMon());
 		
 		JMenu mnDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(mnDatosPersonales);
+		mnDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
+
 		
 		JLabel lblDescripcion = new JLabel("Descripción:");
 		lblDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblDescripcion.setBounds(151, 72, 124, 29);
+		lblDescripcion.setBounds(149, 113, 124, 29);
 		getContentPane().add(lblDescripcion);
 		
 		// Descripción de la actividad
 		JScrollPane scrollPaneDescripcion = new JScrollPane();
-		scrollPaneDescripcion.setBounds(137, 112, 235, 123);
+		scrollPaneDescripcion.setBounds(135, 153, 235, 123);
 		getContentPane().add(scrollPaneDescripcion);
 		
-		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion = new JTextArea();
 		textAreaDescripcion.setBackground(new Color(255, 255, 255));
 		scrollPaneDescripcion.setViewportView(textAreaDescripcion);
 		
 		//nombre
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNombre.setBounds(430, 48, 124, 29);
+		lblNombre.setBounds(149, 78, 124, 29);
 		getContentPane().add(lblNombre);
 		
 		txtNombre = new JTextField();
 		txtNombre.setColumns(10);
-		txtNombre.setBounds(497, 52, 124, 20);
+		txtNombre.setBounds(216, 82, 124, 20);
 		getContentPane().add(txtNombre);
-		
-		// Descripción de la sala (tipo, numero y nombre de la sala)
-		JLabel lblNumeroSala = new JLabel("Número Sala:");
-		lblNumeroSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNumeroSala.setBounds(407, 97, 124, 29);
-		getContentPane().add(lblNumeroSala);
-		
-		txtNumeroSala = new JTextField();
-		txtNumeroSala.setColumns(10);
-		txtNumeroSala.setBounds(497, 101, 124, 20);
-		getContentPane().add(txtNumeroSala);
-		
-		JLabel lblNombreSala = new JLabel("Nombre Sala:");
-		lblNombreSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNombreSala.setBounds(407, 132, 124, 29);
-		getContentPane().add(lblNombreSala);
-		
-		txtNombreSala = new JTextField();
-		txtNombreSala.setColumns(10);
-		txtNombreSala.setBounds(497, 136, 124, 20);
-		getContentPane().add(txtNombreSala);
 		
 		JLabel lblTipoSala = new JLabel("Tipo Sala:");
 		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblTipoSala.setBounds(407, 172, 124, 29);
+		lblTipoSala.setBounds(407, 132, 124, 29);
 		getContentPane().add(lblTipoSala);
 		
 		txtTipoSala = new JTextField();
 		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(497, 176, 124, 20);
+		txtTipoSala.setBounds(497, 136, 124, 20);
 		getContentPane().add(txtTipoSala);
 		
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
-		JSpinner AlumnosMaximos = new JSpinner();
-		AlumnosMaximos.setBounds(254, 251, 101, 20);
-		getContentPane().add(AlumnosMaximos);
+		SpinnerNumberModel modeloSpinnerAlumnosMaximos = new SpinnerNumberModel(1, 1, 50, 1);
+		alumnosMaximos = new JSpinner(modeloSpinnerAlumnosMaximos);
+		alumnosMaximos.setBounds(264, 304, 101, 20);
+		
+		getContentPane().add(alumnosMaximos);
 		
 		JLabel lblAlumnosMaximos = new JLabel("Alumnos Máximos:");
 		lblAlumnosMaximos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAlumnosMaximos.setBounds(139, 247, 124, 29);
+		lblAlumnosMaximos.setBounds(149, 300, 124, 29);
 		getContentPane().add(lblAlumnosMaximos);
 		
 		// label y txt para añadir la fecha
 		JLabel lblFecha = new JLabel("Fecha Actividad:");
 		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblFecha.setBounds(139, 282, 124, 29);
+		lblFecha.setBounds(405, 191, 124, 29);
 		getContentPane().add(lblFecha);
 		
 		txtFecha = new JTextField();
-		txtFecha.setBounds(254, 287, 101, 20);
+		txtFecha.setBounds(520, 196, 101, 20);
 		getContentPane().add(txtFecha);
 		txtFecha.setColumns(10);
 		
 		// label y txt para añadir la hora
 		JLabel lblHora = new JLabel("Hora Actividad:");
 		lblHora.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblHora.setBounds(139, 318, 124, 29);
+		lblHora.setBounds(405, 248, 124, 29);
 		getContentPane().add(lblHora);
 		
 		txtHora = new JTextField();
 		txtHora.setColumns(10);
-		txtHora.setBounds(254, 322, 101, 20);
+		txtHora.setBounds(520, 252, 101, 20);
 		getContentPane().add(txtHora);
 		
 		//Boton para crear la actividad
 		JButton btnNewButton = new JButton("Crear Actividad");
-		btnNewButton.addActionListener(new ListenerCrearActividad());
+		btnNewButton.addActionListener(new ListenerCrearActividad(this));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton.setBounds(551, 318, 118, 29);
+		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
 		
-		JLabel lblNomUsuario = new JLabel("UserName");
+		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNomUsuario.setBounds(597, 11, 74, 29);
 		getContentPane().add(lblNomUsuario);
+		
+		JLabel lblCapcidadSala = new JLabel("Capacidd de la sala: ");
+		lblCapcidadSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCapcidadSala.setBounds(405, 78, 143, 29);
+		getContentPane().add(lblCapcidadSala);
+		
+		SpinnerNumberModel modeloSpinnerCapacidadSala = new SpinnerNumberModel(1, 1, 100, 1);
+		capacidadSala = new JSpinner(modeloSpinnerCapacidadSala);
+		capacidadSala.setBounds(530, 82, 91, 20);
+		getContentPane().add(capacidadSala);
+		
+		lblMensaje = new JLabel("");
+		lblMensaje.setForeground(new Color(255, 0, 0));
+		lblMensaje.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblMensaje.setBounds(375, 318, 159, 25);
+		getContentPane().add(lblMensaje);
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
 	
+	/**
+	 * @return the capacidadSala
+	 */
+	public JSpinner getCapacidadSala() {
+		return capacidadSala;
+	}
+
+	/**
+	 * @param capacidadSala the capacidadSala to set
+	 */
+	public void setCapacidadSala(JSpinner capacidadSala) {
+		this.capacidadSala = capacidadSala;
+	}
+
 	public void HacerVisible(){
 		setVisible(true);
 	}
 	
 	// Getters y Setters
 	
-	/**
-	 * @return the txtIdentificador
-	 */
-	public JTextField getTxtIdentificador() {
-		return txtIdentificador;
-	}
-
-	/**
-	 * @param txtIdentificador the txtIdentificador to set
-	 */
-	public void setTxtIdentificador(JTextField txtIdentificador) {
-		this.txtIdentificador = txtIdentificador;
-	}
-
 	/**
 	 * @return the txtNombre
 	 */
@@ -209,34 +196,6 @@ public class CrearActividad extends JFrame {
 	 */
 	public void setTxtNombre(JTextField txtNombre) {
 		this.txtNombre = txtNombre;
-	}
-
-	/**
-	 * @return the txtNumeroSala
-	 */
-	public JTextField getTxtNumeroSala() {
-		return txtNumeroSala;
-	}
-
-	/**
-	 * @param txtNumeroSala the txtNumeroSala to set
-	 */
-	public void setTxtNumeroSala(JTextField txtNumeroSala) {
-		this.txtNumeroSala = txtNumeroSala;
-	}
-
-	/**
-	 * @return the txtNombreSala
-	 */
-	public JTextField getTxtNombreSala() {
-		return txtNombreSala;
-	}
-
-	/**
-	 * @param txtNombreSala the txtNombreSala to set
-	 */
-	public void setTxtNombreSala(JTextField txtNombreSala) {
-		this.txtNombreSala = txtNombreSala;
 	}
 
 	/**
@@ -280,4 +239,48 @@ public class CrearActividad extends JFrame {
 	public void setTxtHora(JTextField txtHora) {
 		this.txtHora = txtHora;
 	}
+
+	/**
+	 * @return the alumnosMaximos
+	 */
+	public JSpinner getAlumnosMaximos() {
+		return alumnosMaximos;
+	}
+
+	/**
+	 * @param alumnosMaximos the alumnosMaximos to set
+	 */
+	public void setAlumnosMaximos(JSpinner alumnosMaximos) {
+		this.alumnosMaximos = alumnosMaximos;
+	}
+
+	/**
+	 * @return the textAreaDescripcion
+	 */
+	public JTextArea getTextAreaDescripcion() {
+		return textAreaDescripcion;
+	}
+
+	/**
+	 * @param textAreaDescripcion the textAreaDescripcion to set
+	 */
+	public void setTextAreaDescripcion(JTextArea textAreaDescripcion) {
+		this.textAreaDescripcion = textAreaDescripcion;
+	}
+
+	/**
+	 * @return the lblMensaje
+	 */
+	public JLabel getLblMensaje() {
+		return lblMensaje;
+	}
+
+	/**
+	 * @param lblMensaje the lblMensaje to set
+	 */
+	public void setLblMensaje(JLabel lblMensaje) {
+		this.lblMensaje = lblMensaje;
+	}
+	
+	
 }

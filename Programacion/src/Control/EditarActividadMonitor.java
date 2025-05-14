@@ -36,8 +36,6 @@ public class EditarActividadMonitor implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SalaActividad = new Sala(idActividad, usuariosMaximos, descripcionActividad);
-		SalaEditada = new Sala(idActividad, NuevosUsuariosMax, NuevaDescripcion);
 		
 		idActividad = Actividad.getIdActividad();
 		idMonitor = Actividad.getIdMonitor();
@@ -45,9 +43,6 @@ public class EditarActividadMonitor implements ActionListener {
 		descripcionActividad = Actividad.getDescripcionActividad();
 		usuariosMaximos = Actividad.getUsuariosMaximos();
 		usuariosInscritos = Actividad.getUsuariosInscritos();
-		
-		Actividad = new Actividad(idActividad, idMonitor, nombreActividad, descripcionActividad, usuariosMaximos, usuariosInscritos, fechaActividad, horaActividad);
-		ActividadEditada = new Actividad(idActividad, idMonitor, NuevoNombre, NuevaDescripcion, NuevosUsuariosMax, usuariosInscritos, Nuevafecha, Nuevahora);
 		
 		Actividad = ActividadEditada;
 		SalaActividad = SalaEditada;

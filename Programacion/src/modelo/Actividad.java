@@ -9,30 +9,15 @@ public class Actividad {
 	private int usuariosInscritos;
 	private String fechaActividad;
 	private String HoraActividad;
-	
-	public Actividad(int idActividad, int idMonitor, String nombreActividad, String descripcionActividad,
-			int usuariosMaximos, int usuariosInscritos, String fechaActividad, String horaActividad) {
-		super();
-		this.idActividad = idActividad;
-		this.idMonitor = idMonitor;
-		this.nombreActividad = nombreActividad;
-		this.descripcionActividad = descripcionActividad;
-		this.usuariosMaximos = usuariosMaximos;
-		this.usuariosInscritos = usuariosInscritos;
-		this.fechaActividad = fechaActividad;
-		HoraActividad = horaActividad;
+	private int idSala;
+	private Sala sala;
+
+
+	public Actividad(int idActividad2, int idActividad3, String horaActividad2, String horaActividad3, int idActividad4,
+			int idActividad5, String horaActividad4, String horaActividad5,  int sala) {
 	}
 
-	public void CrearActividad() {
-
-	}
-
-	public void eliminarActividad() {
-
-	}
-
-	public void editarActividad() {
-
+	public Actividad() {
 	}
 
 	/**
@@ -146,5 +131,45 @@ public class Actividad {
 	public void setHoraActividad(String horaActividad) {
 		HoraActividad = horaActividad;
 	}
+
+	/**
+	 * @return the idSala
+	 */
+	public int getIdSala() {
+		return idSala;
+	}
+
+	/**
+	 * @param idSala the idSala to set
+	 */
+	public void setIdSala(int idSala) {
+		this.idSala = idSala;
+	}
+
+	/**
+	 * @return the sala
+	 */
+	public Sala getSala() {
+		return sala;
+	}
+
+	/**
+	 * @param sala the sala to set
+	 */
+	public void setSala(Sala sala) {
+		this.sala = sala;
+	}
+
+	@Override
+	public String toString() {
+		return idActividad+", "+idMonitor+", "+idSala+", "+ nombreActividad+", "+descripcionActividad+", "+usuariosMaximos+", "+ usuariosInscritos+", "+fechaActividad+", "+HoraActividad;
+		
+//		return "Actividad [idActividad=" + idActividad + ", idMonitor=" + idMonitor + ", nombreActividad="
+//				+ nombreActividad + ", descripcionActividad=" + descripcionActividad + ", usuariosMaximos="
+//				+ usuariosMaximos + ", usuariosInscritos=" + usuariosInscritos + ", fechaActividad=" + fechaActividad
+//				+ ", HoraActividad=" + HoraActividad + ", idSala=" + idSala + ", sala=" + sala + "]";
+	}
+	
+	
 	
 }

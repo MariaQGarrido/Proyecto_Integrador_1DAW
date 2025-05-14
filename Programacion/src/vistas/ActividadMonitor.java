@@ -1,21 +1,26 @@
 package vistas;
 
 import java.awt.Color;
-
+import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.*;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.WindowConstants;
 
+import Control.ListenerCrearActividad;
 import Control.ListenerLogin;
 import Control.ListenerNuevaActividad;
-import Control.MenuActividadMon;
 import Control.MenuDatosPersonalesMonitorListener;
 import modelo.Actividad;
-import modelo.Usuario;
-
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import modelo.BBDD;
 public class ActividadMonitor extends JFrame{
 	
 	private JMenuBar menuBarActividad;
@@ -24,6 +29,7 @@ public class ActividadMonitor extends JFrame{
 	private JScrollPane scrollListaAct;
 	private JList<Actividad> listaActividades;
 	private JButton btnNuevaActividad;
+	private BBDD bbdd = new BBDD();
 	
 	
 	public ActividadMonitor() {
@@ -46,7 +52,7 @@ public class ActividadMonitor extends JFrame{
 	
 	menuDatosPersonales = new JMenu("Datos Personales");
 	menuBarActividad.add(menuDatosPersonales);
-	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
+	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
 	
 	JLabel nombreUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
@@ -62,11 +68,18 @@ public class ActividadMonitor extends JFrame{
 	scrollListaAct.setBounds(179, 120, 421, 156);
 	getContentPane().add(scrollListaAct);
 	
+	
 	listaActividades = new JList<Actividad>();
 	listaActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
 	listaActividades.setBounds(307, 59, 200, 30);
 	scrollListaAct.setViewportView(listaActividades);
 	listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	
+	DefaultListModel<Actividad> modeloLista = new DefaultListModel<Actividad>();
+	bbdd.traerActividades();
+	modeloLista.addAll(ListenerCrearActividad.actividades);
+	
+	listaActividades.setModel(modeloLista);
 	
 	btnNuevaActividad = new JButton("Nueva actividad");
 	btnNuevaActividad.addActionListener(new ListenerNuevaActividad());

@@ -2,18 +2,11 @@ package modelo;
 
 public class Sala {
 	private int idSala;
-	private int Capacidad;
+	private int capacidad;
 	private String tipoSala;
-	
-	public Sala(int idSala, int capacidad, String tipoSala) {
-		super();
-		this.idSala = idSala;
-		Capacidad = capacidad;
-		this.tipoSala = tipoSala;
-	}
-	
+		
 	/**
-	 * @return the idSala
+	 * @return the idSala 
 	 */
 	public int getIdSala() {
 		return idSala;
@@ -28,13 +21,13 @@ public class Sala {
 	 * @return the capacidad
 	 */
 	public int getCapacidad() {
-		return Capacidad;
+		return capacidad;
 	}
 	/**
 	 * @param capacidad the capacidad to set
 	 */
 	public void setCapacidad(int capacidad) {
-		Capacidad = capacidad;
+		capacidad = capacidad;
 	}
 	/**
 	 * @return the tipoSala
@@ -48,4 +41,10 @@ public class Sala {
 	public void setTipoSala(String tipoSala) {
 		this.tipoSala = tipoSala;
 	}
+	@Override
+	public String toString() {
+		return idSala + ", " + capacidad + ", " + tipoSala;
+	}
+	
+	
 }

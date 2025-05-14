@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS USUARIOS;
 DROP TABLE IF EXISTS SALA;
 
 CREATE TABLE IF NOT EXISTS SALA(
-    id_sala INT UNIQUE PRIMARY KEY,
+    id_sala INT UNIQUE PRIMARY KEY auto_increment,
     capacidad VARCHAR(30),
     tipo_sala VARCHAR(30)
 );
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS USUARIOS(
 );
 
 CREATE TABLE IF NOT EXISTS ACTIVIDADES(
-    id_actividad INT PRIMARY KEY,
+    id_actividad INT PRIMARY KEY auto_increment,
     id_monitor INT,
     id_sala INT,
     nombre_actividad VARCHAR(10),
@@ -63,3 +63,6 @@ INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (1, 1),
 (2, 3),
 (3, 2);
+
+
+select*from actividades a , sala s where a.id_sala = s.id_sala 

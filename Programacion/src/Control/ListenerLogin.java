@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 import modelo.Actividad;
 import modelo.BBDD;
 import modelo.Usuario;
@@ -20,7 +23,6 @@ public class ListenerLogin implements ActionListener {
 	// Crear una variable estática, existe una sola en todo el programa Java
 	// se puede acceder desde cualquier parte
 	public static Usuario usuario = null;
-	private static ArrayList<Actividad> actividades= new ArrayList<Actividad>();
 
 	public ListenerLogin(VistaInicioSesion login) {
 		this.login = login;
@@ -34,8 +36,18 @@ public class ListenerLogin implements ActionListener {
 		if (usuario != null ) {
 			login.dispose();
 			if(usuario.getCiclo().equals("TAFD")) {
-				dtsPerMon = new DatosPersonalesMonitor();
-				dtsPerMon.setVisible(true);
+				int resultado = JOptionPane.showConfirmDialog(login, "¿Quieres quedarte como monitor?", "Opción", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				
+				if (resultado==JOptionPane.YES_OPTION) {
+					dtsPerMon = new DatosPersonalesMonitor();
+					dtsPerMon.setVisible(true);
+					
+				}else {
+					dtsPerUsr = new DatosPersonalesUsuario();
+					dtsPerUsr.setVisible(true);
+				}
+
+
 			} else{
 				dtsPerUsr = new DatosPersonalesUsuario();
 				dtsPerUsr.setVisible(true);

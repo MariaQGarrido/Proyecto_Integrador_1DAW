@@ -30,13 +30,11 @@ public class ListenerBorrar implements ActionListener {
 		usuariosInscritos = Act.getUsuariosInscritos();
 		fechaActividad = Act.getFechaActividad();
 		HoraActividad = Act.getHoraActividad();
-		
-		Act  = new Actividad(idActividad, idActividad, HoraActividad, HoraActividad, idActividad, idActividad, HoraActividad, 
-				HoraActividad); 
+
 		int Confirmacion = JOptionPane.showConfirmDialog(null, "¿Estás seguro?", "Confirmar", JOptionPane.YES_NO_OPTION);
 		
 		if(Confirmacion == JOptionPane.YES_OPTION){
-			Act.eliminarActividad();
+			
 		}
 	}
 

@@ -9,19 +9,6 @@ import vistas.DatosPersonalesMonitor;
 import vistas.DatosPersonalesUsuario;
 
 public class MenuDatosPersonalesMonitorListener implements MouseListener {
-	private DatosPersonalesMonitor datosMon;	
-	private ActividadMonitor actividadMonitor;	
-	
-	/**
-	 * @param datosMon
-	 */
-	public MenuDatosPersonalesMonitorListener(DatosPersonalesMonitor datosMon) {
-		this.datosMon = datosMon;
-	}
-
-	public MenuDatosPersonalesMonitorListener(ActividadMonitor actividadMonitor) {
-		this.actividadMonitor = actividadMonitor;
-	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {

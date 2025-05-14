@@ -14,7 +14,6 @@ public class ListenerNuevaActividad implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		NuevAct = new CrearActividad();
-		
 		NuevAct.HacerVisible();
 	}
 
