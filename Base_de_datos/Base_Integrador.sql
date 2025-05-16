@@ -22,10 +22,10 @@ CREATE TABLE IF NOT EXISTS ACTIVIDADES(
     id_actividad INT PRIMARY KEY auto_increment,
     id_monitor INT,
     id_sala INT,
-    nombre_actividad VARCHAR(10),
+    nombre_actividad VARCHAR(50),
     descripcion_actividad VARCHAR(100),
     usuarios_maximos INT,
-    usuarios_inscritos INT,
+    usuarios_inscritos INT default (0),
 	dia_actividad DATE,
     hora VARCHAR(6)
 );
@@ -63,4 +63,3 @@ INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (1, 1),
 (2, 3),
 (3, 2);
-
