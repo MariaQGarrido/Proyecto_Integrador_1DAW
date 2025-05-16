@@ -163,11 +163,6 @@ public class Actividad {
 	@Override
 	public String toString() {
 		return idActividad+", "+idMonitor+", "+idSala+", "+ nombreActividad+", "+descripcionActividad+", "+usuariosMaximos+", "+ usuariosInscritos+", "+fechaActividad+", "+HoraActividad;
-		
-//		return "Actividad [idActividad=" + idActividad + ", idMonitor=" + idMonitor + ", nombreActividad="
-//				+ nombreActividad + ", descripcionActividad=" + descripcionActividad + ", usuariosMaximos="
-//				+ usuariosMaximos + ", usuariosInscritos=" + usuariosInscritos + ", fechaActividad=" + fechaActividad
-//				+ ", HoraActividad=" + HoraActividad + ", idSala=" + idSala + ", sala=" + sala + "]";
 	}
 	
 	
