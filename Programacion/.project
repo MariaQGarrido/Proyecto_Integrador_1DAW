@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>PeakMotion</name>
-=======
-<<<<<<< HEAD
-	<name>PeakMotion</name>
-=======
-	<name>Prueba</name>
->>>>>>> cccad96dd01e5cae0f45f3c3d10c3e81be010e13
->>>>>>> 6d7e4f8b96947b93b4feb8f0e8e67a4a424dce05
+	<name>Programacion</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,8 +10,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 </projectDescription>
