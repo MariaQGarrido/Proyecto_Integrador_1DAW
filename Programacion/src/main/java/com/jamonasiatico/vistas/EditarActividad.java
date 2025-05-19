@@ -1,6 +1,8 @@
 package com.jamonasiatico.vistas;
 
 import com.jamonasiatico.control.EditarActividadMonitor;
+import com.jamonasiatico.control.ListenerCrearActividad;
+import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadMon;
 import com.jamonasiatico.modelo.Usuario;
 
@@ -20,18 +22,20 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 public class EditarActividad extends JFrame {
-	private JTextField txtIdentificador;
 	private JTextField txtNombre;
 	private JTextField txtNumeroSala;
-	private JTextField txtNombreSala;
 	private JTextField txtTipoSala;
 	private JTextField txtCambioFecha;
 	private JTextField txtCambioHora;
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
 	private Usuario usuario;
-	
-	public EditarActividad(Usuario usuario) {
+	private JLabel lblMensaje;
+	private JTextArea textAreaCambioDescripcion;
+	private JSpinner AlumnosCambioMaximos;
+	private JLabel lblCambioIdentificador;
+
+	public EditarActividad() {
 		this.setUsuario(usuario);
 		// Color de fondo de la vista
 		getContentPane().setBackground(new Color(247, 202, 136));
@@ -50,15 +54,15 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(lblTitulo);
 
 		// identificador
-		JLabel lblCambioIdentificador = new JLabel("Identificador:");
+		JLabel lblIdentificador = new JLabel("Identificador:");
+		lblIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIdentificador.setBounds(96, 48, 118, 29);
+		getContentPane().add(lblIdentificador);
+		
+		lblCambioIdentificador = new JLabel("0");
 		lblCambioIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioIdentificador.setBounds(95, 48, 124, 29);
+		lblCambioIdentificador.setBounds(195, 48, 118, 29);
 		getContentPane().add(lblCambioIdentificador);
-
-		txtIdentificador = new JTextField();
-		txtIdentificador.setBounds(170, 52, 124, 20);
-		getContentPane().add(txtIdentificador);
-		txtIdentificador.setColumns(10);
 
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
@@ -69,7 +73,7 @@ public class EditarActividad extends JFrame {
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
 		menuActividad.addMouseListener(new MenuActividadMon());
-		
+
 		menuDatosPersonales = new JMenu("DatosPersonales");
 		menuBar.add(menuDatosPersonales);
 //		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
@@ -84,7 +88,7 @@ public class EditarActividad extends JFrame {
 		scrollPaneDescripcion.setBounds(95, 108, 235, 123);
 		getContentPane().add(scrollPaneDescripcion);
 
-		JTextArea textAreaCambioDescripcion = new JTextArea();
+		textAreaCambioDescripcion = new JTextArea();
 		textAreaCambioDescripcion.setBackground(new Color(255, 255, 255));
 		scrollPaneDescripcion.setViewportView(textAreaCambioDescripcion);
 
@@ -110,28 +114,18 @@ public class EditarActividad extends JFrame {
 		txtNumeroSala.setBounds(445, 111, 124, 20);
 		getContentPane().add(txtNumeroSala);
 
-		JLabel lblNombreSala = new JLabel("Nombre Sala:");
-		lblNombreSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNombreSala.setBounds(365, 142, 124, 29);
-		getContentPane().add(lblNombreSala);
-
-		txtNombreSala = new JTextField();
-		txtNombreSala.setColumns(10);
-		txtNombreSala.setBounds(445, 146, 124, 20);
-		getContentPane().add(txtNombreSala);
-
 		JLabel lblTipoSala = new JLabel("Tipo Sala:");
 		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipoSala.setBounds(365, 182, 124, 29);
+		lblTipoSala.setBounds(365, 147, 124, 29);
 		getContentPane().add(lblTipoSala);
 
 		txtTipoSala = new JTextField();
 		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(445, 186, 124, 20);
+		txtTipoSala.setBounds(445, 151, 124, 20);
 		getContentPane().add(txtTipoSala);
 
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
-		JSpinner AlumnosCambioMaximos = new JSpinner();
+		AlumnosCambioMaximos = new JSpinner();
 		AlumnosCambioMaximos.setBounds(200, 247, 101, 20);
 		getContentPane().add(AlumnosCambioMaximos);
 
@@ -163,39 +157,31 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(txtCambioHora);
 
 		// Boton para crear la actividad
-		JButton btnNewButton = new JButton("Editar Actividad");
-		btnNewButton.addActionListener(new EditarActividadMonitor());
-		btnNewButton.setBounds(551, 318, 118, 30);
-		getContentPane().add(btnNewButton);
-		
-		JLabel lblNomUsuario = new JLabel("UserName");
+		JButton btnEditar = new JButton("Editar Actividad");
+		btnEditar.addActionListener(new EditarActividadMonitor(this));
+		btnEditar.setBounds(551, 318, 118, 30);
+		getContentPane().add(btnEditar);
+
+		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNomUsuario.setBounds(595, 11, 74, 29);
 		getContentPane().add(lblNomUsuario);
 
+		lblMensaje = new JLabel("");
+		lblMensaje.setForeground(Color.RED);
+		lblMensaje.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblMensaje.setBounds(382, 321, 159, 25);
+		getContentPane().add(lblMensaje);
+
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
-	
-	public void HacerVisible(){
+
+	public void HacerVisible() {
 		setVisible(true);
 	}
-	
+
 	// Getters y Setters
-
-	/**
-	 * @return the txtIdentificador
-	 */
-	public JTextField getTxtIdentificador() {
-		return txtIdentificador;
-	}
-
-	/**
-	 * @param txtIdentificador the txtIdentificador to set
-	 */
-	public void setTxtIdentificador(JTextField txtIdentificador) {
-		this.txtIdentificador = txtIdentificador;
-	}
 
 	/**
 	 * @return the txtNombre
@@ -223,20 +209,6 @@ public class EditarActividad extends JFrame {
 	 */
 	public void setTxtNumeroSala(JTextField txtNumeroSala) {
 		this.txtNumeroSala = txtNumeroSala;
-	}
-
-	/**
-	 * @return the txtNombreSala
-	 */
-	public JTextField getTxtNombreSala() {
-		return txtNombreSala;
-	}
-
-	/**
-	 * @param txtNombreSala the txtNombreSala to set
-	 */
-	public void setTxtNombreSala(JTextField txtNombreSala) {
-		this.txtNombreSala = txtNombreSala;
 	}
 
 	/**
@@ -315,5 +287,54 @@ public class EditarActividad extends JFrame {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	/**
+	 * @return the lblMensaje
+	 */
+	public JLabel getLblMensaje() {
+		return lblMensaje;
+	}
+
+	/**
+	 * @param lblMensaje the lblMensaje to set
+	 */
+	public void setLblMensaje(JLabel lblMensaje) {
+		this.lblMensaje = lblMensaje;
+	}
+
+	/**
+	 * @return the textAreaCambioDescripcion
+	 */
+	public JTextArea getTextAreaCambioDescripcion() {
+		return textAreaCambioDescripcion;
+	}
+
+	/**
+	 * @param textAreaCambioDescripcion the textAreaCambioDescripcion to set
+	 */
+	public void setTextAreaCambioDescripcion(JTextArea textAreaCambioDescripcion) {
+		this.textAreaCambioDescripcion = textAreaCambioDescripcion;
+	}
+
+	/**
+	 * @return the alumnosCambioMaximos
+	 */
+	public JSpinner getAlumnosCambioMaximos() {
+		return AlumnosCambioMaximos;
+	}
+
+	/**
+	 * @param alumnosCambioMaximos the alumnosCambioMaximos to set
+	 */
+	public void setAlumnosCambioMaximos(JSpinner alumnosCambioMaximos) {
+		AlumnosCambioMaximos = alumnosCambioMaximos;
+	}
+
+	/**
+	 * @return the lblCambioIdentificador
+	 */
+	public JLabel getLblCambioIdentificador() {
+		return lblCambioIdentificador;
 	}
 }

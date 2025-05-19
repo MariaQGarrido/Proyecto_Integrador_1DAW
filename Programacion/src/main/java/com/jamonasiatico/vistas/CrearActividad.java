@@ -32,6 +32,7 @@ public class CrearActividad extends JFrame {
 	private JTextArea textAreaDescripcion;
 	private JSpinner capacidadSala;
 	private JLabel lblMensaje;
+	private JTextField txtNombreSala;
 	
 	public CrearActividad() {
 		// Color de fondo de la vista
@@ -93,12 +94,12 @@ public class CrearActividad extends JFrame {
 		
 		JLabel lblTipoSala = new JLabel("Tipo Sala:");
 		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblTipoSala.setBounds(407, 132, 124, 29);
+		lblTipoSala.setBounds(407, 173, 124, 29);
 		getContentPane().add(lblTipoSala);
 		
 		txtTipoSala = new JTextField();
 		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(497, 136, 124, 20);
+		txtTipoSala.setBounds(497, 177, 124, 20);
 		getContentPane().add(txtTipoSala);
 		
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
@@ -116,11 +117,11 @@ public class CrearActividad extends JFrame {
 		// label y txt para añadir la fecha
 		JLabel lblFecha = new JLabel("Fecha Actividad:");
 		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblFecha.setBounds(405, 191, 124, 29);
+		lblFecha.setBounds(407, 208, 124, 29);
 		getContentPane().add(lblFecha);
 		
 		txtFecha = new JTextField();
-		txtFecha.setBounds(520, 196, 101, 20);
+		txtFecha.setBounds(522, 213, 101, 20);
 		getContentPane().add(txtFecha);
 		txtFecha.setColumns(10);
 		
@@ -147,7 +148,7 @@ public class CrearActividad extends JFrame {
 		lblNomUsuario.setBounds(597, 11, 74, 29);
 		getContentPane().add(lblNomUsuario);
 		
-		JLabel lblCapcidadSala = new JLabel("Capacidd de la sala: ");
+		JLabel lblCapcidadSala = new JLabel("Capacidad de la sala: ");
 		lblCapcidadSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblCapcidadSala.setBounds(405, 78, 143, 29);
 		getContentPane().add(lblCapcidadSala);
@@ -162,6 +163,16 @@ public class CrearActividad extends JFrame {
 		lblMensaje.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblMensaje.setBounds(375, 318, 159, 25);
 		getContentPane().add(lblMensaje);
+		
+		JLabel lblNombreDeLaSala = new JLabel("Nombre de la  Sala:");
+		lblNombreDeLaSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNombreDeLaSala.setBounds(407, 133, 124, 29);
+		getContentPane().add(lblNombreDeLaSala);
+		
+		txtNombreSala = new JTextField();
+		txtNombreSala.setColumns(10);
+		txtNombreSala.setBounds(530, 139, 124, 20);
+		getContentPane().add(txtNombreSala);
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
@@ -284,6 +295,19 @@ public class CrearActividad extends JFrame {
 	public void setLblMensaje(JLabel lblMensaje) {
 		this.lblMensaje = lblMensaje;
 	}
-	
+
+	/**
+	 * @return the txtNombreSala
+	 */
+	public JTextField getTxtNombreSala() {
+		return txtNombreSala;
+	}
+
+	/**
+	 * @param txtNombreSala the txtNombreSala to set
+	 */
+	public void setTxtNombreSala(JTextField txtNombreSala) {
+		this.txtNombreSala = txtNombreSala;
+	}
 	
 }

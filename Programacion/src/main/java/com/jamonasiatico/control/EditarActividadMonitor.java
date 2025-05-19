@@ -2,55 +2,54 @@ package com.jamonasiatico.control;
 
 import com.jamonasiatico.modelo.Sala;
 import com.jamonasiatico.vistas.ActividadMonitor;
+import com.jamonasiatico.vistas.CrearActividad;
+import com.jamonasiatico.vistas.EditarActividad;
 import com.jamonasiatico.vistas.InformacionActividadMonitor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.jamonasiatico.modelo.Actividad;
+import com.jamonasiatico.modelo.BBDD;
 
 public class EditarActividadMonitor implements ActionListener {
 
-	ActividadMonitor vista;
-	InformacionActividadMonitor vistaAnterior;
-	Actividad Actividad;
-	Actividad ActividadEditada;
-	Sala SalaActividad;
-	Sala SalaEditada;
-	
-	//Datos originales
-	int idActividad;
-	int idMonitor;
-	String nombreActividad;
-	String descripcionActividad;
-	int usuariosMaximos;
-	int usuariosInscritos;
-	String fechaActividad;
-	String horaActividad;
-	
-	// Cambios
-	String NuevoNombre;
-	String NuevaDescripcion;
-	int NuevosUsuariosMax;
-	String Nuevafecha;
-	String Nuevahora;
+	private EditarActividad vista;
+	private BBDD bbdd;
+
+	public EditarActividadMonitor(EditarActividad editarActividad) {
+		// TODO Auto-generated constructor stub
+		this.vista = editarActividad;
+		this.bbdd = new BBDD();
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		idActividad = Actividad.getIdActividad();
-		idMonitor = Actividad.getIdMonitor();
-		nombreActividad = Actividad.getNombreActividad();
-		descripcionActividad = Actividad.getDescripcionActividad();
-		usuariosMaximos = Actividad.getUsuariosMaximos();
-		usuariosInscritos = Actividad.getUsuariosInscritos();
-		
-		Actividad = ActividadEditada;
-		SalaActividad = SalaEditada;
-		
-		vistaAnterior = new InformacionActividadMonitor();
-		vistaAnterior.isVisible();
-		vista.dispose();
+		int id_actividad = Integer.parseInt(vista.getLblCambioIdentificador().getText());
+		String NuevoNombre = vista.getTxtNombre().getText();
+		String NuevaFecha = vista.getTxtCambioFecha().getText();
+		String NuevaHora = vista.getTxtCambioHora().getText();
+		String NuevoNumSala = vista.getTxtNumeroSala().getText();
+		String NuevoTiposSala = vista.getTxtTipoSala().getText();
+		int NumAlumnosMax = (int) vista.getAlumnosCambioMaximos().getValue();
+		String Descripcion = vista.getTextAreaCambioDescripcion().getText();
+
+		if (NuevoNombre.isEmpty() || NuevaFecha.isEmpty() || NuevaHora.isEmpty() || NuevoNumSala.isEmpty()
+				|| NuevoTiposSala.isEmpty() || Descripcion.isEmpty()) {
+			vista.getLblMensaje().setText("Datos insuficientes");
+			return;
+		} else {
+			ListenerCrearActividad.actividad.setNombreActividad(NuevoNombre);
+			ListenerCrearActividad.actividad.setFechaActividad(NuevaFecha);
+			ListenerCrearActividad.actividad.setHoraActividad(NuevaHora);
+			ListenerCrearActividad.actividad.setIdSala(Integer.parseInt(NuevoNumSala));
+			ListenerCrearActividad.actividad.getSala().setTipoSala(NuevoTiposSala);
+			ListenerCrearActividad.actividad.setUsuariosMaximos(NumAlumnosMax);
+			ListenerCrearActividad.actividad.setDescripcionActividad(Descripcion);
+
+			vista.getLblMensaje().setText("Actividad editada");
+			bbdd.editarActividad();
+		}
 	}
 
 }

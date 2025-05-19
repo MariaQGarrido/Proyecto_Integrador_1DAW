@@ -34,8 +34,10 @@ public class ListenerCrearActividad implements ActionListener {
 		String cogerHora = vista.getTxtHora().getText();
 		int cogerAlumnosMaximos = (int) vista.getAlumnosMaximos().getValue();
 		String cogerDescripcion = vista.getTextAreaDescripcion().getText();
+		String TipoSala = vista.getTxtTipoSala().getText();
 		
-		if (cogerDescripcion.isEmpty() || cogerFecha.isEmpty() || cogerHora.isEmpty() || cogerNombre.isEmpty() || cogerTipoSala.isEmpty()) {
+		if (cogerDescripcion.isEmpty() || cogerFecha.isEmpty() || cogerHora.isEmpty() || 
+				cogerNombre.isEmpty() || cogerTipoSala.isEmpty()) {
 			vista.getLblMensaje().setText("Datos insuficientes");
 			return;
 		}else {
@@ -58,6 +60,7 @@ public class ListenerCrearActividad implements ActionListener {
 		actividad.setUsuariosMaximos(cogerAlumnosMaximos);
 		actividad.setDescripcionActividad(cogerDescripcion);
 		actividad.setIdSala(sala.getIdSala());
+		
 		
 		bbdd.introducirDatosActividad(actividad);
 	

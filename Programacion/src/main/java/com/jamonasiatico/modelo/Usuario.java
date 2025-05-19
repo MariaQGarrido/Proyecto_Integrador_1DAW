@@ -19,11 +19,6 @@ public class Usuario {
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public void infoUsuario(Usuario usr){
-		
-	}
-	
 	
 	public boolean EsMonitor(String ciclo) {
 		return false;

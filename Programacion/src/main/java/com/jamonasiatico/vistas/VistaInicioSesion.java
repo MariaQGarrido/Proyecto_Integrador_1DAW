@@ -84,8 +84,6 @@ public class VistaInicioSesion extends JFrame {
 		txtpassword.setBackground(new Color(255, 255, 255));
 		txtpassword.setBounds(269, 246, 143, 20);
 
-		// TODO: borrar mas adelante -----------------------------------------------
-		txtpassword.setText("1234");
 		getContentPane().add(txtpassword);
 		
 		// Logotipo del equipo

@@ -6,6 +6,7 @@ package com.jamonasiatico.vistas;
 import com.jamonasiatico.control.ListenerBorrar;
 import com.jamonasiatico.control.ListenerCrearActividad;
 import com.jamonasiatico.control.ListenerEditar;
+import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadMon;
 import com.jamonasiatico.modelo.Usuario;
 
@@ -44,7 +45,7 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		getContentPane().setBackground(new Color(247, 202, 136));
 						
-		JLabel lblNomUsuario = new JLabel("UserName");
+		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblNomUsuario.setBounds(571, 11, 100, 37);
 		lblNomUsuario.setForeground(new Color(0, 0, 0));
 		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
