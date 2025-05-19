@@ -4,6 +4,10 @@ public class Sala {
 	private int idSala;
 	private int capacidad;
 	private String tipoSala;
+	
+	public Sala() {
+		
+	}
 		
 	/**
 	 * @return the idSala 

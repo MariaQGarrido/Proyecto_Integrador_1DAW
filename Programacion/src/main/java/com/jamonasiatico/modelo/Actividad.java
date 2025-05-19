@@ -13,10 +13,6 @@ public class Actividad {
 	private Sala sala;
 
 
-	public Actividad(int idActividad2, int idActividad3, String horaActividad2, String horaActividad3, int idActividad4,
-			int idActividad5, String horaActividad4, String horaActividad5,  int sala) {
-	}
-
 	public Actividad() {
 	}
 
