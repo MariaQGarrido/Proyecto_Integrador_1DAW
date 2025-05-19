@@ -1,6 +1,7 @@
 package com.jamonasiatico.vistas;
 
 import com.jamonasiatico.control.ListenerInscribirActividad;
+import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadUSR;
 
 import java.awt.Color;
@@ -39,7 +40,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		menuBarActividad.add(menuDatosPersonales);
 //		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener());
 		
-		JLabel nombreUsuario = new JLabel("UserName");
+		JLabel nombreUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
 		nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
 		nombreUsuario.setBounds(571, 11, 100, 30);
 		getContentPane().add(nombreUsuario);

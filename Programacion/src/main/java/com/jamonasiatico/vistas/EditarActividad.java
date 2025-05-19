@@ -59,7 +59,7 @@ public class EditarActividad extends JFrame {
 		lblIdentificador.setBounds(96, 48, 118, 29);
 		getContentPane().add(lblIdentificador);
 		
-		lblCambioIdentificador = new JLabel("0");
+		lblCambioIdentificador = new JLabel();
 		lblCambioIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioIdentificador.setBounds(195, 48, 118, 29);
 		getContentPane().add(lblCambioIdentificador);
