@@ -1,9 +1,9 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.vistas.InformacionActividadUsuarioInscribir;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import com.jamonasiatico.vistas.InformacionActividadUsuarioInscribir;
 
 
 

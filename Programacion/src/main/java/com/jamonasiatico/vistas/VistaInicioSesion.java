@@ -1,9 +1,6 @@
 package com.jamonasiatico.vistas;
 
-import com.jamonasiatico.control.ListenerLogin;
-
 import java.awt.Color;
-
 import java.awt.Font;
 import java.awt.Image;
 import java.nio.file.Path;
@@ -17,6 +14,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+
+import com.jamonasiatico.control.ListenerLogin;
 
 public class VistaInicioSesion extends JFrame {
 	private JTextField Nombretxt;
@@ -61,7 +60,7 @@ public class VistaInicioSesion extends JFrame {
 		Nombretxt.setColumns(10);
 		
 		// TODO: borrar mas adelante -----------------------------------------------
-		Nombretxt.setText(" ");
+		Nombretxt.setText("489343L");
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");

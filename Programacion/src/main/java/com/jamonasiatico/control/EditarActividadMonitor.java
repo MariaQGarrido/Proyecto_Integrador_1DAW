@@ -1,16 +1,10 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.modelo.Sala;
-import com.jamonasiatico.vistas.ActividadMonitor;
-import com.jamonasiatico.vistas.CrearActividad;
-import com.jamonasiatico.vistas.EditarActividad;
-import com.jamonasiatico.vistas.InformacionActividadMonitor;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.jamonasiatico.modelo.Actividad;
 import com.jamonasiatico.modelo.BBDD;
+import com.jamonasiatico.vistas.EditarActividad;
 
 public class EditarActividadMonitor implements ActionListener {
 

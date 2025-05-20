@@ -1,10 +1,10 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.vistas.ActividadesUsuario;
-import com.jamonasiatico.vistas.DatosPersonalesUsuario;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import com.jamonasiatico.vistas.ActividadesUsuario;
+import com.jamonasiatico.vistas.DatosPersonalesUsuario;
 
 
 

@@ -3,21 +3,18 @@
  */
 package com.jamonasiatico.vistas;
 
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.MenuActividadMon;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.WindowConstants;
-
-
-
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.WindowConstants;
+
+import com.jamonasiatico.control.ListenerLogin;
+import com.jamonasiatico.control.MenuActividadMon;
 
 /**
  * 
