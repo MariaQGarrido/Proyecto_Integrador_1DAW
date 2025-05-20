@@ -13,7 +13,7 @@
 4. [Actividades](#actividades)
    * [Usuario](#actividades-usuario)
      * [Inscribir en una actividad](#inscribir-en-una-actividad)
-     * [Dejr una ctividad](#dejar-una-actividad)
+     * [Dejar una actividad](#dejar-una-actividad)
    * [Monitor](#actividades-monitor)
      * [Crear actividad](#crear-actividad)
      * [Editar actividad](#editar-actividad)
