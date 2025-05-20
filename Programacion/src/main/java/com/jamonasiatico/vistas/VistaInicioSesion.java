@@ -60,7 +60,7 @@ public class VistaInicioSesion extends JFrame {
 		Nombretxt.setColumns(10);
 		
 		// TODO: borrar mas adelante -----------------------------------------------
-		Nombretxt.setText("489343L");
+		Nombretxt.setText(" ");
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");

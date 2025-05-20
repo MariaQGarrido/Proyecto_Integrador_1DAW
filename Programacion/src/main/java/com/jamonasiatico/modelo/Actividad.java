@@ -1,11 +1,11 @@
 package com.jamonasiatico.modelo;
 
 public class Actividad {
-	private int idActividad;
+	private Integer idActividad;
 	private int idMonitor;
 	private String nombreActividad;
 	private String descripcionActividad;
-	private int usuariosMaximos;
+	private Integer usuariosMaximos;
 	private int usuariosInscritos;
 	private String fechaActividad;
 	private String HoraActividad;
@@ -19,7 +19,7 @@ public class Actividad {
 	/**
 	 * @return the idActividad
 	 */
-	public int getIdActividad() {
+	public Integer getIdActividad() {
 		return idActividad;
 	}
 
@@ -75,7 +75,7 @@ public class Actividad {
 	/**
 	 * @return the usuariosMaximos
 	 */
-	public int getUsuariosMaximos() {
+	public Integer getUsuariosMaximos() {
 		return usuariosMaximos;
 	}
 

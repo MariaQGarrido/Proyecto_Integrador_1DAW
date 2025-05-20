@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import com.jamonasiatico.control.EditarActividadMonitor;
+import com.jamonasiatico.control.ListenerCrearActividad;
 import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadMon;
 import com.jamonasiatico.modelo.Usuario;
@@ -53,12 +54,12 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(lblTitulo);
 
 		// identificador
-		JLabel lblIdentificador = new JLabel("Identificador:");
+		JLabel lblIdentificador = new JLabel("Identificador: ");
 		lblIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblIdentificador.setBounds(96, 48, 118, 29);
 		getContentPane().add(lblIdentificador);
 		
-		lblCambioIdentificador = new JLabel();
+		lblCambioIdentificador = new JLabel(ListenerCrearActividad.actividad.getIdActividad().toString());
 		lblCambioIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCambioIdentificador.setBounds(195, 48, 118, 29);
 		getContentPane().add(lblCambioIdentificador);
