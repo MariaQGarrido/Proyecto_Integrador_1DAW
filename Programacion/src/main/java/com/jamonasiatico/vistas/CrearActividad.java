@@ -1,10 +1,5 @@
 package com.jamonasiatico.vistas;
 
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.MenuActividadMon;
-import com.jamonasiatico.control.MenuDatosPersonalesMonitorListener;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -20,6 +15,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.WindowConstants;
+
+import com.jamonasiatico.control.ListenerCrearActividad;
+import com.jamonasiatico.control.ListenerLogin;
+import com.jamonasiatico.control.MenuActividadMon;
+import com.jamonasiatico.control.MenuDatosPersonalesMonitorListener;
 
 
 

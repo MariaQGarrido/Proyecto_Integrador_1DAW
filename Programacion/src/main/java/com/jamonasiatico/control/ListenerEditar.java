@@ -1,11 +1,10 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.vistas.ActividadMonitor;
-import com.jamonasiatico.vistas.EditarActividad;
-import com.jamonasiatico.vistas.InformacionActividadMonitor;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import com.jamonasiatico.vistas.ActividadMonitor;
+import com.jamonasiatico.vistas.EditarActividad;
 
 
 

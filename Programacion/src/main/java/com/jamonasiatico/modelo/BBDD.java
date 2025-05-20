@@ -1,11 +1,5 @@
 package com.jamonasiatico.modelo;
 
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerEditarActividad;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.vistas.ActividadMonitor;
-import com.jamonasiatico.vistas.InformacionActividadMonitor;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,11 +8,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.jamonasiatico.control.ListenerCrearActividad;
+import com.jamonasiatico.control.ListenerLogin;
+
 public class BBDD {
 	private String url = "jdbc:mysql://localhost/base_integrador";
 
 	private String usuarioBBDD = "root";
-	private String passwdBBDD = "1234567";
+	private String passwdBBDD = "Tote2005@";
 
 	private Connection con;
 
