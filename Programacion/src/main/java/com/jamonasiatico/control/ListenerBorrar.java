@@ -1,10 +1,10 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.modelo.BBDD;
-import com.jamonasiatico.vistas.ActividadMonitor;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import com.jamonasiatico.modelo.BBDD;
+import com.jamonasiatico.vistas.ActividadMonitor;
 
 public class ListenerBorrar implements ActionListener {
 	private BBDD bbdd = new BBDD();

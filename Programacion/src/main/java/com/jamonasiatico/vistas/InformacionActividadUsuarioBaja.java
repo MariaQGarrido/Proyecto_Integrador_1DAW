@@ -1,12 +1,18 @@
 package com.jamonasiatico.vistas;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.WindowConstants;
+
 import com.jamonasiatico.control.ListenerDejarActividad;
 import com.jamonasiatico.control.MenuActividadUSR;
-
-import javax.swing.*;
-
-
-import java.awt.*;
 
 public class InformacionActividadUsuarioBaja extends JFrame{
 	

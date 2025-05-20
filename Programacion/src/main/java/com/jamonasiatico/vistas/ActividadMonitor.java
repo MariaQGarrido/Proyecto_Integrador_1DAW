@@ -1,12 +1,5 @@
 package com.jamonasiatico.vistas;
 
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.ListenerNuevaActividad;
-import com.jamonasiatico.control.MenuDatosPersonalesMonitorListener;
-import com.jamonasiatico.modelo.Actividad;
-import com.jamonasiatico.modelo.BBDD;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -23,6 +16,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.WindowConstants;
+
+import com.jamonasiatico.control.ListenerCrearActividad;
+import com.jamonasiatico.control.ListenerLogin;
+import com.jamonasiatico.control.ListenerNuevaActividad;
+import com.jamonasiatico.control.MenuDatosPersonalesMonitorListener;
+import com.jamonasiatico.modelo.Actividad;
+import com.jamonasiatico.modelo.BBDD;
 
 
 public class ActividadMonitor extends JFrame{

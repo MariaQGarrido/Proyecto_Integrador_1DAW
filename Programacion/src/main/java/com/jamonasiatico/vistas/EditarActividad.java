@@ -1,11 +1,5 @@
 package com.jamonasiatico.vistas;
 
-import com.jamonasiatico.control.EditarActividadMonitor;
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.MenuActividadMon;
-import com.jamonasiatico.modelo.Usuario;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -20,6 +14,11 @@ import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import com.jamonasiatico.control.EditarActividadMonitor;
+import com.jamonasiatico.control.ListenerLogin;
+import com.jamonasiatico.control.MenuActividadMon;
+import com.jamonasiatico.modelo.Usuario;
 
 public class EditarActividad extends JFrame {
 	private JTextField txtNombre;

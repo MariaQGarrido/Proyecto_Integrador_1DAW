@@ -1,11 +1,9 @@
 package com.jamonasiatico.control;
 
-import com.jamonasiatico.vistas.CrearActividad;
-
 import java.awt.event.ActionEvent;
-
-
 import java.awt.event.ActionListener;
+
+import com.jamonasiatico.vistas.CrearActividad;
 
 
 
