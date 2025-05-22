@@ -9,7 +9,7 @@ public class Actividad {
 	private int usuariosInscritos;
 	private String fechaActividad;
 	private String HoraActividad;
-	private int idSala;
+	private String idSala;
 	private Sala sala;
 
 
@@ -131,15 +131,15 @@ public class Actividad {
 	/**
 	 * @return the idSala
 	 */
-	public int getIdSala() {
+	public String getIdSala() {
 		return idSala;
 	}
 
 	/**
-	 * @param idSala the idSala to set
+	 * @param idSala2 the idSala to set
 	 */
-	public void setIdSala(int idSala) {
-		this.idSala = idSala;
+	public void setIdSala(String idSala2) {
+		this.idSala = idSala2;
 	}
 
 	/**

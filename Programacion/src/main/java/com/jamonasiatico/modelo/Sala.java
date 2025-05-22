@@ -1,7 +1,7 @@
 package com.jamonasiatico.modelo;
 
 public class Sala {
-	private int idSala;
+	private String idSala;
 	private int capacidad;
 	private String tipoSala;
 	
@@ -12,13 +12,13 @@ public class Sala {
 	/**
 	 * @return the idSala 
 	 */
-	public int getIdSala() {
+	public String getIdSala() {
 		return idSala;
 	}
 	/**
 	 * @param idSala the idSala to set
 	 */
-	public void setIdSala(int idSala) {
+	public void setIdSala(String idSala) {
 		this.idSala = idSala;
 	}
 	/**
@@ -31,7 +31,7 @@ public class Sala {
 	 * @param capacidad the capacidad to set
 	 */
 	public void setCapacidad(int capacidad) {
-		capacidad = capacidad;
+		this.capacidad = capacidad;
 	}
 	/**
 	 * @return the tipoSala

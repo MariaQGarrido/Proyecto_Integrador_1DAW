@@ -3,6 +3,7 @@ package com.jamonasiatico.vistas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,18 +21,21 @@ import com.jamonasiatico.control.ListenerCrearActividad;
 import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadMon;
 import com.jamonasiatico.control.MenuDatosPersonalesMonitorListener;
+import com.jamonasiatico.modelo.Sala;
+
+import javax.swing.JComboBox;
 
 
 
 public class CrearActividad extends JFrame {
 	private JTextField txtNombre;
-	private JTextField txtTipoSala;
 	private JTextField txtFecha;
 	private JTextField txtHora;
 	private JSpinner alumnosMaximos;
 	private JTextArea textAreaDescripcion;
-	private JSpinner capacidadSala;
 	private JLabel lblMensaje;
+	private JComboBox<String> salaBox;
+	private ListenerCrearActividad listenerCrearActividad;
 	
 	public CrearActividad() {
 		// Color de fondo de la vista
@@ -41,6 +45,8 @@ public class CrearActividad extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setResizable(false);
+		
+		listenerCrearActividad= new ListenerCrearActividad(this);
 
 		// Titulo
 		JLabel lblTitulo = new JLabel("Crear Actividad");
@@ -91,26 +97,21 @@ public class CrearActividad extends JFrame {
 		txtNombre.setBounds(216, 82, 124, 20);
 		getContentPane().add(txtNombre);
 		
-		JLabel lblTipoSala = new JLabel("Tipo Sala:");
+		JLabel lblTipoSala = new JLabel("Sala:");
 		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTipoSala.setBounds(407, 139, 101, 29);
 		getContentPane().add(lblTipoSala);
 		
-		txtTipoSala = new JTextField();
-		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(502, 145, 121, 20);
-		getContentPane().add(txtTipoSala);
-		
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
 		SpinnerNumberModel modeloSpinnerAlumnosMaximos = new SpinnerNumberModel(1, 1, 50, 1);
 		alumnosMaximos = new JSpinner(modeloSpinnerAlumnosMaximos);
-		alumnosMaximos.setBounds(264, 304, 101, 20);
+		alumnosMaximos.setBounds(522, 82, 101, 20);
 		
 		getContentPane().add(alumnosMaximos);
 		
 		JLabel lblAlumnosMaximos = new JLabel("Alumnos Máximos:");
 		lblAlumnosMaximos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAlumnosMaximos.setBounds(149, 300, 124, 29);
+		lblAlumnosMaximos.setBounds(407, 78, 124, 29);
 		getContentPane().add(lblAlumnosMaximos);
 		
 		// label y txt para añadir la fecha
@@ -137,7 +138,7 @@ public class CrearActividad extends JFrame {
 		
 		//Boton para crear la actividad
 		JButton btnNewButton = new JButton("Crear Actividad");
-		btnNewButton.addActionListener(new ListenerCrearActividad(this));
+		btnNewButton.addActionListener(listenerCrearActividad);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
@@ -147,15 +148,7 @@ public class CrearActividad extends JFrame {
 		lblNomUsuario.setBounds(597, 11, 74, 29);
 		getContentPane().add(lblNomUsuario);
 		
-		JLabel lblCapcidadSala = new JLabel("Capacidad de la sala: ");
-		lblCapcidadSala.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCapcidadSala.setBounds(405, 78, 143, 29);
-		getContentPane().add(lblCapcidadSala);
-		
 		SpinnerNumberModel modeloSpinnerCapacidadSala = new SpinnerNumberModel(1, 1, 100, 1);
-		capacidadSala = new JSpinner(modeloSpinnerCapacidadSala);
-		capacidadSala.setBounds(530, 82, 91, 20);
-		getContentPane().add(capacidadSala);
 		
 		lblMensaje = new JLabel("");
 		lblMensaje.setForeground(new Color(255, 0, 0));
@@ -163,23 +156,21 @@ public class CrearActividad extends JFrame {
 		lblMensaje.setBounds(375, 318, 159, 25);
 		getContentPane().add(lblMensaje);
 		
+		salaBox = new JComboBox();
+		salaBox.setBounds(501, 144, 122, 22);
+		salaBox.removeAllItems();
+		ArrayList<Sala> salas = listenerCrearActividad.getBbdd().listarSalas();
+		
+		for (Sala sala : salas) {
+			salaBox.addItem(sala.getIdSala());
+		}
+		getContentPane().add(salaBox);
+		
+		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
 	}
 	
-	/**
-	 * @return the capacidadSala
-	 */
-	public JSpinner getCapacidadSala() {
-		return capacidadSala;
-	}
-
-	/**
-	 * @param capacidadSala the capacidadSala to set
-	 */
-	public void setCapacidadSala(JSpinner capacidadSala) {
-		this.capacidadSala = capacidadSala;
-	}
 
 	public void HacerVisible(){
 		setVisible(true);
@@ -201,19 +192,6 @@ public class CrearActividad extends JFrame {
 		this.txtNombre = txtNombre;
 	}
 
-	/**
-	 * @return the txtTipoSala
-	 */
-	public JTextField getTxtTipoSala() {
-		return txtTipoSala;
-	}
-
-	/**
-	 * @param txtTipoSala the txtTipoSala to set
-	 */
-	public void setTxtTipoSala(JTextField txtTipoSala) {
-		this.txtTipoSala = txtTipoSala;
-	}
 
 	/**
 	 * @return the txtFecha
@@ -284,4 +262,16 @@ public class CrearActividad extends JFrame {
 	public void setLblMensaje(JLabel lblMensaje) {
 		this.lblMensaje = lblMensaje;
 	}
+
+
+	public JComboBox<String> getSalaBox() {
+		return salaBox;
+	}
+
+
+	public void setSalaBox(JComboBox<String> salaBox) {
+		this.salaBox = salaBox;
+	}
+	
+	
 }

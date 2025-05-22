@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.jamonasiatico.control.ListenerCrearActividad;
@@ -15,7 +14,7 @@ public class BBDD {
 	private String url = "jdbc:mysql://localhost/base_integrador";
 
 	private String usuarioBBDD = "root";
-	private String passwdBBDD = "1234567";
+	private String passwdBBDD = "Tote2005@";
 
 	private Connection con;
 
@@ -79,32 +78,6 @@ public class BBDD {
 		return null;
 	}
 
-	public void introducirDatosSala(Sala sala) {
-
-		String consultaString = "INSERT INTO sala (capacidad, tipo_sala) VALUES (?, ?)";
-
-		try {
-			abrirConexion();
-			PreparedStatement stmt1 = con.prepareStatement(consultaString, Statement.RETURN_GENERATED_KEYS);
-
-			stmt1.setInt(1, sala.getCapacidad());
-			stmt1.setString(2, sala.getTipoSala());
-
-			stmt1.executeUpdate();
-
-			// recuperar los ids generados en la base de datos causado por un insert
-			// para obtener el id de sala
-			ResultSet idGenerados = stmt1.getGeneratedKeys();
-			while (idGenerados.next()) {
-				int idSala = idGenerados.getInt(1);
-				sala.setIdSala(idSala);
-			}
-
-			cerrarConexion();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public void introducirDatosActividad(Actividad actividad) {
 
@@ -115,7 +88,7 @@ public class BBDD {
 			PreparedStatement stmt1 = con.prepareStatement(consultaString);
 
 			stmt1.setInt(1, ListenerLogin.usuario.getIdUsuario());
-			stmt1.setInt(2, actividad.getIdSala());
+			stmt1.setString(2, actividad.getIdSala());
 			stmt1.setString(3, actividad.getNombreActividad());
 			stmt1.setString(4, actividad.getDescripcionActividad());
 			stmt1.setInt(5, actividad.getUsuariosMaximos());
@@ -151,7 +124,7 @@ public class BBDD {
 				int idMonitor = resultado.getInt("id_monitor");
 				actividad.setIdMonitor(idMonitor);
 
-				int idSala = resultado.getInt("id_sala");
+				String idSala = resultado.getString("id_sala");
 				actividad.setIdSala(idSala);
 
 				String nombreActividad = resultado.getString("nombre_actividad");
@@ -193,6 +166,7 @@ public class BBDD {
 	}
 
 	public void eliminarActividad() {
+		String eliminarInscritos;
 		String eliminar = "delete from actividades where id_actividad=?";
 
 		try {
@@ -216,7 +190,7 @@ public class BBDD {
 			abrirConexion();
 			PreparedStatement stmt1 = con.prepareStatement(editar);
 			
-			stmt1.setInt(1, ListenerCrearActividad.actividad.getIdSala());
+			stmt1.setString(1, ListenerCrearActividad.actividad.getIdSala());
 			stmt1.setString(2, ListenerCrearActividad.actividad.getNombreActividad());
 			stmt1.setString(3, ListenerCrearActividad.actividad.getDescripcionActividad());
 			stmt1.setInt(4, ListenerCrearActividad.actividad.getUsuariosMaximos());
@@ -231,6 +205,14 @@ public class BBDD {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	// crear un método para saber si una actividad ha sido creada pasando por todos los campos excepto el id
+	
 
 	public void cerrarConexion() {
 		try {
@@ -239,6 +221,41 @@ public class BBDD {
 			System.out.println("Error al cerrar conexión");
 			e.printStackTrace();
 		}
+	}
+
+	public ArrayList<Sala> listarSalas() {
+		String query = "SELECT * FROM SALA";
+
+		try {
+			abrirConexion();
+			PreparedStatement stmt1 = con.prepareStatement(query);
+
+			ResultSet resultado = stmt1.executeQuery();
+
+			ArrayList<Sala> lista = new ArrayList<Sala>();
+
+			while (resultado.next()) {
+				Sala sala = new Sala();
+
+				String idSala = resultado.getString("id_sala");
+				sala.setIdSala(idSala);
+				
+				 int capacidad = resultado.getInt("capacidad");
+				 sala.setCapacidad(capacidad);
+
+				String tipoSala = resultado.getString("tipo_sala");
+				sala.setTipoSala(tipoSala);
+
+				lista.add(sala);
+			}
+
+			cerrarConexion();
+			return lista;		
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

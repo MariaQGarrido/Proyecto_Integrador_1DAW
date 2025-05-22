@@ -36,7 +36,7 @@ public class EditarActividadMonitor implements ActionListener {
 			ListenerCrearActividad.actividad.setNombreActividad(NuevoNombre);
 			ListenerCrearActividad.actividad.setFechaActividad(NuevaFecha);
 			ListenerCrearActividad.actividad.setHoraActividad(NuevaHora);
-			ListenerCrearActividad.actividad.setIdSala(Integer.parseInt(NuevoNumSala));
+			ListenerCrearActividad.actividad.setIdSala(NuevoNumSala);
 			ListenerCrearActividad.actividad.getSala().setTipoSala(NuevoTiposSala);
 			ListenerCrearActividad.actividad.setUsuariosMaximos(NumAlumnosMax);
 			ListenerCrearActividad.actividad.setDescripcionActividad(Descripcion);

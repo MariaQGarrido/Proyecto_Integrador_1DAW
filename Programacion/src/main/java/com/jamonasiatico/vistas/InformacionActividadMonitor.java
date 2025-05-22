@@ -83,12 +83,12 @@ public class InformacionActividadMonitor extends JFrame{
 		getContentPane().add(lblHora);
 		
 		JLabel lblSala = new JLabel("Sala: "+ListenerCrearActividad.actividad.getSala().getTipoSala());
-		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 14));
 		lblSala.setBounds(141, 262, 236, 30);
 		getContentPane().add(lblSala);
 		
 		JLabel lblDescripcin = new JLabel("Descripción: "+ ListenerCrearActividad.actividad.getDescripcionActividad());
-		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
+		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
 		lblDescripcin.setBounds(142, 221, 488, 30);
 		getContentPane().add(lblDescripcin);
 		
