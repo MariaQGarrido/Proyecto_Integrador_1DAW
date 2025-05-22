@@ -165,15 +165,32 @@ public class BBDD {
 
 	}
 
+	public void eliminarInscritosPorIdActividad() {
+		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
+		String eliminar = "delete from inscrito_en where id_act=?";
+
+		try {
+			abrirConexion();
+			PreparedStatement stmt1 = con.prepareStatement(eliminar);
+
+			stmt1.setInt(1, idActividad);
+			stmt1.executeUpdate();
+
+			cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void eliminarActividad() {
-		String eliminarInscritos;
+		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
 		String eliminar = "delete from actividades where id_actividad=?";
 
 		try {
 			abrirConexion();
 			PreparedStatement stmt1 = con.prepareStatement(eliminar);			
 
-			stmt1.setInt(1, ListenerCrearActividad.actividad.getIdActividad());
+			stmt1.setInt(1, idActividad);
 			stmt1.executeUpdate();
 
 			cerrarConexion();
@@ -182,7 +199,6 @@ public class BBDD {
 		}
 
 	}
-
 	public void editarActividad() {
 		String editar = "update actividades set id_sala=?, nombre_actividad=?, descripcion_actividad=?, usuarios_maximos=?, dia_actividad=?, hora=? where id_actividad=?";
 		
@@ -257,5 +273,6 @@ public class BBDD {
 		}
 		return null;
 	}
+
 
 }

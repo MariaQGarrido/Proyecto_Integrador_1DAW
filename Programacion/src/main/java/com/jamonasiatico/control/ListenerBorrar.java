@@ -11,8 +11,8 @@ public class ListenerBorrar implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		bbdd.eliminarInscritosPorIdActividad();
 		bbdd.eliminarActividad();
-		
 		new ActividadMonitor();
 	}
 

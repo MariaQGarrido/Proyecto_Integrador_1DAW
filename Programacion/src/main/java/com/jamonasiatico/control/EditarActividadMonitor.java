@@ -24,12 +24,11 @@ public class EditarActividadMonitor implements ActionListener {
 		String NuevaFecha = vista.getTxtCambioFecha().getText();
 		String NuevaHora = vista.getTxtCambioHora().getText();
 		String NuevoNumSala = vista.getTxtNumeroSala().getText();
-		String NuevoTiposSala = vista.getTxtTipoSala().getText();
 		int NumAlumnosMax = (int) vista.getAlumnosCambioMaximos().getValue();
 		String Descripcion = vista.getTextAreaCambioDescripcion().getText();
 
 		if (NuevoNombre.isEmpty() || NuevaFecha.isEmpty() || NuevaHora.isEmpty() || NuevoNumSala.isEmpty()
-				|| NuevoTiposSala.isEmpty() || Descripcion.isEmpty()) {
+				|| Descripcion.isEmpty()) {
 			vista.getLblMensaje().setText("Datos insuficientes");
 			return;
 		} else {
@@ -37,7 +36,6 @@ public class EditarActividadMonitor implements ActionListener {
 			ListenerCrearActividad.actividad.setFechaActividad(NuevaFecha);
 			ListenerCrearActividad.actividad.setHoraActividad(NuevaHora);
 			ListenerCrearActividad.actividad.setIdSala(NuevoNumSala);
-			ListenerCrearActividad.actividad.getSala().setTipoSala(NuevoTiposSala);
 			ListenerCrearActividad.actividad.setUsuariosMaximos(NumAlumnosMax);
 			ListenerCrearActividad.actividad.setDescripcionActividad(Descripcion);
 
