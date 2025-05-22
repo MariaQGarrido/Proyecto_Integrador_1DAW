@@ -24,7 +24,6 @@ import com.jamonasiatico.modelo.Usuario;
 public class EditarActividad extends JFrame {
 	private JTextField txtNombre;
 	private JTextField txtNumeroSala;
-	private JTextField txtTipoSala;
 	private JTextField txtCambioFecha;
 	private JTextField txtCambioHora;
 	private JMenu menuActividad;
@@ -114,46 +113,36 @@ public class EditarActividad extends JFrame {
 		txtNumeroSala.setBounds(445, 111, 124, 20);
 		getContentPane().add(txtNumeroSala);
 
-		JLabel lblTipoSala = new JLabel("Tipo Sala:");
-		lblTipoSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipoSala.setBounds(365, 147, 124, 29);
-		getContentPane().add(lblTipoSala);
-
-		txtTipoSala = new JTextField();
-		txtTipoSala.setColumns(10);
-		txtTipoSala.setBounds(445, 151, 124, 20);
-		getContentPane().add(txtTipoSala);
-
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
 		AlumnosCambioMaximos = new JSpinner();
-		AlumnosCambioMaximos.setBounds(200, 247, 101, 20);
+		AlumnosCambioMaximos.setBounds(468, 181, 101, 20);
 		getContentPane().add(AlumnosCambioMaximos);
 
 		JLabel lblCambioAlumnosMaximos = new JLabel("Alumnos Máximos:");
 		lblCambioAlumnosMaximos.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioAlumnosMaximos.setBounds(95, 242, 124, 29);
+		lblCambioAlumnosMaximos.setBounds(363, 176, 124, 29);
 		getContentPane().add(lblCambioAlumnosMaximos);
 
 		// label y txt para añadir la fecha
 		JLabel lblCambioFecha = new JLabel("Fecha Actividad:");
 		lblCambioFecha.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioFecha.setBounds(95, 277, 124, 29);
+		lblCambioFecha.setBounds(96, 247, 124, 29);
 		getContentPane().add(lblCambioFecha);
 
 		txtCambioFecha = new JTextField();
-		txtCambioFecha.setBounds(200, 282, 101, 20);
+		txtCambioFecha.setBounds(201, 252, 101, 20);
 		getContentPane().add(txtCambioFecha);
 		txtCambioFecha.setColumns(10);
 
 		// label y txt para añadir la hora
 		JLabel lblCambioHora = new JLabel("Hora Actividad:");
 		lblCambioHora.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioHora.setBounds(95, 313, 124, 29);
+		lblCambioHora.setBounds(96, 303, 124, 29);
 		getContentPane().add(lblCambioHora);
 
 		txtCambioHora = new JTextField();
 		txtCambioHora.setColumns(10);
-		txtCambioHora.setBounds(200, 317, 101, 20);
+		txtCambioHora.setBounds(201, 307, 101, 20);
 		getContentPane().add(txtCambioHora);
 
 		// Boton para crear la actividad
@@ -209,20 +198,6 @@ public class EditarActividad extends JFrame {
 	 */
 	public void setTxtNumeroSala(JTextField txtNumeroSala) {
 		this.txtNumeroSala = txtNumeroSala;
-	}
-
-	/**
-	 * @return the txtTipoSala
-	 */
-	public JTextField getTxtTipoSala() {
-		return txtTipoSala;
-	}
-
-	/**
-	 * @param txtTipoSala the txtTipoSala to set
-	 */
-	public void setTxtTipoSala(JTextField txtTipoSala) {
-		this.txtTipoSala = txtTipoSala;
 	}
 
 	/**
