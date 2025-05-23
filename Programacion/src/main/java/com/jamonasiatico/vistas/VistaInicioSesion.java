@@ -87,7 +87,7 @@ public class VistaInicioSesion extends JFrame {
 		
 		// Logotipo del equipo
 		String rutaRaiz = System.getProperty("user.dir");
-		Path path = Paths.get(rutaRaiz, "src", "main", "java","com", "jamonasiatico", "imagenes", "logopng.png");
+		Path path = Paths.get(rutaRaiz, "Programacion","src", "main", "java","com", "jamonasiatico", "imagenes", "logopng.png");
 		ImageIcon originalIcon = new ImageIcon(path.toString());
 		Image imagenEscalada = originalIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		ImageIcon imageIcon = new ImageIcon(imagenEscalada);
