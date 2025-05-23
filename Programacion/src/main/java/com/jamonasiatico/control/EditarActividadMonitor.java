@@ -7,7 +7,6 @@ import com.jamonasiatico.modelo.BBDD;
 import com.jamonasiatico.vistas.EditarActividad;
 
 public class EditarActividadMonitor implements ActionListener {
-
 	private EditarActividad vista;
 	private BBDD bbdd;
 
@@ -16,7 +15,6 @@ public class EditarActividadMonitor implements ActionListener {
 	 * @param editarActividad
 	 */
 	public EditarActividadMonitor(EditarActividad editarActividad) {
-		// TODO Auto-generated constructor stub
 		this.vista = editarActividad;
 		this.bbdd = new BBDD();
 	}
@@ -33,13 +31,11 @@ public class EditarActividadMonitor implements ActionListener {
 		String NuevoNombre = vista.getTxtNombre().getText();
 		String NuevaFecha = vista.getTxtCambioFecha().getText();
 		String NuevaHora = vista.getTxtCambioHora().getText();
-		String NuevoNumSala = vista.getTxtNumeroSala().getText();
 		int NumAlumnosMax = (int) vista.getAlumnosCambioMaximos().getValue();
 		String Descripcion = vista.getTextAreaCambioDescripcion().getText();
 
 		//Comprobamos que los datos no estén vacíos. Si no se completan todos, enseña el siguiente mensaje
-		if (NuevoNombre.isEmpty() || NuevaFecha.isEmpty() || NuevaHora.isEmpty() || NuevoNumSala.isEmpty()
-				|| Descripcion.isEmpty()) {
+		if (NuevoNombre.isEmpty() || NuevaFecha.isEmpty() || NuevaHora.isEmpty() || Descripcion.isEmpty()) {
 			vista.getLblMensaje().setText("Datos insuficientes");
 			return;
 		} else {
@@ -48,7 +44,6 @@ public class EditarActividadMonitor implements ActionListener {
 			ListenerCrearActividad.actividad.setNombreActividad(NuevoNombre);
 			ListenerCrearActividad.actividad.setFechaActividad(NuevaFecha);
 			ListenerCrearActividad.actividad.setHoraActividad(NuevaHora);
-			ListenerCrearActividad.actividad.setIdSala(NuevoNumSala);
 			ListenerCrearActividad.actividad.setUsuariosMaximos(NumAlumnosMax);
 			ListenerCrearActividad.actividad.setDescripcionActividad(Descripcion);
 

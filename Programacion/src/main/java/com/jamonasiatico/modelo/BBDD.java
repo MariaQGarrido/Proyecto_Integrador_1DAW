@@ -260,7 +260,7 @@ public class BBDD {
 	 */
 	public void editarActividad() {
 		//consulta para actualizar una actividad
-		String editar = "update actividades set id_sala=?, nombre_actividad=?, descripcion_actividad=?, usuarios_maximos=?, dia_actividad=?, hora=? where id_actividad=?";
+		String editar = "update actividades set  nombre_actividad=?, descripcion_actividad=?, usuarios_maximos=?, dia_actividad=?, hora=? where id_actividad=?";
 		
 		try {
 			abrirConexion();
@@ -268,14 +268,12 @@ public class BBDD {
 			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(editar);
 
-			//para asignar valores a los parámetros
-			stmt1.setString(1, ListenerCrearActividad.actividad.getIdSala());
-			stmt1.setString(2, ListenerCrearActividad.actividad.getNombreActividad());
-			stmt1.setString(3, ListenerCrearActividad.actividad.getDescripcionActividad());
-			stmt1.setInt(4, ListenerCrearActividad.actividad.getUsuariosMaximos());
-			stmt1.setString(5, ListenerCrearActividad.actividad.getFechaActividad());
-			stmt1.setString(6, ListenerCrearActividad.actividad.getHoraActividad());
-			stmt1.setInt(7, ListenerCrearActividad.actividad.getIdActividad());
+			stmt1.setString(1, ListenerCrearActividad.actividad.getNombreActividad());
+			stmt1.setString(2, ListenerCrearActividad.actividad.getDescripcionActividad());
+			stmt1.setInt(3, ListenerCrearActividad.actividad.getUsuariosMaximos());
+			stmt1.setString(4, ListenerCrearActividad.actividad.getFechaActividad());
+			stmt1.setString(5, ListenerCrearActividad.actividad.getHoraActividad());
+			stmt1.setInt(6, ListenerCrearActividad.actividad.getIdActividad());
 			
 			int resultado = stmt1.executeUpdate();
 			

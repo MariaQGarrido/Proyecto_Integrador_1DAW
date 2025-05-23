@@ -23,7 +23,6 @@ import com.jamonasiatico.modelo.Usuario;
 
 public class EditarActividad extends JFrame {
 	private JTextField txtNombre;
-	private JTextField txtNumeroSala;
 	private JTextField txtCambioFecha;
 	private JTextField txtCambioHora;
 	private JMenu menuActividad;
@@ -54,13 +53,13 @@ public class EditarActividad extends JFrame {
 
 		// identificador
 		JLabel lblIdentificador = new JLabel("Identificador: ");
-		lblIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblIdentificador.setBounds(96, 48, 118, 29);
+		lblIdentificador.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblIdentificador.setBounds(96, 68, 118, 29);
 		getContentPane().add(lblIdentificador);
 		
 		lblCambioIdentificador = new JLabel(ListenerCrearActividad.actividad.getIdActividad().toString());
-		lblCambioIdentificador.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioIdentificador.setBounds(195, 48, 118, 29);
+		lblCambioIdentificador.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioIdentificador.setBounds(212, 68, 118, 29);
 		getContentPane().add(lblCambioIdentificador);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -78,13 +77,13 @@ public class EditarActividad extends JFrame {
 //		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
-		lblCambioDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioDescripcion.setBounds(95, 78, 124, 29);
+		lblCambioDescripcion.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioDescripcion.setBounds(96, 108, 124, 29);
 		getContentPane().add(lblCambioDescripcion);
 
 		// Descripción de la actividad
 		JScrollPane scrollPaneDescripcion = new JScrollPane();
-		scrollPaneDescripcion.setBounds(95, 108, 235, 123);
+		scrollPaneDescripcion.setBounds(96, 148, 235, 101);
 		getContentPane().add(scrollPaneDescripcion);
 
 		textAreaCambioDescripcion = new JTextArea();
@@ -93,56 +92,55 @@ public class EditarActividad extends JFrame {
 
 		// nombre
 		JLabel lblCambioNombre = new JLabel("Nombre:");
-		lblCambioNombre.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioNombre.setBounds(365, 48, 124, 29);
+		lblCambioNombre.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioNombre.setBounds(365, 119, 124, 29);
 		getContentPane().add(lblCambioNombre);
 
 		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtNombre.setColumns(10);
-		txtNombre.setBounds(432, 52, 124, 20);
+		txtNombre.setBounds(545, 123, 124, 20);
 		getContentPane().add(txtNombre);
 
 		// Descripción de la sala (tipo, numero y nombre de la sala)
-		JLabel lblNumeroSala = new JLabel("Número Sala:");
-		lblNumeroSala.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNumeroSala.setBounds(365, 107, 124, 29);
+		JLabel lblNumeroSala = new JLabel("Sala:"+ListenerCrearActividad.actividad.getSala().getTipoSala());
+		lblNumeroSala.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNumeroSala.setBounds(365, 68, 304, 29);
 		getContentPane().add(lblNumeroSala);
-
-		txtNumeroSala = new JTextField();
-		txtNumeroSala.setColumns(10);
-		txtNumeroSala.setBounds(445, 111, 124, 20);
-		getContentPane().add(txtNumeroSala);
 
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
 		AlumnosCambioMaximos = new JSpinner();
-		AlumnosCambioMaximos.setBounds(468, 181, 101, 20);
+		AlumnosCambioMaximos.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		AlumnosCambioMaximos.setBounds(534, 204, 139, 20);
 		getContentPane().add(AlumnosCambioMaximos);
 
 		JLabel lblCambioAlumnosMaximos = new JLabel("Alumnos Máximos:");
-		lblCambioAlumnosMaximos.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioAlumnosMaximos.setBounds(363, 176, 124, 29);
+		lblCambioAlumnosMaximos.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioAlumnosMaximos.setBounds(365, 200, 159, 29);
 		getContentPane().add(lblCambioAlumnosMaximos);
 
 		// label y txt para añadir la fecha
 		JLabel lblCambioFecha = new JLabel("Fecha Actividad:");
-		lblCambioFecha.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioFecha.setBounds(96, 247, 124, 29);
+		lblCambioFecha.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioFecha.setBounds(365, 269, 139, 29);
 		getContentPane().add(lblCambioFecha);
 
 		txtCambioFecha = new JTextField();
-		txtCambioFecha.setBounds(201, 252, 101, 20);
+		txtCambioFecha.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtCambioFecha.setBounds(570, 273, 101, 20);
 		getContentPane().add(txtCambioFecha);
 		txtCambioFecha.setColumns(10);
 
 		// label y txt para añadir la hora
 		JLabel lblCambioHora = new JLabel("Hora Actividad:");
-		lblCambioHora.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblCambioHora.setBounds(96, 303, 124, 29);
+		lblCambioHora.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCambioHora.setBounds(96, 274, 124, 29);
 		getContentPane().add(lblCambioHora);
 
 		txtCambioHora = new JTextField();
+		txtCambioHora.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtCambioHora.setColumns(10);
-		txtCambioHora.setBounds(201, 307, 101, 20);
+		txtCambioHora.setBounds(229, 278, 101, 20);
 		getContentPane().add(txtCambioHora);
 
 		// Boton para crear la actividad
@@ -152,8 +150,8 @@ public class EditarActividad extends JFrame {
 		getContentPane().add(btnEditar);
 
 		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNomUsuario.setBounds(595, 11, 74, 29);
+		lblNomUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNomUsuario.setBounds(570, 11, 99, 29);
 		getContentPane().add(lblNomUsuario);
 
 		lblMensaje = new JLabel("");
@@ -184,20 +182,6 @@ public class EditarActividad extends JFrame {
 	 */
 	public void setTxtNombre(JTextField txtNombre) {
 		this.txtNombre = txtNombre;
-	}
-
-	/**
-	 * @return the txtNumeroSala
-	 */
-	public JTextField getTxtNumeroSala() {
-		return txtNumeroSala;
-	}
-
-	/**
-	 * @param txtNumeroSala the txtNumeroSala to set
-	 */
-	public void setTxtNumeroSala(JTextField txtNumeroSala) {
-		this.txtNumeroSala = txtNumeroSala;
 	}
 
 	/**
