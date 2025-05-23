@@ -142,7 +142,8 @@ El monitor, en cambio, puede:
 ![borrarActividad](https://i.postimg.cc/4dpYJr5r/borrar-Actividad.png)
 
 
-Por: María Qingxuan Garrido, Rosa Xiu Qiong Hu, Alejandro Raboso
-Tutoras: Irene del Rincon y Sara Villanueva
-Universidad Europea de Madrid
-1ºDAW
+Por: María Qingxuan Garrido, Rosa Xiu Qiong Hu, Alejandro Raboso 
+
+Tutoras: Irene del Rincon y Sara Villanueva 
+
+Universidad Europea de Madrid 1ºDAW
