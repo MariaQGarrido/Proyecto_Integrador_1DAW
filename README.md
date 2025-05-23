@@ -120,10 +120,9 @@ Proyecto_Integrador_1DAW
 ## Ejemplo de uso
 ### Inicio Sesión:
 Primero el usuario inicia sesión con su matrícula.
-Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
 ![inicioSesion](https://i.postimg.cc/xCvRNp5z/inicio-Sesion.png)
-
-![Monitor]([src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png](https://i.postimg.cc/kG7yQNYh/monitor-Si-No.png))
+Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
+![Monitor](https://i.postimg.cc/kG7yQNYh/monitor-Si-No.png)
 
 ### Datos personales
 Después de iniciar sesión nos enseñará los datos personales.
@@ -141,3 +140,9 @@ El monitor, en cambio, puede:
 ![editarActividad](https://i.postimg.cc/9FmDhgqn/editar-Actividad.png)
 ##### Borrar actividad
 ![borrarActividad](https://i.postimg.cc/4dpYJr5r/borrar-Actividad.png)
+
+
+Por: María Qingxuan Garrido, Rosa Xiu Qiong Hu, Alejandro Raboso
+Tutoras: Irene del Rincon y Sara Villanueva
+Universidad Europea de Madrid
+1ºDAW
