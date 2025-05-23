@@ -24,9 +24,10 @@ public class ListenerDejarActividad implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// Enviamos un dialog para confirmar si el usuario se quiere desapuntar o no de la actividad
 		int confirmacion = JOptionPane.showConfirmDialog(vista, "¿Estas seguro de darte de baja?","Baja Actividad",
 				JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-		
+		// Si lo confirma de desiscribimos
 		if(confirmacion == JOptionPane.YES_OPTION){
 			bbdd.DarDeBajaActividad(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad());
 			vista2.HacerVisible();

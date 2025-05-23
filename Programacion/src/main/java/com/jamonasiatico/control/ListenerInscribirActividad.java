@@ -24,9 +24,11 @@ public class ListenerInscribirActividad implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// Si un usuario ya esta inscrito en una actividad le mandamos un mensaje informandole que ya está inscrito
 		if(bbdd.YaInscrito(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad()) == true) {
 			JOptionPane.showInternalMessageDialog(vista, "Ya estas inscrito", "error", JOptionPane.ERROR_MESSAGE);
 		}else {
+			// Si no lo está le inscribimos en la actividad
 			bbdd.InscribirEnActividad(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad());
 			vista2.HacerVisible();
 		}
