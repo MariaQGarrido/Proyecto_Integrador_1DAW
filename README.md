@@ -122,11 +122,9 @@ Proyecto_Integrador_1DAW
 ### Inicio Sesión:
 Primero el usuario inicia sesión con su matrícula.
 Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
-![inicioSesion]
-(src/main/java/com.jamonasiatico/imagenes/inicioSesion.png)
+![inicioSesion](https://i.postimg.cc/xCvRNp5z/inicio-Sesion.png)
 
-![Monitor]
-(src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png)
+![Monitor](src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png)
 
 ### Datos personales
 Después de iniciar sesión nos enseñará los datos personales.
