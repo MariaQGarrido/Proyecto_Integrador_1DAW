@@ -91,7 +91,7 @@ Para poder utilizar el programa, abrimos el archivo en un entorno de desarrollo 
 ## Estructura del proyecto
 Para realizar este proyecto, hemos seguido el diseño de MVC (Modelo-Vista-Controlador), así mantenemos el código de forma organizada.
 
-Nuestra estructura es la siguiente:
+La estructura es la siguiente:
 
 ```
 Proyecto_Integrador_1DAW
