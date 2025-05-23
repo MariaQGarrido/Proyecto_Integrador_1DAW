@@ -35,12 +35,12 @@ public class ActividadesUsuario extends JFrame{
 	private JList<Actividad> listActDisponibles;
 	private JList<Actividad> listActInscritas;
 	private BBDD bbdd = new BBDD();
-	
-	
+
+	/**
+	 * Contenido de la vista ActividadesUsuario
+	 */
 	public ActividadesUsuario() {
-		
-		
-		// 1) configura JFrame
+		//configuracion de la ventana
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
@@ -136,6 +136,9 @@ public class ActividadesUsuario extends JFrame{
 		setLocationRelativeTo(null);
 	}
 
+	/**
+	 * Metodo para mostrar la ventana
+	 */
 	public void HacerVisible(){
 		setVisible(true);
 	}

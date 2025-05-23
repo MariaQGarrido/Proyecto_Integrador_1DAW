@@ -58,9 +58,7 @@ public class VistaInicioSesion extends JFrame {
 		Nombretxt.setBounds(271, 196, 141, 20);
 		getContentPane().add(Nombretxt);
 		Nombretxt.setColumns(10);
-		
-		// TODO: borrar mas adelante -----------------------------------------------
-		Nombretxt.setText("489343L");
+
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
