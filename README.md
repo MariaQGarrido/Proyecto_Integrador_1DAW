@@ -54,7 +54,7 @@ Requisitos de hardware y software requerido:
 * Memoria de 4 GB de RAM como mínimo, se recomienda 8 GB 
 * Almacenamiento al menos 2 GB de espacio libre.
 
-Sistema operativo compatible
+Sistema operativo compatible:
 * Windows 10/11 de 64 bits
 * macOS de 64 bits
 * Linux 
