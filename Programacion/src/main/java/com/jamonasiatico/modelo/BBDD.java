@@ -421,8 +421,12 @@ public class BBDD {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/*
+	 *	Metodo para inscribir un usuario a una actividad 
+	 */
 	public void InscribirEnActividad(int usr, int act) {
+		// Introducimos los datos recogidos en la tabla INSCRITO_EN
 		String Inscribir = "INSERT INTO INSCRITO_EN(id_usr, id_act) VALUES (?, ?)";
 
 		try {
@@ -444,7 +448,11 @@ public class BBDD {
 		}
 	}
 	
+	/*
+	 * Metodo para comprobar si el usuario está ya inscrito en una actividad 
+	 */
 	public boolean YaInscrito(int usr, int act) {
+		// Recogemos la info de la bbdd para ver si existe conexion en la base entre la actividad y el alumno
 		String comprobar = "SELECT * FROM INSCRITO_EN WHERE id_usr=? And id_act=?";
 		
 		try {
@@ -465,9 +473,13 @@ public class BBDD {
 		return false;
 	}
 	
+	
+	/*
+	 * Metodo para dar de baja a un alumno de una actividad  
+	 */
 	public void DarDeBajaActividad(int act, int usr) {
 
-		// consulta para eliminar los datos de la actividad
+		// Eliminamos de la base el id de la actividad y usuario
 		String eliminar = "delete from inscrito_en where id_act=? AND id_usr=?";
 		
 		
