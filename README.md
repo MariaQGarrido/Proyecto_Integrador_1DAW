@@ -12,7 +12,6 @@
    * [Actividades](#actividades)
        * [Inscribir en una actividad](#inscribir-en-una-actividad)
        * [Dejar una ctividad](#dejar-una-actividad)
-     * [Monitor](#actividades-monitor)
        * [Crear actividad](#crear-actividad)
        * [Editar actividad](#editar-actividad)
        * [Borrar actividad](#borrar-actividad)
@@ -124,18 +123,21 @@ Primero el usuario inicia sesión con su matrícula.
 Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
 ![inicioSesion](https://i.postimg.cc/xCvRNp5z/inicio-Sesion.png)
 
-![Monitor](src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png)
+![Monitor]([src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png](https://i.postimg.cc/kG7yQNYh/monitor-Si-No.png))
 
 ### Datos personales
 Después de iniciar sesión nos enseñará los datos personales.
 ### Actividades:
-En el menú de la izquierda se encuentra Actividades. 
-Si pinchamos en ella, para el usuario que hace las atividades le sale en pantalla una lista de actividades disponibles y otra lista de actividades inscritas.
+En el menú de la izquierda se encuentra Actividades. El usuario que realiza las actividades solo puede inscribirse y dejar la actividad.
 ##### Inscribir en una actividad
-
+![inscribirActividad](https://i.postimg.cc/dt5LtR2t/incribir-Actividad.png)
 ##### Dejar una actividad
+![dejarActividad](https://i.postimg.cc/CMHR9pd8/dejar-Actividad.png)
 
-#### Actividades Monitor:
+El monitor, en cambio, puede:
 ##### Crear actividad
+![crearActividad](https://i.postimg.cc/GtQ9DG6K/crear-Actividad.png)
 ##### Editar actividad
+![editarActividad](https://i.postimg.cc/9FmDhgqn/editar-Actividad.png)
 ##### Borrar actividad
+![borrarActividad](https://i.postimg.cc/4dpYJr5r/borrar-Actividad.png)
