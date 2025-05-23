@@ -8,11 +8,8 @@
 5. [Estructura del proyecto](#estructura-del-proyecto)
 6. [Ejemplo de uso](#ejemplo-de-uso)
    * [Inicio Sesión](#inicio-sesión)
-     * [Usuario](#usuario)
-     * [Monitor](#monitor)
    * [Datos personales](#datos-personales)
    * [Actividades](#actividades)
-     * [Usuario](#actividades-usuario)
        * [Inscribir en una actividad](#inscribir-en-una-actividad)
        * [Dejar una ctividad](#dejar-una-actividad)
      * [Monitor](#actividades-monitor)
@@ -122,14 +119,22 @@ Proyecto_Integrador_1DAW
 ``` 
 
 ## Ejemplo de uso
-
 ### Inicio Sesión:
-#### Usuario
-#### Monitor
+Primero el usuario inicia sesión con su matrícula.
+Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
+![inicioSesion]
+(src/main/java/com.jamonasiatico/imagenes/inicioSesion.png)
+
+![Monitor]
+(src/main/java/com.jamonasiatico/imagenes/monitorSiNo.png)
+
 ### Datos personales
+Después de iniciar sesión nos enseñará los datos personales.
 ### Actividades:
-#### Actividades Usuario:
+En el menú de la izquierda se encuentra Actividades. 
+Si pinchamos en ella, para el usuario que hace las atividades le sale en pantalla una lista de actividades disponibles y otra lista de actividades inscritas.
 ##### Inscribir en una actividad
+
 ##### Dejar una actividad
 
 #### Actividades Monitor:
