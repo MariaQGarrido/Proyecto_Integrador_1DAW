@@ -85,23 +85,54 @@ Sistema operativo compatible:
 * macOS 
 * Linux
 
-## Requisitos previos
-
 ## Instrucciones de instalación y ejecución
+Vamos al repositorio donde se encuentra el programa y copiamos el link que nos proporciona.
+
+Abrimos el GitBash y escribimos **git clone** y pegamos el link.
+
+Para poder utilizar el programa, abrimos el archivo en un entorno de desarrollo como Eclipse, IntelliJ, VisualStudioCode...
 
 ## Estructura del proyecto
+Para realizar este proyecto, hemos seguido el diseño de MVC (Modelo-Vista-Controlador), así mantenemos el código de forma organizada.
+
+Nuestra estructura es la siguiente:
+
+```
+Proyecto_Integrador_1DAW
+│
+├── 📂 src
+│   ├── 📂 main
+│   │   ├── 📂 java
+│   │   │   └── 📦 com.jamonasiatico
+│   │   │       ├── 📁 control    → Conectar el modelo con la vista.
+│   │   │       ├── 📁 imagenes   → Imágenes utilizadas por la aplicación.
+│   │   │       ├── 📁 lib        → Librerías adicionales utilizadas por el proyecto.
+│   │   │       ├── 📁 main       → Punto de entrada principal de la aplicación.
+│   │   │       ├── 📁 modelo     → La parte del programa que guarda y gestiona los datos.
+│   │   │       ├── 📁 vistas     → Interfaz gráfica de usuario desarrollada con Java Swing (Vista).
+│   │   │       └── 📁 wireframe  → Prototipos de diseño visual y estructuras previas a la implementación.
+│   │   └── 📂 resources          → Recursos como archivos de configuración, textos, etc.
+│
+├── 📂 test
+│   └── 📂 java                   → Pruebas unitarias del proyecto.
+│
+├── 📂 target                     → Archivos generados tras compilar el proyecto.
+│
+├── 📄 pom.xml                    → Archivo de configuración de Maven (gestión del proyecto y dependencias).
+``` 
 
 ## Ejemplo de uso
- Introducción:
- Inicio Sesión:
- Usuario
- Monitor
- Datos personales
- Actividades:
- Actividades Usuario:
- Inscribir en una actividad
- Dejar una actividad
- Actividades Monitor:
- Crear actividad
- Editar actividad
- Borrar actividad
+
+### Inicio Sesión:
+#### Usuario
+#### Monitor
+### Datos personales
+### Actividades:
+#### Actividades Usuario:
+##### Inscribir en una actividad
+##### Dejar una actividad
+
+#### Actividades Monitor:
+##### Crear actividad
+##### Editar actividad
+##### Borrar actividad
