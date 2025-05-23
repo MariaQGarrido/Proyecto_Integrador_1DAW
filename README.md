@@ -11,7 +11,7 @@
    * [Datos personales](#datos-personales)
    * [Actividades](#actividades)
        * [Inscribir en una actividad](#inscribir-en-una-actividad)
-       * [Dejar una ctividad](#dejar-una-actividad)
+       * [Dejar una actividad](#dejar-una-actividad)
        * [Crear actividad](#crear-actividad)
        * [Editar actividad](#editar-actividad)
        * [Borrar actividad](#borrar-actividad)
