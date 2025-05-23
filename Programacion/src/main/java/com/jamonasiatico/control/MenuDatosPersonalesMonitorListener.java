@@ -9,7 +9,19 @@ import com.jamonasiatico.vistas.DatosPersonalesMonitor;
 
 public class MenuDatosPersonalesMonitorListener implements MouseListener {
 
+	/**
+	 * Listener para el menu de Datos Personales Monitor
+	 * @param e the event to be processed
+	 */
 	@Override
+	public void mouseClicked(MouseEvent e) {
+		DatosPersonalesMonitor vista = new DatosPersonalesMonitor();
+		vista.setVisible(true);
+
+	}
+
+	@Override
+
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 
@@ -32,12 +44,4 @@ public class MenuDatosPersonalesMonitorListener implements MouseListener {
 		// TODO Auto-generated method stub
 
 	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		DatosPersonalesMonitor vista = new DatosPersonalesMonitor();
-		vista.setVisible(true);
-		
-	}
-
 }

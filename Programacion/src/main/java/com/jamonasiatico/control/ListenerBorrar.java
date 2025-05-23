@@ -10,8 +10,13 @@ public class ListenerBorrar implements ActionListener {
 	private BBDD bbdd = new BBDD();
 	
 	@Override
+	/**
+	 * Listener para el boton de borrar actividad
+	 */
 	public void actionPerformed(ActionEvent e) {
+		// Eliminamos primero todos los usuarios que están inscritos en una actividad
 		bbdd.eliminarInscritosPorIdActividad();
+		// para posteriormente poder eliminar la actividad
 		bbdd.eliminarActividad();
 		new ActividadMonitor();
 	}

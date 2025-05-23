@@ -12,10 +12,22 @@ public class Actividad {
 	private String idSala;
 	private Sala sala;
 
-
+	/**
+	 * Constructor de la clase Actividad
+	 *
+	 * @param idActividad
+	 * @param idMonitor
+	 * @param nombreActividad
+	 * @param descripcionActividad
+	 * @param usuariosMaximos
+	 * @param usuariosInscritos
+	 * @param fechaActividad
+	 * @param horaActividad
+	 */
 	public Actividad() {
 	}
 
+	//Getters y Setters
 	/**
 	 * @return the idActividad
 	 */
@@ -157,6 +169,9 @@ public class Actividad {
 	}
 
 	@Override
+	/**
+	 * Método toString para mostrar la información de la actividad
+	 */
 	public String toString() {
 		return idActividad+", "+idMonitor+", "+idSala+", "+ nombreActividad+", "+descripcionActividad+", "+usuariosMaximos+", "+ usuariosInscritos+", "+fechaActividad+", "+HoraActividad;
 	}

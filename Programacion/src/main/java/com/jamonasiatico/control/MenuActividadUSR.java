@@ -10,6 +10,10 @@ import com.jamonasiatico.vistas.ActividadesUsuario;
 public class MenuActividadUSR implements MouseListener {
 
 	@Override
+	/**
+	 * Listener para el menu de Actividad Usuario
+	 * @param e the event to be processed
+	 */
 	public void mouseClicked(MouseEvent e) {
 		ActividadesUsuario actividadUsr = new ActividadesUsuario();
 		actividadUsr.HacerVisible();

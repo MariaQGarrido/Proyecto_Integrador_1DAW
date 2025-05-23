@@ -6,7 +6,15 @@ public class Usuario {
 	private String apellidos;
 	private String matricula;
 	private String ciclo;
-		
+
+	/**
+	 * Constructor de la clase Usuario
+	 * @param idUsuario
+	 * @param nombre
+	 * @param apellidos
+	 * @param matricula
+	 * @param ciclo
+	 */
 	public Usuario(int idUsuario, String nombre, String apellidos, String matricula, String ciclo) {
 		super();
 		this.idUsuario = idUsuario;
@@ -19,12 +27,8 @@ public class Usuario {
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public boolean EsMonitor(String ciclo) {
-		return false;
-	}
-	
 
+	//Getters y Setters
 	/**
 	 * @return the idUsuario
 	 */

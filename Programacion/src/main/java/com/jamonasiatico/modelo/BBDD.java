@@ -18,6 +18,10 @@ public class BBDD {
 
 	private Connection con;
 
+	/**
+	 * Método para abrir la conexión a la base de datos
+	 * @return
+	 */
 	public Connection abrirConexion() {
 		con = null;
 
@@ -31,6 +35,12 @@ public class BBDD {
 		return con;
 	}
 
+	/**
+	 * Método para comprobar si el usuario existe en la base de datos
+	 * @param matricula
+	 * @param password
+	 * @return
+	 */
 	public Usuario obtenerUsuario(String matricula, String password) {
 
 		// consulta para iniciar sesión
@@ -40,8 +50,10 @@ public class BBDD {
 		Usuario usuario = new Usuario();
 		try {
 			abrirConexion();
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(consultaString);
 
+			//para asignar valores a los parámetros
 			stmt1.setString(1, matricula);
 			stmt1.setString(2, password);
 
@@ -51,8 +63,7 @@ public class BBDD {
 			// recorrer la tabla. Mientras que haya dato de dicho atributo en la tabla
 			// usuarios, que los meta en el objeto creado
 			while (resultado.next()) {
-				// cogemos el valor de id_usuario de la bbdd y lo metemos en nuestro objeto
-				// usuario y así con todos
+				// cogemos el valor de id_usuario de la bbdd y lo metemos en nuestro objeto usuario y así con todos
 				int idUsuario = resultado.getInt("id_usuario");
 				usuario.setIdUsuario(idUsuario);
 
@@ -74,19 +85,26 @@ public class BBDD {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		// Si no encuentra el usuario, devuelve null
 		return null;
 	}
 
-
+	/**
+	 * Método par introducir los datos de la actividad en la base de datos
+	 * @param actividad
+	 */
 	public void introducirDatosActividad(Actividad actividad) {
 
+		// consulta para insertar los datos de la actividad
 		String consultaString = "INSERT INTO actividades (id_monitor, id_sala, nombre_actividad, descripcion_actividad, usuarios_maximos, dia_actividad, hora) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			abrirConexion();
+
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(consultaString);
 
+			//para asignar valores a los parámetros
 			stmt1.setInt(1, ListenerLogin.usuario.getIdUsuario());
 			stmt1.setString(2, actividad.getIdSala());
 			stmt1.setString(3, actividad.getNombreActividad());
@@ -95,6 +113,7 @@ public class BBDD {
 			stmt1.setString(6, actividad.getFechaActividad());
 			stmt1.setString(7, actividad.getHoraActividad());
 
+			// ejecutar la consulta
 			stmt1.executeUpdate();
 
 			cerrarConexion();
@@ -103,18 +122,31 @@ public class BBDD {
 		}
 	}
 
+	/**
+	 * Método para traer la informción de las activiades de la base de datos
+	 */
 	public void traerActividades() {
+
+		// consulta para obtener los datos de las actividades
 		String recibirActividades = "SELECT * FROM ACTIVIDADES a, SALA s WHERE a.id_sala = s.id_sala";
 
 		try {
 			abrirConexion();
+
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(recibirActividades);
 
+			// Esto te devuelve lo que ha buscado del query.
 			ResultSet resultado = stmt1.executeQuery();
 
+			//creamos un objeto de tipo actividad vacío para luego rellenarlo con sus atributos.
 			ArrayList<Actividad> lista = new ArrayList<Actividad>();
 
+			// mientras haya datos de dicho atributo en la tabla actividades, que los meta en el objeto creado
 			while (resultado.next()) {
+
+				// creamos un objeto de tipo actividad y otro de tipo sala
+				// en la actividad guardamos los datos de la actividad y en la sala los de la sala
 				Actividad actividad = new Actividad();
 				Sala sala = new Sala();
 
@@ -155,7 +187,7 @@ public class BBDD {
 
 				lista.add(actividad);
 			}
-
+			//gurdamos los datos de la list en actividades
 			ListenerCrearActividad.actividades = lista;			
 			
 			cerrarConexion();
@@ -165,15 +197,26 @@ public class BBDD {
 
 	}
 
+	/**
+	 * Método para eliminar una actividad de la tabla inscrito_en de l base de datos
+	 */
 	public void eliminarInscritosPorIdActividad() {
+
+		// creamos un objeto y le asignamos el id de la actividad
 		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
+
+		// consulta para eliminar los datos de la actividad
 		String eliminar = "delete from inscrito_en where id_act=?";
 
 		try {
 			abrirConexion();
+
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(eliminar);
 
+			//para asignar valores a los parámetros
 			stmt1.setInt(1, idActividad);
+			// ejecutar la consulta
 			stmt1.executeUpdate();
 
 			cerrarConexion();
@@ -182,15 +225,27 @@ public class BBDD {
 		}
 	}
 
+	/**
+	 * Método para eliminar una actividad
+	 */
 	public void eliminarActividad() {
+
+		// creamos un objeto y le asignamos el id de la actividad
 		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
+
+		// consulta para eliminar los datos de la actividad
 		String eliminar = "delete from actividades where id_actividad=?";
 
 		try {
 			abrirConexion();
+
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(eliminar);			
 
+			//para asignar valores a los parámetros
 			stmt1.setInt(1, idActividad);
+
+			// ejecutar la consulta
 			stmt1.executeUpdate();
 
 			cerrarConexion();
@@ -199,13 +254,21 @@ public class BBDD {
 		}
 
 	}
+
+	/**
+	 * Método para editar una actividad
+	 */
 	public void editarActividad() {
+		//consulta para actualizar una actividad
 		String editar = "update actividades set id_sala=?, nombre_actividad=?, descripcion_actividad=?, usuarios_maximos=?, dia_actividad=?, hora=? where id_actividad=?";
 		
 		try {
 			abrirConexion();
+
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(editar);
-			
+
+			//para asignar valores a los parámetros
 			stmt1.setString(1, ListenerCrearActividad.actividad.getIdSala());
 			stmt1.setString(2, ListenerCrearActividad.actividad.getNombreActividad());
 			stmt1.setString(3, ListenerCrearActividad.actividad.getDescripcionActividad());
@@ -223,34 +286,32 @@ public class BBDD {
 	}
 	
 	
-	
-	
-	
-	
 	// crear un método para saber si una actividad ha sido creada pasando por todos los campos excepto el id
-	
 
-	public void cerrarConexion() {
-		try {
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("Error al cerrar conexión");
-			e.printStackTrace();
-		}
-	}
 
+	/**
+	 * Método para listar las salas de la base de datos
+	 * @return
+	 */
 	public ArrayList<Sala> listarSalas() {
+
+		// consulta para obtener los datos de las salas
 		String query = "SELECT * FROM SALA";
 
 		try {
 			abrirConexion();
+			//Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(query);
 
+			// Esto te devuelve lo que ha buscado del query.
 			ResultSet resultado = stmt1.executeQuery();
 
+			// creamos un objeto de tipo sala vacío para luego rellenarlo con sus atributos.
 			ArrayList<Sala> lista = new ArrayList<Sala>();
 
 			while (resultado.next()) {
+				// mientras haya datos de dicho atributo en la tabla sala, que los meta en el objeto creado
+
 				Sala sala = new Sala();
 
 				String idSala = resultado.getString("id_sala");
@@ -274,5 +335,16 @@ public class BBDD {
 		return null;
 	}
 
+	/**
+	 * Método para cerrar la conexión a la base de datos
+	 */
+	public void cerrarConexion() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("Error al cerrar conexión");
+			e.printStackTrace();
+		}
+	}
 
 }

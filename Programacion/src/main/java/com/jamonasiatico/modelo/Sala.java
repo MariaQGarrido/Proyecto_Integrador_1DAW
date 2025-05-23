@@ -4,11 +4,18 @@ public class Sala {
 	private String idSala;
 	private int capacidad;
 	private String tipoSala;
-	
+
+	/**
+	 * Constructor de la clase Sala
+	 * @param idSala
+	 * @param capacidad
+	 * @param tipoSala
+	 */
 	public Sala() {
 		
 	}
-		
+
+	//Getters y Setters
 	/**
 	 * @return the idSala 
 	 */

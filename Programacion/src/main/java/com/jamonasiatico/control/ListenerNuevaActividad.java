@@ -11,6 +11,9 @@ public class ListenerNuevaActividad implements ActionListener {
 	CrearActividad NuevAct;
 	
 	@Override
+	/**
+	 * Listener para el boton de Nueva Actividad
+	 */
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		NuevAct = new CrearActividad();

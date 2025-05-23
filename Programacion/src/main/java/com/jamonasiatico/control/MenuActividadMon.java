@@ -8,8 +8,11 @@ import com.jamonasiatico.vistas.ActividadMonitor;
 
 
 public class MenuActividadMon implements MouseListener {
-	
 
+	/**
+	 * Listener para el menu de Actividad Monitor
+	 * @param e the event to be processed
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
