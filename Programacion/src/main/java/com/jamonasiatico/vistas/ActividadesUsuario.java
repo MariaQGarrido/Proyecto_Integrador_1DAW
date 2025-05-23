@@ -3,6 +3,8 @@ package com.jamonasiatico.vistas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
@@ -59,6 +61,17 @@ public class ActividadesUsuario extends JFrame{
 		modeloLista.addAll(ListenerCrearActividad.actividades);
 		
 		listActDisponibles.setModel(modeloLista);
+		listActDisponibles.addMouseListener(new MouseAdapter() {
+			
+		       public void mouseClicked(MouseEvent e) {
+		    	   int index = listActDisponibles.locationToIndex(e.getPoint());
+		           if (index != -1) { 
+		        	   ListenerCrearActividad.actividad = listActDisponibles.getModel().getElementAt(index);
+		        	   
+		        	   new InformacionActividadUsuarioInscribir();
+		           }
+		       }
+			});
 		
 		scrollActInscritas = new JScrollPane();
 		scrollActInscritas.setSize(540, 97);
@@ -69,6 +82,22 @@ public class ActividadesUsuario extends JFrame{
 		scrollActInscritas.setViewportView(listActInscritas);
 		listActDisponibles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
+		DefaultListModel<Actividad> modeloListaInscritas = new DefaultListModel<Actividad>();
+		bbdd.traerActInscritas(ListenerLogin.usuario.getIdUsuario());
+		modeloListaInscritas.addAll(ListenerCrearActividad.actividadesInscritas);
+		
+		listActInscritas.setModel(modeloListaInscritas);
+		listActInscritas.addMouseListener(new MouseAdapter() {
+			
+		       public void mouseClicked(MouseEvent e) {
+		    	   int index = listActInscritas.locationToIndex(e.getPoint());
+		           if (index != -1) { 
+		        	   ListenerCrearActividad.actividad = listActInscritas.getModel().getElementAt(index);
+		        	   
+		        	   new InformacionActividadUsuarioBaja();
+		           }
+		       }
+			});
 		
 		JLabel actividades = new JLabel("ACTIVIDADES");
 		actividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));

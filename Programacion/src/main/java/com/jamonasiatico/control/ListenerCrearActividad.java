@@ -16,6 +16,7 @@ public class ListenerCrearActividad implements ActionListener {
 
 	//clases estáticas para poder ser llamadas desde cualquier clase
 	public static ArrayList<Actividad> actividades= new ArrayList<Actividad>();
+	public static ArrayList<Actividad> actividadesInscritas= new ArrayList<Actividad>();
 	public static Actividad actividad;
 
 	/**

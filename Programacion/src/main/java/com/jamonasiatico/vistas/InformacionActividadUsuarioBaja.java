@@ -105,9 +105,6 @@ public class InformacionActividadUsuarioBaja extends JFrame{
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
-	}
-	
-	public void HacerVisible(){
 		setVisible(true);
 	}
 

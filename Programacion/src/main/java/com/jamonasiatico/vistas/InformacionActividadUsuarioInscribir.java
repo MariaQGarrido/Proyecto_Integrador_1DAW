@@ -11,6 +11,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.WindowConstants;
 
+import com.jamonasiatico.control.ListenerCrearActividad;
 import com.jamonasiatico.control.ListenerInscribirActividad;
 import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.control.MenuActividadUSR;
@@ -63,54 +64,52 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		btnInscribirActividad.setBounds(516, 319, 155, 30);
 		getContentPane().add(btnInscribirActividad);
 		
-		JLabel lblNombre = new JLabel("Nombre: ");
+		JLabel lblNombre = new JLabel("Nombre: "+ ListenerCrearActividad.actividad.getNombreActividad());
 		lblNombre.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNombre.setBounds(132, 93, 294, 44);
+		lblNombre.setBounds(132, 93, 288, 44);
 		getContentPane().add(lblNombre);
 		
-		JLabel lblMonitor = new JLabel("Monitor: ");
+		JLabel lblMonitor = new JLabel("Monitor: "+ ListenerCrearActividad.actividad.getIdMonitor());
 		lblMonitor.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblMonitor.setBounds(132, 148, 288, 30);
 		getContentPane().add(lblMonitor);
 		
-		JLabel lblDescripcion = new JLabel("Descripción: ");
+		JLabel lblDescripcion = new JLabel("Descripción: "+ ListenerCrearActividad.actividad.getDescripcionActividad());
 		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblDescripcion.setBounds(132, 195, 294, 40);
 		getContentPane().add(lblDescripcion);
 		
-		JLabel lblIdentificador = new JLabel("Identificador: ");
-		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(436, 93, 235, 38);
-		getContentPane().add(lblIdentificador);
+		JLabel lblUsuariosInscritos = new JLabel("IUsuariosInscritos: "+ ListenerCrearActividad.actividad.getUsuariosInscritos());
+		lblUsuariosInscritos.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblUsuariosInscritos.setBounds(436, 96, 235, 38);
+		getContentPane().add(lblUsuariosInscritos);
 		
-		JLabel lblFecha = new JLabel("Fecha: ");
+		JLabel lblFecha = new JLabel("Fecha: "+ ListenerCrearActividad.actividad.getFechaActividad());
 		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFecha.setBounds(436, 142, 235, 30);
+		lblFecha.setBounds(436, 148, 235, 30);
 		getContentPane().add(lblFecha);
 		
-		JLabel lblHora = new JLabel("Hora: ");
+		JLabel lblHora = new JLabel("Hora: "+ ListenerCrearActividad.actividad.getHoraActividad());
 		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblHora.setBounds(436, 183, 235, 30);
+		lblHora.setBounds(436, 200, 235, 30);
 		getContentPane().add(lblHora);
 		
-		JLabel lblSala = new JLabel("Sala: ");
+		JLabel lblSala = new JLabel("Sala: "+ ListenerCrearActividad.actividad.getIdSala());
 		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblSala.setBounds(436, 227, 235, 30);
+		lblSala.setBounds(436, 247, 235, 30);
 		getContentPane().add(lblSala);
 		
-		JLabel lblNMximo = new JLabel("Nº Máximo: ");
+		JLabel lblNMximo = new JLabel("Nº Máximo: "+ ListenerCrearActividad.actividad.getUsuariosMaximos());
 		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblNMximo.setBounds(436, 268, 235, 30);
+		lblNMximo.setBounds(132, 303, 235, 30);
 		getContentPane().add(lblNMximo);
 		
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);
-	}
-	
-	public void HacerVisible(){
 		setVisible(true);
 	}
+	
 	
 	// Getters y Setters
 	

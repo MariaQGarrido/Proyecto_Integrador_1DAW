@@ -15,6 +15,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import com.jamonasiatico.control.ListenerBorrar;
@@ -31,7 +32,6 @@ public class InformacionActividadMonitor extends JFrame{
 	private JMenu menuActividad;
 	private JMenu menuDatosPersonales;
 	private JTextField txtIdentificador;
-	private JList<Usuario> listParticipantes;
 	private JLabel lblMensaje;
 	
 	public InformacionActividadMonitor(){
@@ -61,48 +61,49 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		JLabel lblIdentificador = new JLabel("Identificador: "+ ListenerCrearActividad.actividad.getIdActividad());
 		lblIdentificador.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblIdentificador.setBounds(141, 90, 284, 30);
+		lblIdentificador.setBounds(141, 116, 284, 30);
 		getContentPane().add(lblIdentificador);
 		
 		txtIdentificador = new JTextField();
 		
 		
-		JLabel lblParticipantes = new JLabel("Participantes: ");
+		JLabel lblParticipantes = new JLabel("Participantes: "+ListenerCrearActividad.actividad.getUsuariosInscritos()+"/"+ListenerCrearActividad.actividad.getUsuariosMaximos());
 		lblParticipantes.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblParticipantes.setBounds(435, 90, 133, 30);
+		lblParticipantes.setBounds(435, 116, 236, 30);
 		getContentPane().add(lblParticipantes);
 		
 		JLabel lblFecha = new JLabel("Fecha: "+ListenerCrearActividad.actividad.getFechaActividad());
 		lblFecha.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblFecha.setBounds(141, 131, 267, 30);
+		lblFecha.setBounds(141, 168, 267, 30);
 		getContentPane().add(lblFecha);
 		
 		JLabel lblHora = new JLabel("Hora: "+ListenerCrearActividad.actividad.getHoraActividad());
 		lblHora.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-		lblHora.setBounds(141, 172, 267, 30);
+		lblHora.setBounds(141, 216, 267, 30);
 		getContentPane().add(lblHora);
 		
 		JLabel lblSala = new JLabel("Sala: "+ListenerCrearActividad.actividad.getSala().getTipoSala());
-		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 14));
+		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblSala.setBounds(141, 262, 236, 30);
 		getContentPane().add(lblSala);
 		
-		JLabel lblDescripcin = new JLabel("Descripción: "+ ListenerCrearActividad.actividad.getDescripcionActividad());
-		lblDescripcin.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
-		lblDescripcin.setBounds(142, 221, 488, 30);
-		getContentPane().add(lblDescripcin);
+		JLabel lblDescripcion = new JLabel(
+				"<html>" +
+				"<body style='width 200px; '> Descripción: " +
+						
+				ListenerCrearActividad.actividad.getDescripcionActividad()+
+				"</body>" +
+		"</html>"
+		);
+		lblDescripcion.setVerticalAlignment(SwingConstants.NORTH);
+		lblDescripcion.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblDescripcion.setBounds(435, 157, 236, 108);
+		getContentPane().add(lblDescripcion);
 		
 		JLabel lblNMximo = new JLabel("Nº Máximo: "+ ListenerCrearActividad.actividad.getUsuariosMaximos());
 		lblNMximo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblNMximo.setBounds(435, 262, 236, 30);
 		getContentPane().add(lblNMximo);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(433, 131, 197, 71);
-		getContentPane().add(scrollPane);
-		
-		listParticipantes = new JList();
-		scrollPane.setViewportView(listParticipantes);
 		
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
@@ -176,20 +177,6 @@ public class InformacionActividadMonitor extends JFrame{
 	 */
 	public void setTxtIdentificador(JTextField txtIdentificador) {
 		this.txtIdentificador = txtIdentificador;
-	}
-
-	/**
-	 * @return the listParticipantes
-	 */
-	public JList<Usuario> getListParticipantes() {
-		return listParticipantes;
-	}
-
-	/**
-	 * @param listParticipantes the listParticipantes to set
-	 */
-	public void setListParticipantes(JList<Usuario> listParticipantes) {
-		this.listParticipantes = listParticipantes;
 	}
 
 	/**
