@@ -47,7 +47,7 @@ public class ActividadMonitor extends JFrame{
 	
 	menuBarActividad = new JMenuBar();
 	menuBarActividad.setLayout (new GridLayout(0,1));
-	menuBarActividad.setBounds(0, 0, 109, 360);
+	menuBarActividad.setBounds(0, 0, 110, 360);
 	getContentPane().add(menuBarActividad);
 	
 	menuActividad = new JMenu("Actividades");
@@ -57,11 +57,13 @@ public class ActividadMonitor extends JFrame{
 	menuDatosPersonales = new JMenu("Datos Personales");
 	menuBarActividad.add(menuDatosPersonales);
 	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
-	
-	JLabel nombreUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-	nombreUsuario.setFont(new Font("Microsoft JhengHei", Font.PLAIN, 18));
-	nombreUsuario.setBounds(571, 11, 100, 30);
-	getContentPane().add(nombreUsuario);
+
+	JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+	lblNombreUsr.setBounds(566, 11, 105, 37);
+	lblNombreUsr.setForeground(new Color(0, 0, 0));
+	lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+	getContentPane().add(lblNombreUsr);
+
 	
 	JLabel lblListActividades = new JLabel("Lista Actividades");
 	lblListActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));

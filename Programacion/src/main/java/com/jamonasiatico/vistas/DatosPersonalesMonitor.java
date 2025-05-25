@@ -32,12 +32,12 @@ public class DatosPersonalesMonitor extends JFrame{
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		setResizable(false);
-				
-		JLabel lblTitulo = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblTitulo.setBounds(535, 11, 136, 37);
-		lblTitulo.setForeground(new Color(0, 0, 0));
-		lblTitulo.setFont(new Font("Dialog", Font.PLAIN, 14));
-		getContentPane().add(lblTitulo);
+
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
 				
 		setSize(695, 397);
 		setLocationRelativeTo(null);
@@ -65,7 +65,7 @@ public class DatosPersonalesMonitor extends JFrame{
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
 		menuBar.setLayout (new GridLayout(0,1));
-		menuBar.setBounds(0, 0, 100, 358);
+		menuBar.setBounds(0, 0, 110, 358);
 		getContentPane().add(menuBar);
 		
 		menuActividad = new JMenu("Actividades");

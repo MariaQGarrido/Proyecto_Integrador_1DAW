@@ -18,11 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-import com.jamonasiatico.control.ListenerBorrar;
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerEditar;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.MenuActividadMon;
+import com.jamonasiatico.control.*;
 import com.jamonasiatico.modelo.Usuario;
 
 /**
@@ -41,12 +37,12 @@ public class InformacionActividadMonitor extends JFrame{
 		setResizable(false);
 		
 		getContentPane().setBackground(new Color(247, 202, 136));
-						
-		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblNomUsuario.setBounds(571, 11, 100, 37);
-		lblNomUsuario.setForeground(new Color(0, 0, 0));
-		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		getContentPane().add(lblNomUsuario);
+
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
 		
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.addActionListener(new ListenerEditar());
@@ -82,7 +78,7 @@ public class InformacionActividadMonitor extends JFrame{
 		lblHora.setBounds(141, 216, 267, 30);
 		getContentPane().add(lblHora);
 		
-		JLabel lblSala = new JLabel("Sala: "+ListenerCrearActividad.actividad.getSala().getTipoSala());
+		JLabel lblSala = new JLabel("Sala: "+ListenerCrearActividad.actividad.getIdSala());
 		lblSala.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
 		lblSala.setBounds(141, 262, 236, 30);
 		getContentPane().add(lblSala);
@@ -108,7 +104,7 @@ public class InformacionActividadMonitor extends JFrame{
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
 		menuBar.setLayout (new GridLayout(0,1));
-		menuBar.setBounds(0, 0, 95, 358);
+		menuBar.setBounds(0, 0, 110, 358);
 		getContentPane().add(menuBar);
 		
 		menuActividad = new JMenu("Actividades");
@@ -117,7 +113,7 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-//		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
+		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
 		btnBorrarActiviada.addActionListener(new ListenerBorrar());

@@ -116,7 +116,7 @@ public class ActividadesUsuario extends JFrame{
 		
 		menuBarActividad = new JMenuBar();
 		menuBarActividad.setLayout (new GridLayout(0,1));
-		menuBarActividad.setBounds(0, 0, 99, 360);
+		menuBarActividad.setBounds(0, 0, 110, 360);
 		getContentPane().add(menuBarActividad);
 		
 		menuActividad = new JMenu("Actividades");
@@ -126,11 +126,13 @@ public class ActividadesUsuario extends JFrame{
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener(this));
 		menuBarActividad.add(menuDatosPersonales);
-		
-		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblNomUsuario.setBounds(581, 11, 90, 31);
-		getContentPane().add(lblNomUsuario);
+
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
+
 		
 		setSize(695, 397);
 		setLocationRelativeTo(null);

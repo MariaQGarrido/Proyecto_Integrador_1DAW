@@ -45,7 +45,7 @@ public class EditarActividad extends JFrame {
 
 		// Titulo
 		JLabel lblTitulo = new JLabel("Editar Actividad");
-		lblTitulo.setBounds(96, 11, 349, 37);
+		lblTitulo.setBounds(120, 11, 349, 37);
 		// cambio de color la letra
 		lblTitulo.setForeground(new Color(0, 0, 0));
 		lblTitulo.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
@@ -54,18 +54,18 @@ public class EditarActividad extends JFrame {
 		// identificador
 		JLabel lblIdentificador = new JLabel("Identificador: ");
 		lblIdentificador.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblIdentificador.setBounds(96, 68, 118, 29);
+		lblIdentificador.setBounds(130, 68, 118, 29);
 		getContentPane().add(lblIdentificador);
 		
 		lblCambioIdentificador = new JLabel(ListenerCrearActividad.actividad.getIdActividad().toString());
 		lblCambioIdentificador.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCambioIdentificador.setBounds(212, 68, 118, 29);
+		lblCambioIdentificador.setBounds(242, 68, 200, 29);
 		getContentPane().add(lblCambioIdentificador);
 
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
 		menuBar.setLayout(new GridLayout(0, 1));
-		menuBar.setBounds(0, 0, 85, 358);
+		menuBar.setBounds(0, 0, 110, 358);
 		getContentPane().add(menuBar);
 
 		menuActividad = new JMenu("Actividades");
@@ -78,12 +78,12 @@ public class EditarActividad extends JFrame {
 
 		JLabel lblCambioDescripcion = new JLabel("Descripción:");
 		lblCambioDescripcion.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCambioDescripcion.setBounds(96, 108, 124, 29);
+		lblCambioDescripcion.setBounds(130, 108, 124, 29);
 		getContentPane().add(lblCambioDescripcion);
 
 		// Descripción de la actividad
 		JScrollPane scrollPaneDescripcion = new JScrollPane();
-		scrollPaneDescripcion.setBounds(96, 148, 235, 101);
+		scrollPaneDescripcion.setBounds(150, 148, 180, 101);
 		getContentPane().add(scrollPaneDescripcion);
 
 		textAreaCambioDescripcion = new JTextArea();
@@ -134,13 +134,13 @@ public class EditarActividad extends JFrame {
 		// label y txt para añadir la hora
 		JLabel lblCambioHora = new JLabel("Hora Actividad:");
 		lblCambioHora.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCambioHora.setBounds(96, 274, 124, 29);
+		lblCambioHora.setBounds(130, 274, 124, 29);
 		getContentPane().add(lblCambioHora);
 
 		txtCambioHora = new JTextField();
 		txtCambioHora.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtCambioHora.setColumns(10);
-		txtCambioHora.setBounds(229, 278, 101, 20);
+		txtCambioHora.setBounds(259, 278, 71, 20);
 		getContentPane().add(txtCambioHora);
 
 		// Boton para crear la actividad
@@ -149,10 +149,11 @@ public class EditarActividad extends JFrame {
 		btnEditar.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnEditar);
 
-		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblNomUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNomUsuario.setBounds(570, 11, 99, 29);
-		getContentPane().add(lblNomUsuario);
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
 
 		lblMensaje = new JLabel("");
 		lblMensaje.setForeground(Color.RED);

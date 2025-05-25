@@ -465,15 +465,14 @@ public class BBDD {
 	public void DarDeBajaActividad(int act, int usr) {
 
 		// Eliminamos de la base el id de la actividad y usuario
-		String eliminar = "delete from inscrito_en where id_act=? AND id_usr=?";
-
+		String eliminar = "delete from inscrito_en where id_usr=? and id_act=?";
 
 		try {
 			abrirConexion();
 
 			PreparedStatement stmt1 = con.prepareStatement(eliminar);
-			stmt1.setInt(1, act);
-			stmt1.setInt(2, usr);
+			stmt1.setInt(1, usr);
+			stmt1.setInt(2, act);
 			stmt1.executeUpdate();
 
 			cerrarConexion();

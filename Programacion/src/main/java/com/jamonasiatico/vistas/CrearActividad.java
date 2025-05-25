@@ -60,7 +60,7 @@ public class CrearActividad extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		// Poner el menú el filas
 		menuBar.setLayout (new GridLayout(0,1));
-		menuBar.setBounds(0, 0, 101, 358);
+		menuBar.setBounds(0, 0, 110, 358);
 		getContentPane().add(menuBar);
 		
 		JMenu menuActividad = new JMenu("Actividades");
@@ -142,11 +142,13 @@ public class CrearActividad extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton.setBounds(551, 318, 118, 30);
 		getContentPane().add(btnNewButton);
-		
-		JLabel lblNomUsuario = new JLabel(ListenerLogin.usuario.getMatricula());
-		lblNomUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNomUsuario.setBounds(597, 11, 74, 29);
-		getContentPane().add(lblNomUsuario);
+
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
+
 		
 		SpinnerNumberModel modeloSpinnerCapacidadSala = new SpinnerNumberModel(1, 1, 100, 1);
 		

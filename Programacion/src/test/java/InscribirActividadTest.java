@@ -1,13 +1,12 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.jamonasiatico.control.ListenerCrearActividad;
 import com.jamonasiatico.control.ListenerLogin;
 import com.jamonasiatico.modelo.Actividad;
 import com.jamonasiatico.modelo.BBDD;
 import com.jamonasiatico.modelo.Usuario;
 
-public class ClaseTestUsuario {
+public class InscribirActividadTest {
 
 	@Test
 	public void ComprobarInscripcion() {
