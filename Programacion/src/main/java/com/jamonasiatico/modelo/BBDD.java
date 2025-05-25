@@ -235,10 +235,7 @@ public class BBDD {
 	/**
 	 * Método para eliminar una actividad
 	 */
-	public void eliminarActividad() {
-
-		// creamos un objeto y le asignamos el id de la actividad
-		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
+	public void eliminarActividad(Integer idActividad) {
 
 		// consulta para eliminar los datos de la actividad
 		String eliminar = "delete from actividades where id_actividad=?";
@@ -341,18 +338,6 @@ public class BBDD {
 		return null;
 	}
 
-	/**
-	 * Método para cerrar la conexión a la base de datos
-	 */
-	public void cerrarConexion() {
-		try {
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("Error al cerrar conexión");
-			e.printStackTrace();
-		}
-	}
-
 	public void traerActInscritas(int usr) {
 		// TODO Auto-generated method stub
 		String Incrita = "SELECT * FROM INSCRITO_EN, ACTIVIDADES WHERE INSCRITO_EN.id_act = ACTIVIDADES.id_actividad AND INSCRITO_EN.id_usr=? ";
@@ -421,9 +406,9 @@ public class BBDD {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
-	 *	Metodo para inscribir un usuario a una actividad 
+	 *	Metodo para inscribir un usuario a una actividad
 	 */
 	public void InscribirEnActividad(int usr, int act) {
 		// Introducimos los datos recogidos en la tabla INSCRITO_EN
@@ -447,22 +432,22 @@ public class BBDD {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
-	 * Metodo para comprobar si el usuario está ya inscrito en una actividad 
+	 * Metodo para comprobar si el usuario está ya inscrito en una actividad
 	 */
 	public boolean YaInscrito(int usr, int act) {
 		// Recogemos la info de la bbdd para ver si existe conexion en la base entre la actividad y el alumno
 		String comprobar = "SELECT * FROM INSCRITO_EN WHERE id_usr=? And id_act=?";
-		
+
 		try {
 			abrirConexion();
 			PreparedStatement stmt1 = con.prepareStatement(comprobar);
 			stmt1.setInt(1, usr);
 			stmt1.setInt(2, act);
-			
+
 			ResultSet resultado = stmt1.executeQuery();;
-			
+
 			if(resultado.next()) {
 				cerrarConexion();
 				return true;
@@ -472,28 +457,67 @@ public class BBDD {
 		}
 		return false;
 	}
-	
-	
+
+
 	/*
-	 * Metodo para dar de baja a un alumno de una actividad  
+	 * Metodo para dar de baja a un alumno de una actividad
 	 */
 	public void DarDeBajaActividad(int act, int usr) {
 
 		// Eliminamos de la base el id de la actividad y usuario
 		String eliminar = "delete from inscrito_en where id_act=? AND id_usr=?";
-		
-		
+
+
 		try {
 			abrirConexion();
 
 			PreparedStatement stmt1 = con.prepareStatement(eliminar);
-			stmt1.setInt(1, usr);
-			stmt1.setInt(2, act);
+			stmt1.setInt(1, act);
+			stmt1.setInt(2, usr);
 			stmt1.executeUpdate();
-			
+
 			cerrarConexion();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+
+	//Trer actividad por el nombre
+	public Integer traerIdActividadePorNombre(String nombreActividad) {
+		Integer idActividad = null;
+		// consulta para obtener los datos de las actividades
+		String recibirActividadeNombre = "SELECT id_actividad FROM ACTIVIDADES WHERE nombre_actividad=?";
+
+		try {
+			abrirConexion();
+
+			// Para ejecutar la consulta
+			PreparedStatement stmt1 = con.prepareStatement(recibirActividadeNombre);
+
+			stmt1.setString(1, nombreActividad);
+
+			ResultSet resultado = stmt1.executeQuery();
+			resultado.next();
+			idActividad = resultado.getInt("id_actividad");
+
+			cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return idActividad;
+	}
+
+	/**
+	 * Método para cerrar la conexión a la base de datos
+	 */
+	public void cerrarConexion() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("Error al cerrar conexión");
+			e.printStackTrace();
+		}
+	}
+
+
 }

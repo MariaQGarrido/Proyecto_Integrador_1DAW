@@ -17,7 +17,10 @@ public class ListenerBorrar implements ActionListener {
 		// Eliminamos primero todos los usuarios que están inscritos en una actividad
 		bbdd.eliminarInscritosPorIdActividad();
 		// para posteriormente poder eliminar la actividad
-		bbdd.eliminarActividad();
+		// creamos un objeto y le asignamos el id de la actividad
+		Integer idActividad = ListenerCrearActividad.actividad.getIdActividad();
+
+		bbdd.eliminarActividad(idActividad);
 		new ActividadMonitor();
 	}
 

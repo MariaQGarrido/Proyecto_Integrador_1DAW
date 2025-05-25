@@ -75,3 +75,7 @@ INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (2, 2),
 (3, 3);
 
+select*from actividades where nombre_actividad='PILATES';
+
+select*from actividades;
+select*from inscrito_en;
