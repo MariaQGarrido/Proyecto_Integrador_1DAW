@@ -82,11 +82,26 @@ Sistema operativo compatible:
 * Linux
 
 ## Instrucciones de instalación y ejecución
-Vamos al repositorio donde se encuentra el programa y copiamos el link que nos proporciona.
+Primero ve al repositorio donde se encuentra el programa y copia el link.
+```
+https://github.com/MariaQGarrido/Proyecto_Integrador_1DAW.git
+```
+Abre una terminal, escribe **git clone** y pega el link.
 
-Abrimos el GitBash y escribimos **git clone** y pegamos el link.
+Para poder utilizar el programa, abra el archivo en un entorno de desarrollo como Eclipse, IntelliJ, VisualStudioCode...
 
-Para poder utilizar el programa, abrimos el archivo en un entorno de desarrollo como Eclipse, IntelliJ, VisualStudioCode...
+En Eclipse pinche en File > Import > Existing Projects into Workspace y selecciona el archivo que clonaste.
+En IntelliJ pinche en File > New > Project from Existing Sources y seleccion el archivo clonado.
+Y para Visual Studio Code pinche en Open folder y seleccione el archivo clonado.
+
+Por último, como este proyecto tiene una Base de Datos, instale MySQL.
+Para tener la base de datos del proyecto en MySQL, debe crearse un schema con el nombre de la base de datos del archivo (Base_integrador).
+Ejecutelo por primera vez y en cualquier entorno nombrados de los de arriba, asegurese de que el nombre de la base de datos y la contraseña sea igual para esablecer la conexión.
+```
+  private String url = "jdbc:mysql://localhost/base_integrador";
+	private String usuarioBBDD = "root";
+	private String passwdBBDD = "tuContrseña";
+```
 
 ## Estructura del proyecto
 Para realizar este proyecto, hemos seguido el diseño de MVC (Modelo-Vista-Controlador), así mantenemos el código de forma organizada.
