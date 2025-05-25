@@ -29,7 +29,7 @@ public class ListenerDejarActividad implements ActionListener {
 				JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 		// Si lo confirma de desinscribimos
 		if(confirmacion==JOptionPane.YES_OPTION){
-			bbdd.DarDeBajaActividad(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad());
+			bbdd.DarDeBajaActividad(ListenerCrearActividad.actividad.getIdActividad(), ListenerLogin.usuario.getIdUsuario());
 			vista2.HacerVisible();
 		}
 	}
