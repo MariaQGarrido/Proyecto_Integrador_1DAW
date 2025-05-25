@@ -24,15 +24,16 @@ public class BBDD {
 	 * @return
 	 */
 	public Connection abrirConexion() {
-		con = null;
-
 		try {
+			con= null;
+			// Creamos la conexión a la base de datos
 			con = DriverManager.getConnection(url, usuarioBBDD, passwdBBDD);
-		} catch (Exception e) {
-			System.out.println("Error en la conexión");
+			System.out.println("Conexión establecida");
+
+		} catch (SQLException e) {
+			System.out.println("Error al conectar a la base de datos");
 			e.printStackTrace();
 		}
-
 		return con;
 	}
 
