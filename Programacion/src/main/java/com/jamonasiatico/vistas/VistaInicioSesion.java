@@ -58,9 +58,7 @@ public class VistaInicioSesion extends JFrame {
 		Nombretxt.setBounds(271, 196, 141, 20);
 		getContentPane().add(Nombretxt);
 		Nombretxt.setColumns(10);
-		
-		// TODO: borrar mas adelante -----------------------------------------------
-		Nombretxt.setText("489343L");
+
 
 		// Boton Iniciar sesión
 		btnInicioSesion = new JButton("Iniciar Sesión");
@@ -87,7 +85,7 @@ public class VistaInicioSesion extends JFrame {
 		
 		// Logotipo del equipo
 		String rutaRaiz = System.getProperty("user.dir");
-		Path path = Paths.get(rutaRaiz, "src", "main", "java","com", "jamonasiatico", "imagenes", "logopng.png");
+		Path path = Paths.get(rutaRaiz, "Programacion","src", "main", "java","com", "jamonasiatico", "imagenes", "logopng.png");
 		ImageIcon originalIcon = new ImageIcon(path.toString());
 		Image imagenEscalada = originalIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		ImageIcon imageIcon = new ImageIcon(imagenEscalada);

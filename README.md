@@ -8,14 +8,10 @@
 5. [Estructura del proyecto](#estructura-del-proyecto)
 6. [Ejemplo de uso](#ejemplo-de-uso)
    * [Inicio Sesión](#inicio-sesión)
-     * [Usuario](#usuario)
-     * [Monitor](#monitor)
    * [Datos personales](#datos-personales)
    * [Actividades](#actividades)
-     * [Usuario](#actividades-usuario)
        * [Inscribir en una actividad](#inscribir-en-una-actividad)
-       * [Dejar una ctividad](#dejar-una-actividad)
-     * [Monitor](#actividades-monitor)
+       * [Dejar una actividad](#dejar-una-actividad)
        * [Crear actividad](#crear-actividad)
        * [Editar actividad](#editar-actividad)
        * [Borrar actividad](#borrar-actividad)
@@ -58,7 +54,7 @@ Requisitos de hardware y software requerido:
 * Memoria de 4 GB de RAM como mínimo, se recomienda 8 GB 
 * Almacenamiento al menos 2 GB de espacio libre.
 
-Sistema operativo compatible
+Sistema operativo compatible:
 * Windows 10/11 de 64 bits
 * macOS de 64 bits
 * Linux 
@@ -85,23 +81,69 @@ Sistema operativo compatible:
 * macOS 
 * Linux
 
-## Requisitos previos
-
 ## Instrucciones de instalación y ejecución
+Vamos al repositorio donde se encuentra el programa y copiamos el link que nos proporciona.
+
+Abrimos el GitBash y escribimos **git clone** y pegamos el link.
+
+Para poder utilizar el programa, abrimos el archivo en un entorno de desarrollo como Eclipse, IntelliJ, VisualStudioCode...
 
 ## Estructura del proyecto
+Para realizar este proyecto, hemos seguido el diseño de MVC (Modelo-Vista-Controlador), así mantenemos el código de forma organizada.
+
+La estructura es la siguiente:
+
+```
+Proyecto_Integrador_1DAW
+│
+├── 📂 src
+│   ├── 📂 main
+│   │   ├── 📂 java
+│   │   │   └── 📦 com.jamonasiatico
+│   │   │       ├── 📁 control    → Conectar el modelo con la vista.
+│   │   │       ├── 📁 imagenes   → Imágenes utilizadas por la aplicación.
+│   │   │       ├── 📁 lib        → Librerías adicionales utilizadas por el proyecto.
+│   │   │       ├── 📁 main       → Punto de entrada principal de la aplicación.
+│   │   │       ├── 📁 modelo     → La parte del programa que guarda y gestiona los datos.
+│   │   │       ├── 📁 vistas     → Interfaz gráfica de usuario desarrollada con Java Swing (Vista).
+│   │   │       └── 📁 wireframe  → Prototipos de diseño visual y estructuras previas a la implementación.
+│   │   └── 📂 resources          → Recursos como archivos de configuración, textos, etc.
+│
+├── 📂 test
+│   └── 📂 java                   → Pruebas unitarias del proyecto.
+│
+├── 📂 target                     → Archivos generados tras compilar el proyecto.
+│
+├── 📄 pom.xml                    → Archivo de configuración de Maven (gestión del proyecto y dependencias).
+``` 
 
 ## Ejemplo de uso
- Introducción:
- Inicio Sesión:
- Usuario
- Monitor
- Datos personales
- Actividades:
- Actividades Usuario:
- Inscribir en una actividad
- Dejar una actividad
- Actividades Monitor:
- Crear actividad
- Editar actividad
- Borrar actividad
+### Inicio Sesión:
+Primero el usuario inicia sesión con su matrícula.
+![inicioSesion](https://i.postimg.cc/xCvRNp5z/inicio-Sesion.png)
+Si el usuario es un monitor, este tendrá la opción de iniciar sesión como monitor o como alumno.
+![Monitor](https://i.postimg.cc/kG7yQNYh/monitor-Si-No.png)
+
+### Datos personales
+Después de iniciar sesión nos enseñará los datos personales.
+### Actividades:
+En el menú de la izquierda se encuentra Actividades. El usuario que realiza las actividades solo puede inscribirse y dejar la actividad.
+##### Inscribir en una actividad
+![inscribirActividad](https://i.postimg.cc/dt5LtR2t/incribir-Actividad.png)
+##### Dejar una actividad
+![dejarActividad](https://i.postimg.cc/CMHR9pd8/dejar-Actividad.png)
+
+El monitor, en cambio, puede:
+##### Crear actividad
+![crearActividad](https://i.postimg.cc/GtQ9DG6K/crear-Actividad.png)
+##### Editar actividad
+![editarActividad](https://i.postimg.cc/9FmDhgqn/editar-Actividad.png)
+##### Borrar actividad
+![borrarActividad](https://i.postimg.cc/4dpYJr5r/borrar-Actividad.png)
+
+
+Por: María Qingxuan Garrido, Rosa Xiu Qiong Hu, Alejandro Raboso 
+
+Tutoras: Irene del Rincon y Sara Villanueva 
+
+Universidad Europea de Madrid 1ºDAW
