@@ -14,7 +14,7 @@ public class BBDD {
 	private String url = "jdbc:mysql://localhost/base_integrador";
 
 	private String usuarioBBDD = "root";
-	private String passwdBBDD = "Ttote2005@";
+	private String passwdBBDD = "1234567";
 
 	private Connection con;
 
