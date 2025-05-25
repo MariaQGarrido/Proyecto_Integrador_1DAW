@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0a81f84-4e97-4818-8085-ab537166cfbc" name="Changes" comment="cambios">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_de_datos/Base_Integrador.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas/Captura de pantalla 2025-05-25 220854.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas/Diagrama de clases.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas/Modelo Entidad-Relación.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memoria/Proyecto Integrador 1DAW Jamón asiático.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programacion/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,26 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppMain.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClaseTestUsuario.ComprobarInscripcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CrearActividadTest.testCrearActividad.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.InscribirActividadTest.ComprobarInscripcion.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.InscribirActividadTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.proyecto_integrador_jamonasiatico [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.proyecto_integrador_jamonasiatico [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#1 on dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/garri/OneDrive/Escritorio/Proyecto_Integrador_1DAW/Programacion/src/main/java/com/jamonasiatico/imagenes&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppMain.executor": "Run",
+    "JUnit.ClaseTestUsuario.ComprobarInscripcion.executor": "Run",
+    "JUnit.CrearActividadTest.testCrearActividad.executor": "Run",
+    "JUnit.InscribirActividadTest.ComprobarInscripcion.executor": "Run",
+    "JUnit.InscribirActividadTest.executor": "Run",
+    "Maven.proyecto_integrador_jamonasiatico [clean].executor": "Run",
+    "Maven.proyecto_integrador_jamonasiatico [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/garri/OneDrive/Escritorio/Proyecto_Integrador_1DAW/Programacion",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\garri\OneDrive\Escritorio\Proyecto_Integrador_1DAW\Programacion\src\main\java\com\jamonasiatico\imagenes" />
