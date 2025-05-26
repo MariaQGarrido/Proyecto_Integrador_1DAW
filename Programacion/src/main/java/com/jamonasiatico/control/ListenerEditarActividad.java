@@ -8,7 +8,7 @@ import com.jamonasiatico.vistas.EditarActividad;
 
 
 
-public class ListenerEditar implements ActionListener {
+public class ListenerEditarActividad implements ActionListener {
 	ActividadMonitor ActMon;
 	@Override
 	public void actionPerformed(ActionEvent e) {

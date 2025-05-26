@@ -67,7 +67,7 @@ public class ActividadesUsuario extends JFrame{
 		    	   int index = listActDisponibles.locationToIndex(e.getPoint());
 		           if (index != -1) { 
 		        	   ListenerCrearActividad.actividad = listActDisponibles.getModel().getElementAt(index);
-		        	   
+		        	   dispose();
 		        	   new InformacionActividadUsuarioInscribir();
 		           }
 		       }

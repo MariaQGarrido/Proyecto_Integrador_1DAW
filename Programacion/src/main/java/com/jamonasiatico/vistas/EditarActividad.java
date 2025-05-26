@@ -70,7 +70,7 @@ public class EditarActividad extends JFrame {
 
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon(this));
 
 		menuDatosPersonales = new JMenu("DatosPersonales");
 		menuBar.add(menuDatosPersonales);

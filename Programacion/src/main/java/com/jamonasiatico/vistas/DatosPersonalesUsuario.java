@@ -70,7 +70,7 @@ public class DatosPersonalesUsuario extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadUSR());
+		menuActividad.addMouseListener(new MenuActividadUSR(this));
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);

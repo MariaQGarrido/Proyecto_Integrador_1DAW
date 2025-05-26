@@ -70,7 +70,7 @@ public class DatosPersonalesMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon(this));
 		
 		
 		menuDatosPersonales = new JMenu("Datos Personales");

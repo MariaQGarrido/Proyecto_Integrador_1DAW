@@ -35,7 +35,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBarActividad.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadUSR());
+		menuActividad.addMouseListener(new MenuActividadUSR(this));
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);

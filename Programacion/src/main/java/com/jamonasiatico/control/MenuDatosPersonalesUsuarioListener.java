@@ -6,16 +6,16 @@ import java.awt.event.MouseListener;
 import com.jamonasiatico.vistas.ActividadesUsuario;
 import com.jamonasiatico.vistas.DatosPersonalesUsuario;
 
+import javax.swing.*;
 
 
 public class MenuDatosPersonalesUsuarioListener implements MouseListener {
-	private ActividadesUsuario actividadesUsuario;
+	private JFrame vista;
 	/**
 	 * Constructor de la clase MenuDatosPersonalesUsuarioListener
-	 * @param actividadesUsuario
 	 */
-	public MenuDatosPersonalesUsuarioListener(ActividadesUsuario actividadesUsuario) {
-		this.actividadesUsuario = actividadesUsuario;
+	public MenuDatosPersonalesUsuarioListener(JFrame vista) {
+		this.vista=vista;
 	}
 
 	/**
@@ -26,6 +26,7 @@ public class MenuDatosPersonalesUsuarioListener implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		DatosPersonalesUsuario datosPersonalesUsuario = new DatosPersonalesUsuario();
 		datosPersonalesUsuario.hacerVisible();
+		vista.dispose();
 	}
 
 	@Override

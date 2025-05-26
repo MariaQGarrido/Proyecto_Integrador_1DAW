@@ -4,12 +4,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import com.jamonasiatico.vistas.ActividadesUsuario;
+import com.jamonasiatico.vistas.DatosPersonalesUsuario;
 
+import javax.swing.*;
 
 
 public class MenuActividadUSR implements MouseListener {
+	private JFrame vista;
 
-	@Override
+    public MenuActividadUSR(JFrame vista) {
+		this.vista = vista;
+    }
+
+    @Override
 	/**
 	 * Listener para el menu de Actividad Usuario
 	 * @param e the event to be processed
@@ -17,6 +24,7 @@ public class MenuActividadUSR implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		ActividadesUsuario actividadUsr = new ActividadesUsuario();
 		actividadUsr.HacerVisible();
+		vista.dispose();
 	}
 
 	@Override

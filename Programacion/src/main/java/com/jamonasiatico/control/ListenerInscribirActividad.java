@@ -14,7 +14,6 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ListenerInscribirActividad implements ActionListener {
 	private InformacionActividadUsuarioInscribir vista;
-	private ActividadesUsuario vista2 = new ActividadesUsuario();
 	private BBDD bbdd;
 	
 	public ListenerInscribirActividad(InformacionActividadUsuarioInscribir informacionActividadUsuarioInscribir) {
@@ -31,7 +30,9 @@ public class ListenerInscribirActividad implements ActionListener {
 		}else {
 			// Si no lo está le inscribimos en la actividad
 			bbdd.InscribirEnActividad(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad());
+			ActividadesUsuario vista2 = new ActividadesUsuario();
 			vista2.HacerVisible();
+			vista.dispose();
 		}
 		
 	}

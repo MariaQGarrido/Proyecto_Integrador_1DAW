@@ -56,13 +56,7 @@ INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo, password)
 (2, 'Alejandro', 'Raboso Martos', '234567T','DAW', '1234'),
 (3, 'Rosa', 'Hu', '463827Y','ASIR', '1234'),
 (4, 'Sara', 'Villanueva', '489343L','TAFD', '1234'),
-(5, 'Lucas', 'Film', '289398I','TAFD', '1234'),
-(6, 'Diego', 'García', '328932U','TAFD', '1234'),
-(7, 'Marcos', 'Sanchez', '495719P','TAFD', '1234'),
-(8, 'Carolina', 'Martinez', '58205V','TAFD', '1234'),
-(9, 'Juan', 'López', '205191F','TAFD', '1234'),
-(10, 'Martina', 'Hernández', '194758Z','TAFD', '1234'),
-(11, 'Ana', 'Díaz', '593727W','TAFD', '1234');
+(5, 'Irene', 'Del Rincón', '289398I','TAFD', '1234');
 
 
 INSERT INTO ACTIVIDADES (id_actividad, id_monitor, id_sala, nombre_actividad, descripcion_actividad, usuarios_maximos, usuarios_inscritos, dia_actividad, hora) VALUES

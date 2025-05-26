@@ -13,7 +13,6 @@ import com.jamonasiatico.vistas.InformacionActividadUsuarioBaja;
 
 public class ListenerDejarActividad implements ActionListener {
 	private InformacionActividadUsuarioBaja vista;
-	private ActividadesUsuario vista2 = new ActividadesUsuario();
 	private BBDD bbdd;
 	
 	public ListenerDejarActividad(InformacionActividadUsuarioBaja informacionActividadUsuarioBaja) {
@@ -30,7 +29,9 @@ public class ListenerDejarActividad implements ActionListener {
 		// Si lo confirma de desinscribimos
 		if(confirmacion==JOptionPane.YES_OPTION){
 			bbdd.DarDeBajaActividad(ListenerCrearActividad.actividad.getIdActividad(), ListenerLogin.usuario.getIdUsuario());
+			ActividadesUsuario vista2 = new ActividadesUsuario();
 			vista2.HacerVisible();
+			vista.dispose();
 		}
 	}
 

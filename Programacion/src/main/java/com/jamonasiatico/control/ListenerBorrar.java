@@ -5,10 +5,16 @@ import java.awt.event.ActionListener;
 
 import com.jamonasiatico.modelo.BBDD;
 import com.jamonasiatico.vistas.ActividadMonitor;
+import com.jamonasiatico.vistas.InformacionActividadMonitor;
 
 public class ListenerBorrar implements ActionListener {
 	private BBDD bbdd = new BBDD();
-	
+	private InformacionActividadMonitor vista;
+
+	public ListenerBorrar(InformacionActividadMonitor vista) {
+		this.vista = vista;
+	}
+
 	@Override
 	/**
 	 * Listener para el boton de borrar actividad
@@ -22,6 +28,7 @@ public class ListenerBorrar implements ActionListener {
 
 		bbdd.eliminarActividad(idActividad);
 		new ActividadMonitor();
+		vista.dispose();
 	}
 
 }

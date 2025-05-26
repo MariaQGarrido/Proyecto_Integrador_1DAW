@@ -10,16 +10,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import com.jamonasiatico.control.*;
-import com.jamonasiatico.modelo.Usuario;
 
 /**
  * 
@@ -45,7 +42,7 @@ public class InformacionActividadMonitor extends JFrame{
 		getContentPane().add(lblNombreUsr);
 		
 		JButton btnEditar = new JButton("Editar");
-		btnEditar.addActionListener(new ListenerEditar());
+		btnEditar.addActionListener(new ListenerEditarActividad());
 		btnEditar.setBounds(141, 326, 89, 30);
 		getContentPane().add(btnEditar);
 		
@@ -109,14 +106,14 @@ public class InformacionActividadMonitor extends JFrame{
 		
 		menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon(this));
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(menuDatosPersonales);
-		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
+		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
 		
 		JButton btnBorrarActiviada = new JButton("Borrar");
-		btnBorrarActiviada.addActionListener(new ListenerBorrar());
+		btnBorrarActiviada.addActionListener(new ListenerBorrar(this));
 		btnBorrarActiviada.setBounds(582, 326, 89, 30);
 		getContentPane().add(btnBorrarActiviada);
 		

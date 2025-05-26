@@ -37,83 +37,81 @@ public class ActividadMonitor extends JFrame{
 	
 	
 	public ActividadMonitor() {
-	// Color de fondo de la vista
-	getContentPane().setBackground(new Color(247, 202, 136));
-	
-	// 1) configura JFrame
-	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	getContentPane().setLayout(null);
-	
-	
-	menuBarActividad = new JMenuBar();
-	menuBarActividad.setLayout (new GridLayout(0,1));
-	menuBarActividad.setBounds(0, 0, 110, 360);
-	getContentPane().add(menuBarActividad);
-	
-	menuActividad = new JMenu("Actividades");
-	menuActividad.setBackground(new Color(255, 255, 128));
-	menuBarActividad.add(menuActividad);
-	
-	menuDatosPersonales = new JMenu("Datos Personales");
-	menuBarActividad.add(menuDatosPersonales);
-	menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
+		// Color de fondo de la vista
+		getContentPane().setBackground(new Color(247, 202, 136));
 
-	JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
-	lblNombreUsr.setBounds(566, 11, 105, 37);
-	lblNombreUsr.setForeground(new Color(0, 0, 0));
-	lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
-	getContentPane().add(lblNombreUsr);
+		// 1) configura JFrame
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 
+
+		menuBarActividad = new JMenuBar();
+		menuBarActividad.setLayout (new GridLayout(0,1));
+		menuBarActividad.setBounds(0, 0, 110, 360);
+		getContentPane().add(menuBarActividad);
+
+		menuActividad = new JMenu("Actividades");
+		menuActividad.setBackground(new Color(255, 255, 128));
+		menuBarActividad.add(menuActividad);
+
+		menuDatosPersonales = new JMenu("Datos Personales");
+		menuBarActividad.add(menuDatosPersonales);
+		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
+
+		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
+		lblNombreUsr.setBounds(566, 11, 105, 37);
+		lblNombreUsr.setForeground(new Color(0, 0, 0));
+		lblNombreUsr.setFont(new Font("Dialog", Font.PLAIN, 20));
+		getContentPane().add(lblNombreUsr);
+
+
+		JLabel lblListActividades = new JLabel("Lista Actividades");
+		lblListActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
+		lblListActividades.setBounds(327,84, 161, 25);
+		getContentPane().add(lblListActividades);
+
+		scrollListaAct = new JScrollPane();
+		scrollListaAct.setBounds(179, 120, 421, 156);
+		getContentPane().add(scrollListaAct);
+
+
+		listaActividades = new JList<Actividad>();
+		listaActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
+		listaActividades.setBounds(307, 59, 200, 30);
+		scrollListaAct.setViewportView(listaActividades);
+		listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+		DefaultListModel<Actividad> modeloLista = new DefaultListModel<Actividad>();
+		bbdd.traerActividades();
+		modeloLista.addAll(ListenerCrearActividad.actividades);
+
+		listaActividades.setModel(modeloLista);
 	
-	JLabel lblListActividades = new JLabel("Lista Actividades");
-	lblListActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 18));
-	lblListActividades.setBounds(327,84, 161, 25);
-	getContentPane().add(lblListActividades);
-	
-	scrollListaAct = new JScrollPane();
-	scrollListaAct.setBounds(179, 120, 421, 156);
-	getContentPane().add(scrollListaAct);
-	
-	
-	listaActividades = new JList<Actividad>();
-	listaActividades.setFont(new Font("Microsoft JhengHei", Font.BOLD, 20));
-	listaActividades.setBounds(307, 59, 200, 30);
-	scrollListaAct.setViewportView(listaActividades);
-	listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-	
-	DefaultListModel<Actividad> modeloLista = new DefaultListModel<Actividad>();
-	bbdd.traerActividades();
-	modeloLista.addAll(ListenerCrearActividad.actividades);
-	
-	listaActividades.setModel(modeloLista);
-	
-	listaActividades.addMouseListener(new MouseAdapter() {
+		listaActividades.addMouseListener(new MouseAdapter() {
 		
        public void mouseClicked(MouseEvent e) {
     	   int index = listaActividades.locationToIndex(e.getPoint());
            if (index != -1) { 
         	   ListenerCrearActividad.actividad = listaActividades.getModel().getElementAt(index);
-        	   
+        	   dispose();
         	   new InformacionActividadMonitor();
-           }
-       }
-	});
+			   }
+		   }
+		});
 	
 	
-	btnNuevaActividad = new JButton("Nueva actividad");
-	btnNuevaActividad.addActionListener(new ListenerNuevaActividad());
-	btnNuevaActividad.setFont(new Font("Tahoma", Font.PLAIN, 12));
-	btnNuevaActividad.setBounds(327, 307, 148, 30);
-	getContentPane().add(btnNuevaActividad);
-	
-	
-	setSize(695, 397);
-	setLocationRelativeTo(null);
-	}
+		btnNuevaActividad = new JButton("Nueva actividad");
+		btnNuevaActividad.addActionListener(new ListenerNuevaActividad(this));
+		btnNuevaActividad.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNuevaActividad.setBounds(327, 307, 148, 30);
+		getContentPane().add(btnNuevaActividad);
 
-	public void HacerVisible(){
+
+		setSize(695, 397);
+		setLocationRelativeTo(null);
 		setVisible(true);
 	}
+
 	
 	// Getters y Setters
 	

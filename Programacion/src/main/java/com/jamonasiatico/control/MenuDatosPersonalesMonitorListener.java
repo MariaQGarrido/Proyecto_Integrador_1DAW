@@ -3,11 +3,19 @@ package com.jamonasiatico.control;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import com.jamonasiatico.vistas.CrearActividad;
 import com.jamonasiatico.vistas.DatosPersonalesMonitor;
 
+import javax.swing.*;
 
 
 public class MenuDatosPersonalesMonitorListener implements MouseListener {
+	private JFrame vista;
+
+
+	public MenuDatosPersonalesMonitorListener(JFrame vista) {
+		this.vista= vista;
+	}
 
 	/**
 	 * Listener para el menu de Datos Personales Monitor
@@ -15,8 +23,10 @@ public class MenuDatosPersonalesMonitorListener implements MouseListener {
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		DatosPersonalesMonitor vista = new DatosPersonalesMonitor();
-		vista.setVisible(true);
+
+		DatosPersonalesMonitor vistaDM = new DatosPersonalesMonitor();
+		vistaDM.setVisible(true);
+		vista.dispose();
 
 	}
 

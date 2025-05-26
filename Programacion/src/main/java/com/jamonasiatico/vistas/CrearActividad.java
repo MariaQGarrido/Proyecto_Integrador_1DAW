@@ -65,11 +65,11 @@ public class CrearActividad extends JFrame {
 		
 		JMenu menuActividad = new JMenu("Actividades");
 		menuBar.add(menuActividad);
-		menuActividad.addMouseListener(new MenuActividadMon());
+		menuActividad.addMouseListener(new MenuActividadMon(this));
 		
 		JMenu mnDatosPersonales = new JMenu("Datos Personales");
 		menuBar.add(mnDatosPersonales);
-		mnDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener());
+		mnDatosPersonales.addMouseListener(new MenuDatosPersonalesMonitorListener(this));
 
 		
 		JLabel lblDescripcion = new JLabel("Descripción:");
