@@ -55,6 +55,8 @@ INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo, password)
 (1, 'María', 'Garrido Bravo', '123456H', 'DAM',  '1234'),
 (2, 'Alejandro', 'Raboso Martos', '234567T','DAW', '1234'),
 (3, 'Rosa', 'Hu', '463827Y','ASIR', '1234'),
+(6, 'Manuel', 'García', '328932U','DAW', '1234'),
+(7, 'Lucas', 'Sanchez', '495719P','ASIR', '1234'),
 (4, 'Sara', 'Villanueva', '489343L','TAFD', '1234'),
 (5, 'Irene', 'Del Rincón', '289398I','TAFD', '1234');
 
@@ -62,7 +64,8 @@ INSERT INTO USUARIOS (id_usuario, nombre, apellidos, matricula, ciclo, password)
 INSERT INTO ACTIVIDADES (id_actividad, id_monitor, id_sala, nombre_actividad, descripcion_actividad, usuarios_maximos, usuarios_inscritos, dia_actividad, hora) VALUES
 (1, 4, 'PPA1', 'Pilates','Una actividad para relajarse un rato',10,1, '2025-04-11', '11:05'),
 (2, 4,'PPIS','Waterpolo','El gorro no se proporciona',15,1, '2025-04-12', '9:30'),
-(3, 4, 'PPE1','Atletismo','',5,1, '2025-04-21', '13:00');
+(3, 4, 'PPE1','Atletismo','',5,1, '2025-04-21', '13:00'),
+(4,5,'PPA1','Futbol Sala','Último partido de la temporada', 11,0,'2025-11-11','9:30');
 
 INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (1, 1),

@@ -82,7 +82,7 @@ public class ActividadMonitor extends JFrame{
 		listaActividades.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		DefaultListModel<Actividad> modeloLista = new DefaultListModel<Actividad>();
-		bbdd.traerActividades();
+		bbdd.traerActividadesMonitor();
 		modeloLista.addAll(ListenerCrearActividad.actividades);
 
 		listaActividades.setModel(modeloLista);

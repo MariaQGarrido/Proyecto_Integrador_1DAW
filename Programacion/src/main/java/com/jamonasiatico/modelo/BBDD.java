@@ -141,6 +141,7 @@ public class BBDD {
 			// Para ejecutar la consulta
 			PreparedStatement stmt1 = con.prepareStatement(recibirActividades);
 
+
 			// Esto te devuelve lo que ha buscado del query.
 			ResultSet resultado = stmt1.executeQuery();
 
@@ -204,6 +205,84 @@ public class BBDD {
 		}
 
 	}
+
+	public void traerActividadesMonitor() {
+
+		// consulta para obtener los datos de las actividades
+		String recibirActividades = "SELECT * FROM ACTIVIDADES a, SALA s WHERE a.id_sala = s.id_sala and id_monitor = ?";
+
+		try {
+			abrirConexion();
+
+			// Para ejecutar la consulta
+			PreparedStatement stmt1 = con.prepareStatement(recibirActividades);
+
+			// para asignar valores a los parámetros
+			stmt1.setInt(1, ListenerLogin.usuario.getIdUsuario());
+			// Esto te devuelve lo que ha buscado del query.
+			ResultSet resultado = stmt1.executeQuery();
+
+			// creamos un objeto de tipo actividad vacío para luego rellenarlo con sus
+			// atributos.
+			ArrayList<Actividad> lista = new ArrayList<Actividad>();
+
+			// mientras haya datos de dicho atributo en la tabla actividades, que los meta
+			// en el objeto creado
+			while (resultado.next()) {
+
+				// creamos un objeto de tipo actividad y otro de tipo sala
+				// en la actividad guardamos los datos de la actividad y en la sala los de la
+				// sala
+				Actividad actividad = new Actividad();
+				Sala sala = new Sala();
+
+				int idActividad = resultado.getInt("id_actividad");
+				actividad.setIdActividad(idActividad);
+
+				int idMonitor = resultado.getInt("id_monitor");
+				actividad.setIdMonitor(idMonitor);
+
+				String idSala = resultado.getString("id_sala");
+				actividad.setIdSala(idSala);
+
+				String nombreActividad = resultado.getString("nombre_actividad");
+				actividad.setNombreActividad(nombreActividad);
+
+				String descripcion = resultado.getString("descripcion_actividad");
+				actividad.setDescripcionActividad(descripcion);
+
+				int usuariosMaximos = resultado.getInt("usuarios_maximos");
+				actividad.setUsuariosMaximos(usuariosMaximos);
+
+				int usuariosInscritos = resultado.getInt("usuarios_inscritos");
+				actividad.setUsuariosInscritos(usuariosInscritos);
+
+				String diaActividad = resultado.getString("dia_actividad");
+				actividad.setFechaActividad(diaActividad);
+
+				String hora = resultado.getString("hora");
+				actividad.setHoraActividad(hora);
+
+				String tipoSala = resultado.getString("tipo_sala");
+				sala.setTipoSala(tipoSala);
+
+				int capacidadSala = resultado.getInt("capacidad");
+				sala.setCapacidad(capacidadSala);
+
+				actividad.setSala(sala);
+
+				lista.add(actividad);
+			}
+			// gurdamos los datos de la list en actividades
+			ListenerCrearActividad.actividades = lista;
+
+			cerrarConexion();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 
 	/**
 	 * Método para eliminar una actividad de la tabla inscrito_en de l base de datos

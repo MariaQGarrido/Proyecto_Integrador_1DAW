@@ -24,8 +24,12 @@ public class ListenerInscribirActividad implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// 	Si las plazas y están todas ocupadas le mostramos un mensaje de error
 		// Si un usuario ya esta inscrito en una actividad le mandamos un mensaje informandole que ya está inscrito
-		if(bbdd.YaInscrito(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad()) == true) {
+		if (numeroInscritosFinal() <= 0) {
+			JOptionPane.showMessageDialog(vista, "No quedan plazas disponibles", "error", JOptionPane.ERROR_MESSAGE);
+		}
+		else if(bbdd.YaInscrito(ListenerLogin.usuario.getIdUsuario(), ListenerCrearActividad.actividad.getIdActividad()) == true) {
 			showMessageDialog(vista, "Ya estas inscrito", "error", JOptionPane.ERROR_MESSAGE);
 		}else {
 			// Si no lo está le inscribimos en la actividad
@@ -35,6 +39,18 @@ public class ListenerInscribirActividad implements ActionListener {
 			vista.dispose();
 		}
 		
+	}
+
+	/**
+	 * Este método calcula el número de plazas disponibles para inscribirse en la actividad.
+	 *
+	 * @return El número de plazas disponibles.
+	 */
+	public int numeroInscritosFinal() {
+
+		int numFinalInscritos = ListenerCrearActividad.actividad.getUsuariosMaximos() - ListenerCrearActividad.actividad.getUsuariosInscritos();
+
+		return numFinalInscritos;
 	}
 
 }
