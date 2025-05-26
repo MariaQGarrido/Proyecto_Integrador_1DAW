@@ -65,7 +65,8 @@ INSERT INTO ACTIVIDADES (id_actividad, id_monitor, id_sala, nombre_actividad, de
 (1, 4, 'PPA1', 'Pilates','Una actividad para relajarse un rato',10,1, '2025-04-11', '11:05'),
 (2, 4,'PPIS','Waterpolo','El gorro no se proporciona',15,1, '2025-04-12', '9:30'),
 (3, 4, 'PPE1','Atletismo','',5,1, '2025-04-21', '13:00'),
-(4,5,'PPA1','Futbol Sala','Último partido de la temporada', 11,0,'2025-11-11','9:30');
+(4,5,'PPA1','Futbol Sala','Último partido de la temporada', 11,0,'2025-11-11','9:30'),
+(5,4,'PPA3','Baloncesto','En caso de que haga buen tiempo, se jugará afuera',11,11,'2025-12-01','12:30');
 
 INSERT INTO INSCRITO_EN (id_usr, id_act) VALUES
 (1, 1),

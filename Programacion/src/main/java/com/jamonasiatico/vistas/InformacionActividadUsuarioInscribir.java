@@ -6,10 +6,7 @@ import java.awt.GridLayout;
 
 import javax.swing.*;
 
-import com.jamonasiatico.control.ListenerCrearActividad;
-import com.jamonasiatico.control.ListenerInscribirActividad;
-import com.jamonasiatico.control.ListenerLogin;
-import com.jamonasiatico.control.MenuActividadUSR;
+import com.jamonasiatico.control.*;
 
 public class InformacionActividadUsuarioInscribir extends JFrame{
 	
@@ -39,7 +36,7 @@ public class InformacionActividadUsuarioInscribir extends JFrame{
 		
 		menuDatosPersonales = new JMenu("Datos Personales");
 		menuBarActividad.add(menuDatosPersonales);
-//		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener());
+		menuDatosPersonales.addMouseListener(new MenuDatosPersonalesUsuarioListener(this));
 
 		JLabel lblNombreUsr = new JLabel(ListenerLogin.usuario.getMatricula());
 		lblNombreUsr.setBounds(566, 11, 105, 37);
