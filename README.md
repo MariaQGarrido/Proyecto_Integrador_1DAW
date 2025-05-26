@@ -91,7 +91,9 @@ Abre una terminal, escribe **git clone** y pega el link.
 Para poder utilizar el programa, abra el archivo en un entorno de desarrollo como Eclipse, IntelliJ, VisualStudioCode...
 
 En Eclipse pinche en File > Import > Existing Projects into Workspace y selecciona el archivo que clonaste.
+
 En IntelliJ pinche en File > New > Project from Existing Sources y seleccion el archivo clonado.
+
 Y para Visual Studio Code pinche en Open folder y seleccione el archivo clonado.
 
 Por último, como este proyecto tiene una Base de Datos, instale MySQL.
