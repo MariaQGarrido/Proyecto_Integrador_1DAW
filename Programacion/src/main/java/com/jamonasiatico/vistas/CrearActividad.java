@@ -105,7 +105,7 @@ public class CrearActividad extends JFrame {
 		// Label y spinner para el numero máximos de alumnos que hay en una actividad
 		SpinnerNumberModel modeloSpinnerAlumnosMaximos = new SpinnerNumberModel(1, 1, 50, 1);
 		alumnosMaximos = new JSpinner(modeloSpinnerAlumnosMaximos);
-		alumnosMaximos.setBounds(522, 82, 101, 20);
+		alumnosMaximos.setBounds(562, 78, 101, 20);
 		
 		getContentPane().add(alumnosMaximos);
 		
@@ -115,13 +115,13 @@ public class CrearActividad extends JFrame {
 		getContentPane().add(lblAlumnosMaximos);
 		
 		// label y txt para añadir la fecha
-		JLabel lblFecha = new JLabel("Fecha Actividad:");
+		JLabel lblFecha = new JLabel("Fecha Actividad (Y-M-D):");
 		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblFecha.setBounds(407, 191, 124, 29);
+		lblFecha.setBounds(407, 191, 159, 29);
 		getContentPane().add(lblFecha);
 		
 		txtFecha = new JTextField();
-		txtFecha.setBounds(522, 197, 101, 20);
+		txtFecha.setBounds(562, 197, 101, 20);
 		getContentPane().add(txtFecha);
 		txtFecha.setColumns(10);
 		
@@ -133,7 +133,7 @@ public class CrearActividad extends JFrame {
 		
 		txtHora = new JTextField();
 		txtHora.setColumns(10);
-		txtHora.setBounds(520, 252, 101, 20);
+		txtHora.setBounds(560, 248, 101, 20);
 		getContentPane().add(txtHora);
 		
 		//Boton para crear la actividad
@@ -159,7 +159,7 @@ public class CrearActividad extends JFrame {
 		getContentPane().add(lblMensaje);
 		
 		salaBox = new JComboBox();
-		salaBox.setBounds(501, 144, 122, 22);
+		salaBox.setBounds(541, 140, 122, 22);
 		salaBox.removeAllItems();
 		ArrayList<Sala> salas = listenerCrearActividad.getBbdd().listarSalas();
 		
