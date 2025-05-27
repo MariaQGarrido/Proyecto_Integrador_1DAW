@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.jamonasiatico.control"},{"l":"com.jamonasiatico.main"},{"l":"com.jamonasiatico.modelo"},{"l":"com.jamonasiatico.vistas"}];updateSearchResults();
